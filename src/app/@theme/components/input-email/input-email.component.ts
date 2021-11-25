@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input-email',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-email.component.scss']
 })
 export class InputEmailComponent implements OnInit {
+    public emailInput: FormControl = new FormControl();
 
   constructor() { }
 

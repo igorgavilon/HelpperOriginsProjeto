@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AutenticacaoService } from 'src/app/@core/services/autenticacao.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+    public usuarioAutenticado: boolean = false;
+    public mensagemErro: string;
 
-  constructor() { }
+  constructor(private _autenticacaoService: AutenticacaoService, private _rota: Router) { }
 
   ngOnInit(): void {
   }
+
+  public login(form: NgForm): void {
+    console.log(form.value);
+
+    this.usuarioAutenticado = this._autenticacaoService.login(form.value);
+    if(this.usuarioAutenticado) {
+        this._rota.navigate(['/pages/listas']);
+    }else {
+        this.mensagemErro = "Usuário Não Autenticado! E-mail ou senha incorretos!";
+    }
+}
+
 
 }
