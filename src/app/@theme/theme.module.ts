@@ -5,10 +5,13 @@ import { MaterialModule } from "../pages/material.module";
 import { InputEmailComponent } from './components/input-email/input-email.component';
 import { InputSenhaComponent } from './components/input-senha/input-senha.component';
 import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     imports: [
         MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
 	],
 	declarations: [
 		WelcomeComponent,
