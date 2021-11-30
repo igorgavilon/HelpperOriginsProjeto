@@ -22,6 +22,8 @@
         <div class="div-listas-descricao-atividade">
             <p *ngFor="let item of _itensLista">
                 <app-card-item-lista
+                    [_modoReadOnly]="true"
+                    [_botaoMarcarFaltaVisivel]="true"
                     [_itemLista]="item"
                     (botaoStatusClicado)="atualizarValoresDescontoETotal($event)">
                 </app-card-item-lista>

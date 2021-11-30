@@ -1,7 +1,7 @@
 <mat-card class="mat-card-principal">
     <div class="div-container">
         <div class="descricao-atividade">
-            <p>Total de faltas: {{_total_faltas}}</p>
+            <p>Total de faltas: <span class="span-total-faltas">{{_total_faltas}}</span></p>
         </div>
         <div class="valor">
             <p>Mesada:</p>
@@ -12,7 +12,7 @@
         </div>
         <div class="valor">
             <p>Descontos:</p>
-            <p>R$ {{_valor_descontos}}</p>
+            <p><span [ngClass]="_valor_descontos > 0 ? 'estilo-valor-negativo' : ''">R$ {{_valor_descontos}}</span></p>
         </div>
         <div>
             <h3>=</h3>
