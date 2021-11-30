@@ -1,0 +1,6 @@
+<button mat-raised-button color="secondary"
+        (click)="atualizarStatusFalta()"
+        [ngClass]="atividadeEmFalta ? 'estilo-status-falta' : 'estilo-status-marcar'">
+    <mat-icon *ngIf="atividadeEmFalta">{{'close'}}</mat-icon>
+    {{texto}}
+</button>

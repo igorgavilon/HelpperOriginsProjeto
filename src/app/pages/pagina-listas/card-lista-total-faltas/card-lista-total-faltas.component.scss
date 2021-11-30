@@ -1,0 +1,13 @@
+.div-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mat-card-principal {
+    border: 1px solid #83C5BE;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 14px rgba(181, 197, 202, 0.5);
+    border-radius: 4px;
+}

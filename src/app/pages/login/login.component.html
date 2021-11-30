@@ -4,9 +4,16 @@
     </div>
     <div class="div-form-login">
         <h4>Form de Login</h4>
-        <app-input-email></app-input-email>
-        <app-input-senha></app-input-senha>
-        <app-primary-button texto="Entrar"></app-primary-button>
+        <form #loginForm="ngForm">
+            <app-input-email ngDefaultControl ngModel name="email"></app-input-email>
+            <app-input-senha ngDefaultControl ngModel name="senha"></app-input-senha>
+            <app-primary-button texto="Entrar" (click)="login(loginForm)"></app-primary-button>
+        </form>
+        <br/>
+        <div *ngIf="mensagemErro">
+            {{mensagemErro}}
+        </div>
+
     </div>
 </div>
 

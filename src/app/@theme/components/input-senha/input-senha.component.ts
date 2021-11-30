@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input-senha',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputSenhaComponent implements OnInit {
     public hide: boolean = true;
+    public senhaInput: FormControl = new FormControl();
+
   constructor() { }
 
   ngOnInit(): void {

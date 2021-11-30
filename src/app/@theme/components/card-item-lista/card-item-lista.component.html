@@ -1,0 +1,18 @@
+<mat-card class="mat-card-principal">
+    <div class="div-container">
+        <div class="descricao-atividade">
+            <p>Descrição da atividade:</p>
+            <p>{{descricao_atividade}}</p>
+        </div>
+        <div class="valor">
+            <p>Valor:</p>
+            <p>R$ {{_itemLista.valor_desconto}}</p>
+        </div>
+        <div class="botao-status">
+            <app-botao-status-falta
+                [atividadeEmFalta]="atividadeEmFalta"
+                (botaoStatusClicado)="atualizarStatus($event)">
+            </app-botao-status-falta>
+        </div>
+    </div>
+</mat-card>

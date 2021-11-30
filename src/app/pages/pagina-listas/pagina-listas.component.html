@@ -1,1 +1,43 @@
-<p>pagina-listas works!</p>
+<div class="container-principal">
+    <div class="section-esquerda">
+        <h3>Listas:</h3>
+        <div class="div-listas-todos-membros">
+            <p *ngFor="let membro of _listaMembros">
+                <app-card-membro-resumo-descontos
+                    [_membro]="membro"
+                    (click)="atualizarDadosMembroSelecionado(membro.id_membro)"
+                    [_id_membro_selecionado]="_id_membro_selecionado"
+                    [valorDescontosAtualizado]="_descontos">
+                </app-card-membro-resumo-descontos>
+            </p>
+        </div>
+        <div class="div-botao-gerenciar">
+            <app-primary-button texto="Gerenciar listas"></app-primary-button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="section-direita">
+        <h5>Lista:</h5>
+        <div class="div-listas-descricao-atividade">
+            <p *ngFor="let item of _itensLista">
+                <app-card-item-lista
+                    [_itemLista]="item"
+                    (botaoStatusClicado)="atualizarValoresDescontoETotal($event)">
+                </app-card-item-lista>
+            </p>
+        </div>
+        <div class="div-total-faltas">
+            <app-card-lista-total-faltas
+                [acaoFinalizarLista]="finalizarLista"
+                [_total_faltas]="_totalFaltas"
+                [_valor_mesada]="_mesada_membro_selecionado"
+                [_valor_descontos]="_descontos"
+                [_valor_total]="_total"
+                [hidden]="_listaMembros.length === 0">
+            </app-card-lista-total-faltas>
+        </div>
+    </div>
+
+
+</div>
