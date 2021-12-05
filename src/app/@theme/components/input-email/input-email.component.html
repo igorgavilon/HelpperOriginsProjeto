@@ -1,6 +1,11 @@
-<p>
-    <mat-form-field appearance="outline">
+<form [formGroup]="emailForm">
+    <mat-form-field appearance="outline" class="input">
         <mat-label>E-mail</mat-label>
-        <input matInput placeholder="Email@email.com" [formControl]="emailInput" name="inputEmail">
+        <input
+            matInput
+            placeholder="Email@email.com"
+            formControlName="email"
+            name="inputEmail" />
     </mat-form-field>
-</p>
+</form>
+
