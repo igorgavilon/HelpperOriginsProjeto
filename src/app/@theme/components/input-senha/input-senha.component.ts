@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-input-senha',
@@ -7,12 +16,21 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./input-senha.component.scss']
 })
 export class InputSenhaComponent implements OnInit {
-    public hide: boolean = true;
-    public senhaInput: FormControl = new FormControl();
+  public hide: boolean = true;
+    
+  senhaForm: FormGroup;
 
-  constructor() { }
+  matcher = new MyErrorStateMatcher();
+
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+    this.senhaForm = this.formBuilder.group({
+      senha: [null, Validators.required]
+    });
   }
+
 
 }
