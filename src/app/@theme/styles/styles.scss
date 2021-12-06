@@ -37,4 +37,10 @@ $riott-web-theme: mat-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .estilo-valor-negativo {color: #EB5757;}
+.bottom-sheet-container {
+    min-height: calc(100vh - 80px);
+    min-width: 100vw !important;
+    height: 100%;
+    width: 100%;
+}
 

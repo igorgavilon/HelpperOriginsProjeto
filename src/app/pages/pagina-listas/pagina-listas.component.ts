@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatDialog } from '@angular/material/dialog';
 import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
 import ListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
 import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { EnumStatusLista } from 'src/app/@core/common/tipos/tipos-enum';
 import { ListasService } from 'src/app/@core/services/listas.service';
+import { ModalComponent } from 'src/app/@theme/components/modal/modal.component';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-pagina-listas',
@@ -21,7 +25,7 @@ export class PaginaListasComponent implements OnInit {
     public _descontos: number;
     public _total: number;
 
-  constructor(private _listasService: ListasService) {
+  constructor(private _listasService: ListasService, public bottomSheet: MatBottomSheet) {//public dialog: MatDialog) {
       this._descontos = 0;
       this._totalFaltas = 0;
   }
@@ -62,6 +66,16 @@ export class PaginaListasComponent implements OnInit {
   public finalizarLista = (): void => {
     this._listasService.finalizarLista(this._lista_membro_selecionado);
     this.carregarDadosDaPagina();
+  }
+
+  public abrirModal(): void {
+    let bottomSheetRef = this.bottomSheet.open(LoginComponent, {
+        panelClass: 'bottom-sheet-container'
+    });
+
+    bottomSheetRef.afterDismissed().subscribe(() => {
+        console.log('Bottom sheet has been dismissed.');
+    });
   }
 
 }

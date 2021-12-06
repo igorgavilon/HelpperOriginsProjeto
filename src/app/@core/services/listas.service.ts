@@ -62,21 +62,30 @@ var Membros: Array<Membro> = [
     {
         id_membro: 1,
         nome: "Luisa Sousa",
-        url_avatar: "imagem_luisa.png",
+        imagem_avatar: {
+            arquivo: null,
+            url: "imagem_luisa.png"
+        },
         data_nascimento: "01/01/2010",
         valor_mesada: 1000
     },
     {
         id_membro: 2,
         nome: "Clébin Sousa",
-        url_avatar: "imagem_clebin.png",
+        imagem_avatar: {
+            arquivo: null,
+            url: "imagem_clebin.png"
+        },
         data_nascimento: "01/01/2012",
         valor_mesada: 400
     },
     {
         id_membro: 3,
         nome: "Julinha Sousa",
-        url_avatar: "imagem_julinha.png",
+        imagem_avatar: {
+            arquivo: null,
+            url: "imagem_julinha.png"
+        },
         data_nascimento: "01/01/2014",
         valor_mesada: 500
     }

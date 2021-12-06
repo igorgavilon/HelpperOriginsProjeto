@@ -1,0 +1,28 @@
+<div draggable="true" ngClass="{{dragAreaClass}}">
+    <div class="row">
+        <div>
+            <img *ngIf="arquivoImagemInput"
+                [src]="arquivoImagemInput.arquivo === null ? '../../../../assets/' + arquivoImagemInput.url : arquivoImagemInput.url"
+                width="60px"
+                height="60px">
+                <!-- "arquivoImagemInput.url"  -->
+        </div>
+        <div class="col-md-12 text-center">
+            Arraste ou
+            <a href="javascript:void(0)" (click)="file.click()">
+                clique aqui
+            </a>
+            <p *ngIf="arquivoImagemInput">para trocar a foto do usuário</p>
+            <p *ngIf="!arquivoImagemInput">para fazer o upload da foto do usuário</p>
+            <input type="file"
+                    #file
+                    name="inputArquivoImagem"
+                    [multiple]="false"
+                    (change)="onFileChange($event)"
+                    style="display:none" />
+        </div>
+    </div>
+</div>
+<div class="error" *ngIf="error">
+    Só é permitido fazer o upload de um único arquivo
+</div>

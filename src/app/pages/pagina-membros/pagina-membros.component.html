@@ -1,0 +1,15 @@
+<div class="container-principal">
+    <div class="div-superior">
+        <h3>Membros:</h3>
+        <app-primary-button texto="Cadastrar novo membro" (click)="cadastrarNovoMembro()"></app-primary-button>
+    </div>
+    <div class="div-listagem-membros">
+        <p *ngFor="let membro of listaMembros">
+            <app-card-membro-infos [_membro]="membro"
+                [editarMembroClick]="editarMembro"
+                [excluirMembroClick]="excluirMembro">
+            </app-card-membro-infos>
+        </p>
+
+    </div>
+</div>
