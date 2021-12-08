@@ -95,7 +95,7 @@ var Membros: Array<Membro> = [
             arquivo: null,
             url: "imagem_luisa.png"
         },
-        data_nascimento: "01/01/2010",
+        data_nascimento: "2010-01-01",
         valor_mesada: 1000
     },
     {
@@ -105,7 +105,7 @@ var Membros: Array<Membro> = [
             arquivo: null,
             url: "imagem_clebin.png"
         },
-        data_nascimento: "01/01/2012",
+        data_nascimento: "2012-01-01",
         valor_mesada: 400
     },
     {
@@ -115,7 +115,7 @@ var Membros: Array<Membro> = [
             arquivo: null,
             url: "imagem_julinha.png"
         },
-        data_nascimento: "01/01/2014",
+        data_nascimento: "2014-01-01",
         valor_mesada: 500
     }
 ]

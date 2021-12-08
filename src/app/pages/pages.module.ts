@@ -14,6 +14,8 @@ import { PaginaMembrosComponent } from "./pagina-membros/pagina-membros.componen
 import { CadastrarNovoMembroComponent } from "./pagina-membros/cadastrar-novo-membro/cadastrar-novo-membro.component";
 import { CardMembroInfosComponent } from "./pagina-membros/card-membro-infos/card-membro-infos.component";
 import { FormMembroComponent } from "./pagina-membros/form-membro/form-membro.component";
+import { EditarDadosMembroComponent } from "./pagina-membros/editar-dados-membro/editar-dados-membro.component";
+import { ExcluirMembroComponent } from "./pagina-membros/excluir-membro/excluir-membro.component";
 
 @NgModule({
 	imports: [
@@ -35,9 +37,13 @@ import { FormMembroComponent } from "./pagina-membros/form-membro/form-membro.co
         CadastrarNovoMembroComponent,
         CardMembroInfosComponent,
         FormMembroComponent,
+        EditarDadosMembroComponent,
+        ExcluirMembroComponent,
 	],
     entryComponents: [
         CadastrarNovoMembroComponent,
+        EditarDadosMembroComponent,
+        ExcluirMembroComponent,
     ],
 	providers: []
 })

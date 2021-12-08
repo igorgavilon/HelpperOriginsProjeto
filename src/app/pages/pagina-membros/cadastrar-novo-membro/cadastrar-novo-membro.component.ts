@@ -9,6 +9,7 @@ import { MembrosService } from 'src/app/@core/services/membros.service';
   styleUrls: ['./cadastrar-novo-membro.component.scss']
 })
 export class CadastrarNovoMembroComponent implements OnInit {
+    public cadastroSucesso: boolean;
 
   constructor(
         private _membrosService: MembrosService,
@@ -17,7 +18,7 @@ export class CadastrarNovoMembroComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-      console.log(this.dadosMembro.imagem_avatar);
+      this.cadastroSucesso = false;
   }
 
   public fecharModal = (): void => {
@@ -26,7 +27,7 @@ export class CadastrarNovoMembroComponent implements OnInit {
 
   public salvarMembro = (membro: Membro): void => {
     this._membrosService.salvarMembro(membro);
-    this.fecharModal();
+    this.cadastroSucesso = true;
   }
 
 }
