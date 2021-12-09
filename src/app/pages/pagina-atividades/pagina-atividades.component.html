@@ -1,0 +1,15 @@
+<div class="container-principal">
+    <div class="div-superior">
+        <h3>Atividades:</h3>
+        <app-primary-button texto="Cadastrar nova atividade" (click)="cadastrarNovaAtividade()"></app-primary-button>
+    </div>
+    <div class="div-listagem-atividades">
+        <p *ngFor="let atividade of listaAtividades">
+            <app-card-atividade-infos [_atividade]="atividade"
+                [editarAtividadeClick]="editarAtividade"
+                [excluirAtividadeClick]="excluirAtividade">
+            </app-card-atividade-infos>
+        </p>
+
+    </div>
+</div>

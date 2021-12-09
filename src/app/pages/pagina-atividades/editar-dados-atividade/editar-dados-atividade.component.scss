@@ -1,0 +1,40 @@
+.container-principal {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-superior {
+    font-size: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.div-form {
+    width: 300px;
+    height: calc(100vh - 80px - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-mensagem-sucesso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-icon {
+    font-size: 3rem;
+    cursor: pointer;
+}

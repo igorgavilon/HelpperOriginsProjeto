@@ -1,0 +1,23 @@
+.mat-card-principal {
+    border: 1px solid #DEE8EB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    width: auto;
+    max-height: fit-content;
+    cursor: pointer;
+}
+
+.div-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.div-informacoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
