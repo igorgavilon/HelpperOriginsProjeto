@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-
-/** Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input-senha',
@@ -18,10 +9,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class InputSenhaComponent implements OnInit {
   public hide: boolean = true;
     
-  senhaForm: FormGroup;
-
-  matcher = new MyErrorStateMatcher();
-
+  private senhaForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
 
