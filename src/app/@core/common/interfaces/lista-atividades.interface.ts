@@ -8,4 +8,5 @@ export default interface ListaAtividades {
     valor_mesada: number;
     valor_descontado: number;
     valor_total: number;
+// eslint-disable-next-line semi
 }
