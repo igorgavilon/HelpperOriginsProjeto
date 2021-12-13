@@ -1,33 +1,31 @@
-<div class="container-principal">
-    <div class="section-esquerda">
+<main class="container-principal">
+    <section class="section-esquerda">
         <h3>Listas:</h3>
-        <div class="div-listas-todos-membros">
-            <p *ngFor="let membro of _listaMembros">
+            <div *ngFor="let membro of _listaMembros" class="div-listas-todos-membros">
                 <app-card-membro-resumo-descontos
                     [_membro]="membro"
                     (click)="atualizarDadosMembroSelecionado(membro.id_membro)"
                     [_id_membro_selecionado]="_id_membro_selecionado"
                     [valorDescontosAtualizado]="_descontos">
                 </app-card-membro-resumo-descontos>
-            </p>
-        </div>
+            </div>
         <div class="div-botao-gerenciar">
-            <app-primary-button texto="Gerenciar listas"></app-primary-button>
+            <app-primary-button icone="tune" texto="Gerenciar listas" class="button"></app-primary-button>
         </div>
-    </div>
+    </section>
 
     <hr>
-    <div class="section-direita">
+    <section class="section-direita">
         <h5>Lista:</h5>
         <div class="div-listas-descricao-atividade">
-            <p *ngFor="let item of _itensLista">
+            <div *ngFor="let item of _itensLista" class="scrollbar scrollbar-primary">
                 <app-card-item-lista
                     [_modoReadOnly]="true"
                     [_botaoMarcarFaltaVisivel]="true"
                     [_itemLista]="item"
                     (botaoStatusClicado)="atualizarValoresDescontoETotal($event)">
                 </app-card-item-lista>
-            </p>
+            </div>
         </div>
         <div class="div-total-faltas">
             <app-card-lista-total-faltas
@@ -39,7 +37,7 @@
                 [hidden]="_listaMembros.length === 0">
             </app-card-lista-total-faltas>
         </div>
-    </div>
+    </section>
 
 
-</div>
+</main>

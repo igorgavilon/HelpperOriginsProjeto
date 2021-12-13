@@ -1,53 +1,72 @@
+/* CONTEUDO PÁGINA */
 .container-principal {
-    width: 90vw;
+    width: 95%;
+
+    margin: auto;
     display: flex;
-    flex-direction: row;
     height: 80vh;
 }
+
+hr {
+    color: #dee8eb;
+}
+
+/* CONTTROLE SEÇÕES */
 
 .section-esquerda {
-    width: 30%;
-    height: 80vh;
-}
+    display: flex;
+    flex-direction: column;
 
-.section-esquerda h3 {
-    margin-left: 20px;
+    justify-content: space-between;
+
+    width: 25%;
+    min-width: 300px;
+
+    height: 100vh;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+    }
 }
 
 .section-direita {
     width: 70%;
-    height: 80hv;
+    height: 80vh;
 }
 
-.section-direita h5 {
-    padding-left: 20px;
-}
+/* CONTROLE SEÇÃO DE MEMBROS */
 
 .div-listas-todos-membros {
     width: auto;
     padding: 0 20px;
-    height: 60vh;
-    overflow: scroll;
+    // overflow-y: scroll;
 }
 
 .div-botao-gerenciar {
-    display: flex;
-    width: auto;
-    height: 20vh;
-    justify-content: space-around;
-    align-items: center;
+    width: 300px;
+    margin: auto;
 }
+
+/* CONTROLE SEÇÃO DE MEMBROS */
 
 .div-listas-descricao-atividade {
     width: auto;
     padding: 0 20px;
     height: 60vh;
-    overflow: scroll;
-
+    overflow-y: scroll;
 }
 
 .div-total-faltas {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
     height: 20vh;
+}
+
+/* CONFIGURAÇÕES NG-DEEP */
+
+::ng-deep .mat-raised-button.mat-primary {
+    background-color: #83c5be;
+    color: #fff;
+    height: 44px;
 }
