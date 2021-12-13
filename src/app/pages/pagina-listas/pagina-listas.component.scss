@@ -1,66 +1,73 @@
 /* CONTEUDO PÁGINA */
 .container-principal {
-    width: 95%;
+    width: 100%;
 
     margin: auto;
     display: flex;
-    height: 80vh;
+    height: 90vh;
+
+    overflow-y: hidden;
 }
 
-hr {
-    color: #dee8eb;
-}
-
-/* CONTTROLE SEÇÕES */
+/* CONTROLE SEÇÕES */
 
 .section-esquerda {
     display: flex;
     flex-direction: column;
 
     justify-content: space-between;
+    align-content: center;
 
-    width: 25%;
-    min-width: 300px;
+    width: 23%;
+    min-width: 270px;
+    height: 90vh;
 
-    height: 100vh;
+    padding-left: 40px;
 
     h3 {
         font-size: 24px;
         font-weight: 500;
+
+        padding-bottom: 20px;
     }
 }
 
 .section-direita {
     width: 70%;
     height: 80vh;
+
+    padding: 0px 25px 0px 15px;
+
+    border-left: 1px solid #dee8eb;
 }
 
 /* CONTROLE SEÇÃO DE MEMBROS */
 
-.div-listas-todos-membros {
-    width: auto;
-    padding: 0 20px;
-    // overflow-y: scroll;
+.listas-todos-membros {
+    max-width: 270px;
 }
 
-.div-botao-gerenciar {
-    width: 300px;
-    margin: auto;
-}
+/* CONTROLE SEÇÃO DE ATIVIDADES */
 
-/* CONTROLE SEÇÃO DE MEMBROS */
-
-.div-listas-descricao-atividade {
+.controle-listas-descricao-atividade {
     width: auto;
     padding: 0 20px;
     height: 60vh;
     overflow-y: scroll;
 }
 
+.lista-atividade {
+    margin-bottom: 10px;
+}
+
+.botao-gerenciar {
+    max-width: 300px;
+}
+
+/* CONTROLE SEÇÃO DE ATIVIDADES */
+
 .div-total-faltas {
-    width: 100%;
-    padding: 0 10px;
-    height: 20vh;
+    padding: 0 40px;
 }
 
 /* CONFIGURAÇÕES NG-DEEP */
