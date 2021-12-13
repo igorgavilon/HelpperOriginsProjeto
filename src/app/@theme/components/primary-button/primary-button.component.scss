@@ -5,6 +5,10 @@ button {
     font-weight: 500;
 
     margin-top: 24px;
+
+    &:hover {
+        background-color: darken($color: #83c5be, $amount: 10);
+    }
 }
 
 .button-control {
