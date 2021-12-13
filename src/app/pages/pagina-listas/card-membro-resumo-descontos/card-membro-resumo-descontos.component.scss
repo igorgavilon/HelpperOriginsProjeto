@@ -1,6 +1,12 @@
+@import "~@angular/material/theming";
+
 @mixin padrao_ng-deep {
     margin: 0;
     font-size: 14px;
+}
+
+mat-card {
+    @include mat-elevation(0);
 }
 
 /* ESTILO CARD PADRÃO */
@@ -13,7 +19,6 @@
     cursor: pointer;
 
     width: 100%;
-    max-width: 300px;
 
     margin-bottom: 16px;
     padding: 0;
@@ -29,7 +34,7 @@
 }
 
 .div-informacoes {
-    width: 80%;
+    width: 100%;
 }
 
 /* IMAGEM MEMBRO */
