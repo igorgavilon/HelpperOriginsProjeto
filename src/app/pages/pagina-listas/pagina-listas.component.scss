@@ -1,10 +1,29 @@
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #b5c5ca #dee8eb;
+    scrollbar-gutter: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #dee8eb;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b5c5ca;
+    border-radius: 20px;
+    border: 2px solid #b5c5ca;
+}
 /* CONTEUDO PÁGINA */
 .container-principal {
     width: 100%;
 
     margin: auto;
     display: flex;
-    height: 90vh;
+    height: 96vh;
 
     overflow-y: hidden;
 }
@@ -33,10 +52,15 @@
 }
 
 .section-direita {
-    width: 70%;
-    height: 80vh;
+    display: flex;
+    flex-direction: column;
 
-    padding: 0px 25px 0px 15px;
+    justify-content: space-between;
+
+    padding: 0px 5px 0px 35px;
+
+    width: 68%;
+    height: 90vh;
 
     border-left: 1px solid #dee8eb;
 }
@@ -47,11 +71,14 @@
     max-width: 270px;
 }
 
+.botao-gerenciar {
+    max-width: 280px;
+}
+
 /* CONTROLE SEÇÃO DE ATIVIDADES */
 
 .controle-listas-descricao-atividade {
     width: auto;
-    padding: 0 20px;
     height: 60vh;
     overflow-y: scroll;
 }
@@ -60,14 +87,8 @@
     margin-bottom: 10px;
 }
 
-.botao-gerenciar {
-    max-width: 300px;
-}
-
-/* CONTROLE SEÇÃO DE ATIVIDADES */
-
-.div-total-faltas {
-    padding: 0 40px;
+.total-faltas {
+    width: 96%;
 }
 
 /* CONFIGURAÇÕES NG-DEEP */
