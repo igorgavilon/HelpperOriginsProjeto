@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import ListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
+import IItemlista from 'src/app/@core/common/interfaces/item-lista.interface';
+import IListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
 import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
@@ -31,8 +31,8 @@ export class CardMembroResumoDescontosComponent implements OnInit {
 
 
     public _mesada: number;
-    public _listaAtividades: ListaAtividades;
-    public _itensLista: Array<Itemlista>;
+    public _listaAtividades: IListaAtividades;
+    public _itensLista: Array<IItemlista>;
     public _valor_descontos: number;
     public _valor_total: number
 
@@ -45,7 +45,7 @@ export class CardMembroResumoDescontosComponent implements OnInit {
   }
 
   public atualizarValoresCard(): void {
-    this._listaAtividades = this._listasService.buscaListaAtivaPeloIdMembro(this._membro.id_membro);
+    this._listaAtividades = this._listasService.buscaListaEmAndamentoPeloIdMembro(this._membro.id_membro);
     this._itensLista = this._listasService.buscaItensListaPeloIdLista(this._listaAtividades.id_lista);
     this._valor_descontos = 0;
     for(const item of this._itensLista){

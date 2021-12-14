@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { MatDialog } from '@angular/material/dialog';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import ListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
+import IItemlista from 'src/app/@core/common/interfaces/item-lista.interface';
+import IListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
 import Membro from 'src/app/@core/common/interfaces/membro.interface';
-import { EnumStatusLista } from 'src/app/@core/common/tipos/tipos-enum';
 import { ListasService } from 'src/app/@core/services/listas.service';
-import { ModalComponent } from 'src/app/@theme/components/modal/modal.component';
-import { LoginComponent } from '../login/login.component';
+import { GerenciarListasComponent } from './gerenciar-listas/gerenciar-listas.component';
 
 @Component({
   selector: 'app-pagina-listas',
@@ -16,9 +13,9 @@ import { LoginComponent } from '../login/login.component';
 })
 export class PaginaListasComponent implements OnInit {
     public _listaMembros: Array<Membro>;
-    public _listasDeAtividades: Array<ListaAtividades>;
-    public _itensLista: Array<Itemlista>;
-    public _lista_membro_selecionado: ListaAtividades;
+    public _listasDeAtividades: Array<IListaAtividades>;
+    public _itensLista: Array<IItemlista>;
+    public _lista_membro_selecionado: IListaAtividades;
     public _id_membro_selecionado: number;
     public _totalFaltas: number;
     public _mesada_membro_selecionado: number;
@@ -45,7 +42,7 @@ export class PaginaListasComponent implements OnInit {
   public atualizarDadosMembroSelecionado(id_membro: number): void {
     this._id_membro_selecionado = id_membro;
     this._mesada_membro_selecionado = this._listaMembros.find((membro: Membro) => membro.id_membro === this._id_membro_selecionado).valor_mesada;
-    this._lista_membro_selecionado = this._listasService.buscaListaAtivaPeloIdMembro(this._id_membro_selecionado);
+    this._lista_membro_selecionado = this._listasService.buscaListaEmAndamentoPeloIdMembro(this._id_membro_selecionado);
     this._itensLista = this._listasService.buscaItensListaPeloIdLista(this._lista_membro_selecionado.id_lista);
     this._descontos = 0;
     this._totalFaltas = 0;
@@ -61,6 +58,7 @@ export class PaginaListasComponent implements OnInit {
     this._descontos += valorCorrecao;
     this._totalFaltas -= valorCorrecao < 0 ? 1 : -1;
     this._total = this._mesada_membro_selecionado - this._descontos;
+    this._listasService.atualizarValorDescontoLista(this._lista_membro_selecionado.id_lista, this._descontos);
   }
 
   public finalizarLista = (): void => {
@@ -68,13 +66,17 @@ export class PaginaListasComponent implements OnInit {
     this.carregarDadosDaPagina();
   }
 
-  public abrirModal(): void {
-    let bottomSheetRef = this.bottomSheet.open(LoginComponent, {
+  public gerenciarListas(): void {
+    const bottomSheetRef = this.bottomSheet.open(GerenciarListasComponent, {
         panelClass: 'bottom-sheet-container'
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
         console.log('Bottom sheet has been dismissed.');
+        //quando os dados estiverem vindo do backend
+        //devo atualizar a página para refletir as alterações aqui
+        // window.location.reload();
+        this.carregarDadosDaPagina();
     });
   }
 

@@ -1,6 +1,6 @@
 import { EnumStatusLista } from "../tipos/tipos-enum";
 
-export default interface ListaAtividades {
+export default interface IListaAtividades {
     id_lista: number;
     id_membro: number;
     nome_lista: string;

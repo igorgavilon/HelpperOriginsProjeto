@@ -1,0 +1,28 @@
+.mat-card-principal {
+    border: 1px solid #DEE8EB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin: 10px;
+    font-size: 0.8rem;
+    width: auto;
+    max-height: fit-content;
+    cursor: pointer;
+}
+
+.card-selecionado {
+    border: 1px solid #83C5BE;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 24px rgba(131, 197, 190, 0.3);
+    border-radius: 4px;
+}
+
+.div-container {
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.div-informacoes {
+    margin-left: 10px;
+}
