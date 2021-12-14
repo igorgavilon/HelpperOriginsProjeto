@@ -13,4 +13,7 @@ export class PrimaryButtonComponent{
     @Input()
     public icone: string;
 
+    @Input()
+    public color: string;
+
 }
