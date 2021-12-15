@@ -1,0 +1,12 @@
+<mat-card class="mat-card-principal">
+    <div class="div-container">
+        <div class="div-descricao-atividade">
+            <p>Descrição da atividade:</p>
+            <p>{{descricao_atividade}}</p>
+        </div>
+        <div class="div-status-atividade">
+            <p>Status da atividade:</p>
+            <p [ngClass]="atividadeEmFalta ? 'estilo-atividade-faltou' : 'estilo-atividade-concluida'" >{{ atividadeEmFalta ? 'Faltou' : 'Concluída' }}</p>
+        </div>
+    </div>
+</mat-card>

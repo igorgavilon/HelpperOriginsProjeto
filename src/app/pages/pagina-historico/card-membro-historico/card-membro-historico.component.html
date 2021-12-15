@@ -1,0 +1,13 @@
+<mat-card class="mat-card-principal"
+        [ngClass]="{'card-selecionado' : _membro.id_membro === _id_membro_selecionado}">
+    <div class="div-container">
+        <div class="div-avatar">
+            <img mat-card-avatar [src]="_membro.imagem_avatar.arquivo === null ? '../../../../assets/' + _membro.imagem_avatar.url : _membro.imagem_avatar.url">
+            <!-- src="../../../../assets/{{_membro.imagem_avatar.url}}" -->
+        </div>
+        <div class="div-informacoes">
+            <p>Membro:</p>
+            <h2>{{_membro.nome}}</h2>
+        </div>
+    </div>
+</mat-card>

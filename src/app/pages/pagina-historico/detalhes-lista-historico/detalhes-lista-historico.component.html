@@ -1,0 +1,32 @@
+<div class="container-principal">
+    <div class="div-superior">
+        <h3>Detalhe da lista: {{ dadosLista.nome_lista }}</h3>
+
+        <mat-icon (click)="fecharModal()">{{'close'}}</mat-icon>
+    </div>
+    <div class="div-inferior">
+        <div class="div-card-membros-ativos">
+            <app-card-membro-ativo
+                [_membro]="membro">
+
+            </app-card-membro-ativo>
+            <app-card-lista-historico
+                [somenteLeitura]="true"
+                [_lista]="dadosLista">
+
+            </app-card-lista-historico>
+        </div>
+        <div class="div-listagem-atividades">
+            <div class="atividades-titulo">
+                <h3>Atividades:</h3>
+            </div>
+            <div class="div-listagem-atividades-membro-selecionado">
+                <p *ngFor="let item of itensLista">
+                    <app-detalhes-item-lista-historico
+                        [_itemLista]="item">
+                    </app-detalhes-item-lista-historico>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
