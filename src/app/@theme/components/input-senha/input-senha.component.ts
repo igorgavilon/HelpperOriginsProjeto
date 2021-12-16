@@ -8,8 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class InputSenhaComponent implements OnInit {
   public hide: boolean = true;
-    
-  private senhaForm: FormGroup;
+
+  public senhaForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
 
