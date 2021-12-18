@@ -1,6 +1,6 @@
 <mat-card class="mat-card-principal mat-elevation-z1">
     <main class="container">
-        <section class="div-checkbox-seleciona-atividade" *ngIf="!_modoReadOnly">
+        <section class="div-checkbox-seleciona-atividade" *ngIf="!modoReadOnly">
             <mat-checkbox color="primary"
                 [(ngModel)]="checkboxSelecionado"
                 (ngModelChange)="atualizarCheckBox()">
@@ -14,10 +14,10 @@
 
         <section class="valor-desconto">
             <span class="titulo-desconto">Valor:</span>
-            <span class="valor">R$ {{_itemLista.valor_desconto}}</span>
+            <span class="valor">R$ {{itemLista.valor_desconto}}</span>
         </section>
 
-        <section class="botao-status" *ngIf="_botaoMarcarFaltaVisivel && _modoReadOnly">
+        <section class="botao-status" *ngIf="botaoMarcarFaltaVisivel && modoReadOnly">
             <app-botao-status-falta
                 [atividadeEmFalta]="atividadeEmFalta"
                 (botaoStatusClicado)="atualizarStatus($event)">
