@@ -9,9 +9,4 @@ import { FormControl } from '@angular/forms';
 export class InputEmailComponent {
     public emailInput: FormControl = new FormControl();
 
-  // constructor() { }
-
-  // ngOnInit(): void {
-  // }
-
 }
