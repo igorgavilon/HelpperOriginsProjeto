@@ -1,28 +1,38 @@
-<mat-card class="mat-card-principal">
-    <div class="div-container">
-        <div class="descricao-atividade">
-            <p>Total de faltas: <span class="span-total-faltas">{{_total_faltas}}</span></p>
+<mat-card class="mat-card-principal mat-elevation-z3">
+    <section class="secao-info">
+
+        <div class="total-faltas">
+            <p>Total de faltas:</p>
+            <span class="span-total-faltas">{{_total_faltas}}</span>
         </div>
-        <div class="valor">
+
+        <div class="title-content">
             <p>Mesada:</p>
-            <p>R$ {{_valor_mesada}}</p>
+            <span>R$ {{_valor_mesada}}</span>
         </div>
-        <div>
-            <h3>-</h3>
+
+        <div class="menos">
+            <span>
+            -
+            </span>
         </div>
+
         <div class="valor">
             <p>Descontos:</p>
-            <p><span [ngClass]="_valor_descontos > 0 ? 'estilo-valor-negativo' : ''">R$ {{_valor_descontos}}</span></p>
+            <span [ngClass]="_valor_descontos > 0 ? 'estilo-valor-negativo' : ''">R$ {{_valor_descontos}}</span>
         </div>
+
         <div>
-            <h3>=</h3>
+            <span class="icone-igual">=</span>
         </div>
-        <div class="valor">
+
+        <div class="title-content">
             <p>Total:</p>
-            <p>R$ {{_valor_total}}</p>
+            <span>R$ {{_valor_total}}</span>
         </div>
-        <div class="botao-status">
-            <app-primary-button texto="Finalizar lista" (click)="acaoFinalizarLista()"></app-primary-button>
-        </div>
-    </div>
+
+    </section>
+
+    <app-primary-button color="accent" texto="Finalizar lista" (click)="acaoFinalizarLista()"></app-primary-button>
+    
 </mat-card>

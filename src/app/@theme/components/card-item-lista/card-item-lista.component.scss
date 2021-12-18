@@ -1,38 +1,85 @@
-.mat-card-principal {
-    border: 1px solid #DEE8EB;
-    box-sizing: border-box;
-    border-radius: 4px;
+@import "~@angular/material/theming";
+
+/* CONTROLE, ESTILO DA SEÇÃO */
+
+mat-card {
+    @include mat-elevation(0);
+
+    padding: 14px;
 }
 
-.div-container {
+.mat-card-principal {
+    border: 1px solid #dee8eb;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    margin-right: 25px;
+}
+
+.container {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.div-descricao-atividade {
-    margin-right: 20px;
+/* CONTROLE E ESTILO DOS ITEMS DO CARD */
+
+/* == DESCRIÇÃO E TÍTULO DA ATIVIDADE == */
+
+.descricao-atividade {
+    width: 72%;
+
+    h4 {
+        color: #7c8d93;
+        font-size: 14px;
+
+        padding-bottom: 5px;
+        margin: 0;
+    }
+
+    p {
+        color: #3b4244;
+        font-size: 16px;
+    }
 }
 
-.div-botao-status {
-    margin-left: 20px;
+/* == VALOR DE DESCONTO == */
+
+.valor-desconto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    justify-content: left;
 }
 
-.example-right-align {
-    text-align: left;
-  }
+.valor {
+    font-size: 16px;
+}
 
-  input.example-right-align::-webkit-outer-spin-button,
-  input.example-right-align::-webkit-inner-spin-button {
+.titulo-desconto {
+    color: #7c8d93;
+    font-size: 14px;
+
+    padding-bottom: 5px;
+}
+
+/* == BOTÃO STATUS ATIVIDADE == */
+
+.botao-status {
+    width: 13%;
+    text-align: right;
+
+    margin-left: 10px;
+}
+
+/* CONFIG DE NAVEGADORES */
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
     display: none;
-  }
+}
 
-  input.example-right-align {
+input.example-right-align {
     -moz-appearance: textfield;
-  }
-
-  mat-form-field {
-      width: 180px;
-  }
-
+}

@@ -43,8 +43,8 @@ export class CardItemListaComponent implements OnInit {
     this.botaoStatusClicado.emit(statusFalta ? this.valorDesconto : -1*(this.valorDesconto));
   }
 
-  public atualizarCheckBox() {
-      //aqui serão inseridas lógicas quando for fazer o crud da lista de atividades!
-  }
+  // public atualizarCheckBox() {
+  //     //aqui serão inseridas lógicas quando for fazer o crud da lista de atividades!
+  // }
 
 }
