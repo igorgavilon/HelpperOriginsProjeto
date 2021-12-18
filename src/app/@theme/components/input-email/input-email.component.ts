@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-input-email',
@@ -7,11 +8,22 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./input-email.component.scss']
 })
 export class InputEmailComponent implements OnInit {
-    public emailInput: FormControl = new FormControl();
 
-  constructor() { }
+
+  emailForm: FormGroup; 
+
+  constructor(private formBuilder: FormBuilder) {
+
+   }
 
   ngOnInit(): void {
+
+    this.emailForm = this.formBuilder.group({
+      email: [null, [
+              Validators.required, 
+              Validators.email
+        ]]
+    });
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input-senha',
@@ -7,12 +7,18 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./input-senha.component.scss']
 })
 export class InputSenhaComponent implements OnInit {
-    public hide: boolean = true;
-    public senhaInput: FormControl = new FormControl();
+  public hide: boolean = true;
 
-  constructor() { }
+  public senhaForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+    this.senhaForm = this.formBuilder.group({
+      senha: [null, Validators.required]
+    });
   }
+
 
 }
