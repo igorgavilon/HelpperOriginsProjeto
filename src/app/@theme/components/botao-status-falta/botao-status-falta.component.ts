@@ -10,7 +10,7 @@ export class BotaoStatusFaltaComponent implements OnInit {
     public atividadeEmFalta: boolean;
 
     @Output()
-    public botaoStatusClicado: EventEmitter<any> = new EventEmitter();
+    public botaoStatusClicado: EventEmitter<boolean> = new EventEmitter();
 
     public texto: string;
 

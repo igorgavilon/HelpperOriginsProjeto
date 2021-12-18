@@ -15,7 +15,7 @@ export class CardListaTotalFaltasComponent implements OnInit {
     @Input()
     public _valor_total: number;
     @Input()
-    public acaoFinalizarLista: any;
+    public acaoFinalizarLista: () => void;
 
   constructor() { }
 

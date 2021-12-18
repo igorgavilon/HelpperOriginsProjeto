@@ -9,16 +9,16 @@ import { ListasService } from 'src/app/@core/services/listas.service';
 })
 export class CardItemListaComponent implements OnInit {
     @Input()
-    public _modoReadOnly: boolean;
+    public modoReadOnly: boolean;
 
     @Input()
-    public _botaoMarcarFaltaVisivel: boolean;
+    public botaoMarcarFaltaVisivel: boolean;
 
     @Input()
-    public _itemLista: Itemlista;
+    public itemLista: Itemlista;
 
     @Output()
-    public botaoStatusClicado: EventEmitter<any> = new EventEmitter();
+    public botaoStatusClicado: EventEmitter<number> = new EventEmitter();
 
     public descricao_atividade: string;
     public atividadeEmFalta: boolean;
@@ -28,14 +28,18 @@ export class CardItemListaComponent implements OnInit {
   constructor(private _listaService: ListasService) { }
 
   ngOnInit(): void {
-      this.descricao_atividade = this._listaService.buscaAtividadePeloId(this._itemLista.id_atividade).descricao;
-      this.atividadeEmFalta = this._itemLista.status_falta;
-      this.valorDesconto = this._itemLista.valor_desconto;
-      this.checkboxSelecionado = true;
+    this.inicializarVariáveis();
+  }
+
+  public inicializarVariáveis(): void {
+    this.descricao_atividade = this._listaService.buscaAtividadePeloId(this.itemLista.id_atividade).descricao;
+    this.atividadeEmFalta = this.itemLista.status_falta;
+    this.valorDesconto = this.itemLista.valor_desconto;
+    this.checkboxSelecionado = true;
   }
 
   public atualizarStatus(statusFalta: boolean): void {
-    this._listaService.atualizarItemDaLista(this._itemLista, statusFalta);
+    this._listaService.atualizarItemDaLista(this.itemLista, statusFalta);
     this.botaoStatusClicado.emit(statusFalta ? this.valorDesconto : -1*(this.valorDesconto));
   }
 

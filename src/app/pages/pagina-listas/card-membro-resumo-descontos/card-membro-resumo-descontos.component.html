@@ -7,7 +7,14 @@
         <div class="div-informacoes">
             <h2>{{_membro.nome}}</h2>
             <p>Mesada: R$ {{_mesada}}</p>
-            <p>Descontos: <span [ngClass]="_valor_descontos > 0 ? 'estilo-valor-negativo' : ''"><span *ngIf="_valor_descontos !== 0">-</span>R$ {{_valor_descontos}}</span> </p>
+            <p>Descontos: 
+                <span [ngClass]="_valor_descontos > 0 ? 'estilo-valor-negativo' : ''">
+                    <span *ngIf="_valor_descontos !== 0">
+                    -
+                    </span>
+                    R$ {{_valor_descontos}}
+                </span> 
+            </p>
             <p>Total: R$ {{_valor_total}}</p>
         </div>
     </div>
