@@ -1,0 +1,9 @@
+@import "~@angular/material/theming";
+
+button {
+    width: 100%;
+}
+
+mat-raised-button {
+    @include mat-elevation(0);
+}

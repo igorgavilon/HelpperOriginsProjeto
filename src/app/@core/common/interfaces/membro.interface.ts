@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 export default interface Membro {
     id_membro: number;
     nome: string;

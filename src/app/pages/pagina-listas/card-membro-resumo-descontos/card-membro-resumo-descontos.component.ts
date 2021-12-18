@@ -28,7 +28,7 @@ export class CardMembroResumoDescontosComponent implements OnInit {
     
     public _mesada: number;
     public _listaAtividades: ListaAtividades;
-    public _itensLista: Array<Itemlista>;
+    public _itensLista: Itemlista[];
     public _valor_descontos: number;
     public _valor_total: number
 

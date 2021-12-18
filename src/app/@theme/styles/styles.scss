@@ -11,9 +11,9 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$riott-web-primary-dark: mat-palette($mat-teal);
-$riott-web-secondary: mat-palette($mat-cyan);
-$riott-web-accent: mat-palette($mat-green);
+$riott-web-primary: mat-palette($mat-cyan);
+$riott-web-accent: mat-palette($mat-cyan, 900, A100, A400);
+
 
 // The warn palette is optional (defaults to red).
 $riott-web-warn: mat-palette($mat-red);
@@ -23,8 +23,7 @@ $riott-web-warn: mat-palette($mat-red);
 $riott-web-theme: mat-light-theme(
     (
         color: (
-            primary: $riott-web-primary-dark,
-            secondary: $riott-web-secondary,
+            primary: $riott-web-primary,
             accent: $riott-web-accent,
             warn: $riott-web-warn,
         ),
@@ -43,6 +42,10 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.estilo-valor-negativo {
+    color: #eb5757;
 }
 
 html,

@@ -14,8 +14,6 @@ export class BotaoStatusFaltaComponent implements OnInit {
 
     public texto: string;
 
-  constructor() { }
-
   ngOnInit(): void {
     this.texto = this.atividadeEmFalta ? "Faltou" : "Marcar falta";
   }

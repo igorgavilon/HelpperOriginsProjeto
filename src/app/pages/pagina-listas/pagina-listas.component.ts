@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
 import ListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
 import Membro from 'src/app/@core/common/interfaces/membro.interface';
-import { EnumStatusLista } from 'src/app/@core/common/tipos/tipos-enum';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({
@@ -11,14 +10,15 @@ import { ListasService } from 'src/app/@core/services/listas.service';
   styleUrls: ['./pagina-listas.component.scss']
 })
 export class PaginaListasComponent implements OnInit {
-    public listaMembros: Array<Membro>;
-    public itensLista: Array<Itemlista>;
-    public lista_membro_selecionado: ListaAtividades;
-    public id_membro_selecionado: number;
-    public totalFaltas: number;
-    public mesada_membro_selecionado: number;
-    public descontos: number;
-    public total: number;
+    public _listaMembros: Membro[];
+    public _listasDeAtividades: ListaAtividades[];
+    public _itensLista: Itemlista[];
+    public _lista_membro_selecionado: ListaAtividades;
+    public _id_membro_selecionado: number;
+    public _totalFaltas: number;
+    public _mesada_membro_selecionado: number;
+    public _descontos: number;
+    public _total: number;
 
   constructor(private _listasService: ListasService) {
       this.descontos = 0;
