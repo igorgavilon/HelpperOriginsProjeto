@@ -2,12 +2,12 @@
     <section class="section-esquerda">
         <div class="controle">
             <h3>Listas:</h3>
-            <div *ngFor="let membro of _listaMembros" class="listas-todos-membros">
+            <div *ngFor="let membro of listaMembros" class="listas-todos-membros">
                 <app-card-membro-resumo-descontos
                     [_membro]="membro"
                     (click)="atualizarDadosMembroSelecionado(membro.id_membro)"
-                    [_id_membro_selecionado]="_id_membro_selecionado"
-                    [valorDescontosAtualizado]="_descontos">
+                    [_id_membro_selecionado]="id_membro_selecionado"
+                    [valorDescontosAtualizado]="descontos">
                 </app-card-membro-resumo-descontos>
             </div>
         </div>
@@ -20,11 +20,11 @@
         <div class="controle-secao-direita">
             <h5>Lista:</h5>
             <div class="controle-listas-descricao-atividade">
-                <div *ngFor="let item of _itensLista" class="lista-atividade">
+                <div *ngFor="let item of itensLista" class="lista-atividade">
                     <app-card-item-lista
-                        [_modoReadOnly]="true"
-                        [_botaoMarcarFaltaVisivel]="true"
-                        [_itemLista]="item"
+                        [modoReadOnly]="true"
+                        [botaoMarcarFaltaVisivel]="true"
+                        [itemLista]="item"
                         (botaoStatusClicado)="atualizarValoresDescontoETotal($event)">
                     </app-card-item-lista>
                 </div>
@@ -33,11 +33,11 @@
         <section class="total-faltas">
             <app-card-lista-total-faltas
                 [acaoFinalizarLista]="finalizarLista"
-                [_total_faltas]="_totalFaltas"
-                [_valor_mesada]="_mesada_membro_selecionado"
-                [_valor_descontos]="_descontos"
-                [_valor_total]="_total"
-                [hidden]="_listaMembros.length === 0">
+                [_total_faltas]="totalFaltas"
+                [_valor_mesada]="mesada_membro_selecionado"
+                [_valor_descontos]="descontos"
+                [_valor_total]="total"
+                [hidden]="listaMembros.length === 0">
             </app-card-lista-total-faltas>
         </section>
     </section>

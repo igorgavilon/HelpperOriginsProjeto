@@ -10,15 +10,14 @@ import { ListasService } from 'src/app/@core/services/listas.service';
   styleUrls: ['./pagina-listas.component.scss']
 })
 export class PaginaListasComponent implements OnInit {
-    public _listaMembros: Membro[];
-    public _listasDeAtividades: ListaAtividades[];
-    public _itensLista: Itemlista[];
-    public _lista_membro_selecionado: ListaAtividades;
-    public _id_membro_selecionado: number;
-    public _totalFaltas: number;
-    public _mesada_membro_selecionado: number;
-    public _descontos: number;
-    public _total: number;
+    public listaMembros: Membro[];
+    public itensLista: Itemlista[];
+    public lista_membro_selecionado: ListaAtividades;
+    public id_membro_selecionado: number;
+    public totalFaltas: number;
+    public mesada_membro_selecionado: number;
+    public descontos: number;
+    public total: number;
 
   constructor(private _listasService: ListasService) {
       this.descontos = 0;
