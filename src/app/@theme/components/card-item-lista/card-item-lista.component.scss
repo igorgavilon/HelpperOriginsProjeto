@@ -1,0 +1,38 @@
+.mat-card-principal {
+    border: 1px solid #DEE8EB;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.div-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-descricao-atividade {
+    margin-right: 20px;
+}
+
+.div-botao-status {
+    margin-left: 20px;
+}
+
+.example-right-align {
+    text-align: left;
+  }
+
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+
+  mat-form-field {
+      width: 180px;
+  }
+

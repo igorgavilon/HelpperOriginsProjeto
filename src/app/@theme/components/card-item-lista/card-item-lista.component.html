@@ -1,0 +1,33 @@
+<mat-card class="mat-card-principal">
+    <div class="div-container">
+        <div class="div-checkbox-seleciona-atividade" *ngIf="!modoReadOnly">
+            <mat-checkbox color="primary"
+                [(ngModel)]="checkboxSelecionado"
+                (ngModelChange)="atualizarCheckBox()">
+            </mat-checkbox>
+        </div>
+        <div class="div-descricao-atividade">
+            <p>Descrição da atividade:</p>
+            <p>{{descricao_atividade}}</p>
+        </div>
+        <div class="input-valor" [hidden]="!checkboxSelecionado">
+            <mat-form-field appearance="outline"
+                floatLabel="always">
+                <mat-label>Valor do desconto:</mat-label>
+                <input matInput
+                    type="number"
+                    class="example-right-align"
+                    placeholder="0"
+                    [(ngModel)]="valorDesconto"
+                    [readonly]="modoReadOnly">
+                <span matPrefix>R$&nbsp;</span>
+            </mat-form-field>
+        </div>
+        <div class="div-botao-status" *ngIf="botaoMarcarFaltaVisivel && modoReadOnly">
+            <app-botao-status-falta
+                [atividadeEmFalta]="atividadeEmFalta"
+                (botaoStatusClicado)="atualizarStatus($event)">
+            </app-botao-status-falta>
+        </div>
+    </div>
+</mat-card>

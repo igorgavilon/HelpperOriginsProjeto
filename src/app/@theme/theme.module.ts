@@ -5,11 +5,17 @@ import { MaterialModule } from "../pages/material.module";
 import { InputEmailComponent } from './components/input-email/input-email.component';
 import { InputSenhaComponent } from './components/input-senha/input-senha.component';
 import { PrimaryButtonComponent } from './components/primary-button/primary-button.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CardItemListaComponent } from './components/card-item-lista/card-item-lista.component';
+import { SecondaryDarkButtonComponent } from './components/secondary-dark-button/secondary-dark-button.component';
+import { BotaoStatusFaltaComponent } from './components/botao-status-falta/botao-status-falta.component';
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     imports: [
+        CommonModule,
         MaterialModule,
+        FormsModule,
         ReactiveFormsModule,
 	],
 	declarations: [
@@ -18,6 +24,9 @@ import { ReactiveFormsModule } from "@angular/forms";
 		InputEmailComponent,
 		InputSenhaComponent,
 		PrimaryButtonComponent,
+		CardItemListaComponent,
+		SecondaryDarkButtonComponent,
+		BotaoStatusFaltaComponent,
 	],
 	providers: [],
     exports: [
@@ -26,6 +35,8 @@ import { ReactiveFormsModule } from "@angular/forms";
         InputEmailComponent,
         InputSenhaComponent,
         PrimaryButtonComponent,
+        CardItemListaComponent,
+		SecondaryDarkButtonComponent,
     ]
 })
 export class ThemeModule { }

@@ -1,0 +1,28 @@
+<mat-card class="mat-card-principal">
+    <div class="div-container">
+        <div class="descricao-atividade">
+            <p>Total de faltas: <span class="span-total-faltas">{{_total_faltas}}</span></p>
+        </div>
+        <div class="valor">
+            <p>Mesada:</p>
+            <p>R$ {{_valor_mesada}}</p>
+        </div>
+        <div>
+            <h3>-</h3>
+        </div>
+        <div class="valor">
+            <p>Descontos:</p>
+            <p><span [ngClass]="_valor_descontos > 0 ? 'estilo-valor-negativo' : ''">R$ {{_valor_descontos}}</span></p>
+        </div>
+        <div>
+            <h3>=</h3>
+        </div>
+        <div class="valor">
+            <p>Total:</p>
+            <p>R$ {{_valor_total}}</p>
+        </div>
+        <div class="botao-status">
+            <app-primary-button texto="Finalizar lista" (click)="acaoFinalizarLista()"></app-primary-button>
+        </div>
+    </div>
+</mat-card>
