@@ -17,20 +17,6 @@
             <span class="valor">R$ {{_itemLista.valor_desconto}}</span>
         </section>
 
-        <!-- <div class="input-valor" [hidden]="!checkboxSelecionado">
-            <mat-form-field appearance="outline"
-                floatLabel="always">
-                <mat-label>Valor:</mat-label>
-                <input matInput
-                    type="number"
-                    class="example-right-align"
-                    placeholder="0"
-                    [(ngModel)]="valorDesconto"
-                    [readonly]="modoReadOnly">
-                <span matPrefix>R$&nbsp;</span>
-            </mat-form-field>
-        </div> -->
-
         <section class="botao-status" *ngIf="_botaoMarcarFaltaVisivel && _modoReadOnly">
             <app-botao-status-falta
                 [atividadeEmFalta]="atividadeEmFalta"
