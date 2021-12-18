@@ -25,11 +25,7 @@ export class CardMembroResumoDescontosComponent implements OnInit {
             this.atualizarValoresCard();
         }
     }
-    //public _valorDescontosAtualizado: number;
-
-
-
-
+    
     public _mesada: number;
     public _listaAtividades: ListaAtividades;
     public _itensLista: Itemlista[];
@@ -54,6 +50,5 @@ export class CardMembroResumoDescontosComponent implements OnInit {
     this._valor_total = this._mesada - this._valor_descontos;
 
   }
-
-
+  
 }

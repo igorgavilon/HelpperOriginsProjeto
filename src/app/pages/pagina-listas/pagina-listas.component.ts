@@ -21,8 +21,8 @@ export class PaginaListasComponent implements OnInit {
     public _total: number;
 
   constructor(private _listasService: ListasService) {
-      this._descontos = 0;
-      this._totalFaltas = 0;
+      this.descontos = 0;
+      this.totalFaltas = 0;
   }
 
   ngOnInit(): void {
@@ -30,36 +30,36 @@ export class PaginaListasComponent implements OnInit {
   }
 
   public carregarDadosDaPagina(): void {
-    this._listaMembros = this._listasService.retornaTodosMembrosComListaAtiva();
-    this._itensLista = [];
-    if(this._listaMembros.length !== 0) {
-        this.atualizarDadosMembroSelecionado(this._listaMembros[0].id_membro);
+    this.listaMembros = this._listasService.retornaTodosMembrosComListaAtiva();
+    this.itensLista = [];
+    if(this.listaMembros.length !== 0) {
+        this.atualizarDadosMembroSelecionado(this.listaMembros[0].id_membro);
     }
   }
 
   public atualizarDadosMembroSelecionado(id_membro: number): void {
-    this._id_membro_selecionado = id_membro;
-    this._mesada_membro_selecionado = this._listaMembros.find((membro: Membro) => membro.id_membro === this._id_membro_selecionado).valor_mesada;
-    this._lista_membro_selecionado = this._listasService.buscaListaAtivaPeloIdMembro(this._id_membro_selecionado);
-    this._itensLista = this._listasService.buscaItensListaPeloIdLista(this._lista_membro_selecionado.id_lista);
-    this._descontos = 0;
-    this._totalFaltas = 0;
-    for(const item of this._itensLista){
-        this._descontos += item.status_falta? item.valor_desconto: 0;
-        this._totalFaltas += item.status_falta? 1: 0;
+    this.id_membro_selecionado = id_membro;
+    this.mesada_membro_selecionado = this.listaMembros.find((membro: Membro) => membro.id_membro === this.id_membro_selecionado).valor_mesada;
+    this.lista_membro_selecionado = this._listasService.buscaListaAtivaPeloIdMembro(this.id_membro_selecionado);
+    this.itensLista = this._listasService.buscaItensListaPeloIdLista(this.lista_membro_selecionado.id_lista);
+    this.descontos = 0;
+    this.totalFaltas = 0;
+    for(const item of this.itensLista){
+        this.descontos += item.status_falta? item.valor_desconto: 0;
+        this.totalFaltas += item.status_falta? 1: 0;
     }
-    this._total = this._mesada_membro_selecionado - this._descontos;
+    this.total = this.mesada_membro_selecionado - this.descontos;
 
   }
 
   public atualizarValoresDescontoETotal(valorCorrecao: number): void {
-    this._descontos += valorCorrecao;
-    this._totalFaltas -= valorCorrecao < 0 ? 1 : -1;
-    this._total = this._mesada_membro_selecionado - this._descontos;
+    this.descontos += valorCorrecao;
+    this.totalFaltas -= valorCorrecao < 0 ? 1 : -1;
+    this.total = this.mesada_membro_selecionado - this.descontos;
   }
 
   public finalizarLista = (): void => {
-    this._listasService.finalizarLista(this._lista_membro_selecionado);
+    this._listasService.finalizarLista(this.lista_membro_selecionado);
     this.carregarDadosDaPagina();
   }
 

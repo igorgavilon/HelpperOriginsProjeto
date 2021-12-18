@@ -1,15 +1,92 @@
+@import "../pages.component.scss";
+@import "src/app/@theme/styles/styles.scss";
+
+* {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* IMAGE SECTION */
+
 .container-principal {
     display: flex;
-    flex-direction: row;
+    height: 100%;
+}
 
+.picture-section {
+    margin: 0;
+    width: 80%;
+    height: 100vh;
+
+    picture {
+        img {
+            height: 100vh;
+            width: fit-content;
+        }
+    }
 }
-.div-imagem-capa {
-    width: 60%;
-    min-height: 500px;
-    padding: 0px 10px;
+
+.span {
+    position: absolute;
+    bottom: 56px;
+    left: 56px;
+
+    font-size: 86px;
+    font-weight: 700;
+    line-height: 100px;
+
+    color: $white;
+    width: 67%;
 }
+
+/* LOGIN */
+
 .div-form-login {
+    margin: auto;
+    text-align: center;
     width: 40%;
-    min-height: 500px;
-    padding: 0px 10px;
+
+    form {
+        width: 300px;
+        margin: auto;
+    }
+}
+
+.title {
+    color: $primary-dark;
+
+    font-weight: 700;
+    font-size: 56px;
+
+    padding: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 300;
+
+    color: $gray-04;
+    padding-top: 16px;
+
+    width: 290px;
+    line-height: 19px;
+    margin: auto;
+    text-align: center;
+}
+
+::ng-deep mat-form-field .mat-form-field-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.mensagem_erro {
+    text-align: left;
+    padding-left: 0.5rem;
+    margin-bottom: 16px;
+    color: #eb5757;
+    font-weight: 500;
 }

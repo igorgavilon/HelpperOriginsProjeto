@@ -9,5 +9,4 @@ import { FormControl } from '@angular/forms';
 export class InputSenhaComponent {
     public hide: boolean = true;
     public senhaInput: FormControl = new FormControl();
-
 }
