@@ -1,26 +1,36 @@
 <mat-card class="mat-card-principal">
-    <div class="div-container">
-        <div class="div-avatar">
+    <section class="container">
+        <div class="avatar">
             <img mat-card-avatar [src]="_membro.imagem_avatar.arquivo === null ? '../../../../assets/' + _membro.imagem_avatar.url : _membro.imagem_avatar.url">
         </div>
-        <div class="div-informacoes">
-            <div>
-                <p>Membro:</p>
-                <h2>{{_membro.nome}}</h2>
-            </div>
+
+        <div class="nome-membro">
+            <p>Membro:</p>
+            <span>{{_membro.nome}}</span>
+        </div>
+
+        <div class="info-membro">
             <div>
                 <p>Data de nascimento:</p>
-                <h2>{{_membro.data_nascimento}}</h2>
+                <span>{{_membro.data_nascimento}}</span>
             </div>
             <div>
                 <p>Valor mesada:</p>
-                <h2>R$ {{_membro.valor_mesada}}</h2>
-            </div>
-            <div>
-                <app-primary-button texto="Excluir" (click)="excluirMembroClick(_membro.id_membro)"></app-primary-button>
-                <app-primary-button texto="Editar" (click)="editarMembroClick(_membro.id_membro)"></app-primary-button>
-                <app-primary-button texto="Ver lista"></app-primary-button>
+                <span>R$ {{_membro.valor_mesada}}</span>
             </div>
         </div>
-    </div>
+
+        <div class="botoes">
+            <div class="control-button">
+                <app-secondary-dark-button texto="Excluir" (click)="excluirMembroClick(_membro.id_membro)"></app-secondary-dark-button>
+            </div>
+            <div class="control-button">
+                <app-primary-button color="primary" texto="Editar" (click)="editarMembroClick(_membro.id_membro)"></app-primary-button>
+            </div>
+            <div class="control-button">
+                <app-primary-button color="accent" texto="Ver lista"></app-primary-button>
+            </div>
+        </div>
+       
+    </section>
 </mat-card>

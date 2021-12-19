@@ -17,7 +17,7 @@
             [valorMesadaInput]="dadosMembro.valor_mesada"
             name="valor_mesada">
     </app-input-valor-mesada>
-    <app-primary-button [texto]="dadosMembro.id_membro ? 'Salvar edição' : 'Cadastrar membro'" (click)="salvarMembro(membroForm)"></app-primary-button>
+    <app-primary-button color="accent" [texto]="dadosMembro.id_membro ? 'Salvar edição' : 'Cadastrar membro'" (click)="salvarMembro(membroForm)"></app-primary-button>
     <p>
         <app-secondary-dark-button texto="Cancelar" (click)="cancelarFormClick()"></app-secondary-dark-button>
     </p>
