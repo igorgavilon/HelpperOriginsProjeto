@@ -1,21 +1,12 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input-nome',
   templateUrl: './input-nome.component.html',
   styleUrls: ['./input-nome.component.scss']
 })
-export class InputNomeComponent implements OnInit {
+export class InputNomeComponent {
     @Input()
     public nomeInput: string;
-
-    constructor() { }
-
-    ngOnInit(): void {
-    }
-
-    ngOnDestroy(): void {
-    }
 
 }

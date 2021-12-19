@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacaoService } from 'src/app/@core/services/autenticacao.service';
@@ -8,14 +8,13 @@ import { AutenticacaoService } from 'src/app/@core/services/autenticacao.service
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
     public usuarioAutenticado: boolean = false;
     public mensagemErro: string;
 
   constructor(private _autenticacaoService: AutenticacaoService, private _rota: Router) { }
 
-  ngOnInit(): void {
-  }
+  
 
   public login(form: NgForm): void {
     console.log(form.value);

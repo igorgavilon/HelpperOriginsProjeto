@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 export default interface Itemlista {
     id_lista: number;
     id_atividade: number;

@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 import IArquivoImagem from "./arquivo-imagem.interface";
 
 export default interface Membro {

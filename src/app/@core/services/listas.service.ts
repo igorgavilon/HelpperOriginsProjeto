@@ -10,17 +10,17 @@ import { EnumStatusLista } from "../common/tipos/tipos-enum";
 })
 export class ListasService {
 
-    public retornaTodosMembros(): Array<Membro> {
+    public retornaTodosMembros(): Membro[] {
         return Membros;
     }
 
-    public retornaListasAtivas(): Array<ListaAtividades> {
+    public retornaListasAtivas(): ListaAtividades[] {
         return Listas.filter((lista: ListaAtividades) => lista.status_lista === EnumStatusLista.ANDAMENTO);
     }
 
-    public retornaTodosMembrosComListaAtiva(): Array<Membro> {
-        let arrayMembros: Array<Membro> = [];
-        const listasAtivas: Array<ListaAtividades> = this.retornaListasAtivas();
+    public retornaTodosMembrosComListaAtiva(): Membro[] {
+        const arrayMembros: Membro[] = [];
+        const listasAtivas: ListaAtividades[] = this.retornaListasAtivas();
 
         for(const lista of listasAtivas) {
             const membro: Membro = Membros.find((membroAtual: Membro) => membroAtual.id_membro === lista.id_membro);
@@ -33,7 +33,7 @@ export class ListasService {
         return Listas.find((lista: ListaAtividades) => (lista.id_membro === id_membro && lista.status_lista === EnumStatusLista.ANDAMENTO));
     }
 
-    public buscaItensListaPeloIdLista(id_lista: number): Array<Itemlista> {
+    public buscaItensListaPeloIdLista(id_lista: number): Itemlista[] {
 
         return ItensLista.filter((item: Itemlista) => item.id_lista === id_lista);
     }
@@ -58,7 +58,7 @@ export class ListasService {
 
 }
 
-var Membros: Array<Membro> = [
+const Membros: Membro[] = [
     {
         id_membro: 1,
         nome: "Luisa Sousa",
@@ -89,9 +89,9 @@ var Membros: Array<Membro> = [
         data_nascimento: "01/01/2014",
         valor_mesada: 500
     }
-]
+];
 
-var Atividades: Array<Atividade> = [
+const Atividades: Atividade[] = [
     {
         id_atividade: 1,
         descricao: "Faucibus sit dictumst rhoncus ipsum amet egestas tempus eu risus. In sit."
@@ -116,9 +116,9 @@ var Atividades: Array<Atividade> = [
         id_atividade: 6,
         descricao: "Pulvinar aliquam elementum vitae vitae, massa. Quis rhoncus habitant ut."
     }
-]
+];
 
-var Listas: Array<ListaAtividades> = [
+const Listas: ListaAtividades[] = [
     {
         id_lista: 1,
         id_membro: 1,
@@ -137,9 +137,9 @@ var Listas: Array<ListaAtividades> = [
         valor_descontado: 0,
         valor_total: 200
     },
-]
+];
 
-var ItensLista: Array<Itemlista> = [
+const ItensLista: Itemlista[] = [
     {
         id_lista: 1,
         id_atividade: 1,
@@ -176,4 +176,4 @@ var ItensLista: Array<Itemlista> = [
         valor_desconto: 10,
         status_falta: false
     },
-]
+];

@@ -1,11 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-card-lista-total-faltas',
   templateUrl: './card-lista-total-faltas.component.html',
   styleUrls: ['./card-lista-total-faltas.component.scss']
 })
-export class CardListaTotalFaltasComponent implements OnInit {
+export class CardListaTotalFaltasComponent {
     @Input()
     public _total_faltas: number;
     @Input()
@@ -16,10 +15,4 @@ export class CardListaTotalFaltasComponent implements OnInit {
     public _valor_total: number;
     @Input()
     public acaoFinalizarLista: any;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

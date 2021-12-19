@@ -1,3 +1,4 @@
+/* eslint-disable semi */
 import { EnumStatusLista } from "../tipos/tipos-enum";
 
 export default interface ListaAtividades {
