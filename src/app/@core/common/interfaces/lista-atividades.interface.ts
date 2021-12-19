@@ -1,7 +1,6 @@
-/* eslint-disable semi */
 import { EnumStatusLista } from "../tipos/tipos-enum";
 
-export default interface ListaAtividades {
+export interface ListaAtividades {
     id_lista: number;
     id_membro: number;
     nome_lista: string;

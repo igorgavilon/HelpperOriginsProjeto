@@ -1,7 +1,6 @@
-/* eslint-disable semi */
-import IArquivoImagem from "./arquivo-imagem.interface";
+import { IArquivoImagem } from "./arquivo-imagem.interface";
 
-export default interface Membro {
+export interface Membro {
     id_membro: number;
     nome: string;
     imagem_avatar: IArquivoImagem;
