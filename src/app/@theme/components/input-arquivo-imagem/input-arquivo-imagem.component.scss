@@ -1,22 +1,48 @@
-p {
-    font-family: Lato;
-  }
-  .error {
-      color: #f00;
-  }
+.error {
+    color: #f00;
+}
 
-  .dragarea {
-      font-size: 1.5rem;
-      border: 1px dashed #bbb;
-      padding: 1.5rem;
-      background-color: #fff;
-      color: #bbb;
-  }
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-  .droparea {
-    font-size: 1.5rem;
+.dragarea {
     border: 1px dashed #bbb;
-    padding: 1.5rem;
-    background-color: #eff;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #7c8d93;
+
+    max-width: 300px;
+    margin-bottom: 24px;
+}
+
+.droparea {
+    font-size: 1.5rem;
     color: #aaa;
-  }
+
+    border: 1px dashed #b5c5ca;
+    border-radius: 10px;
+
+    padding: 16px 33px;
+    background-color: #eff;
+}
+
+.texto-box {
+    font-size: 14px;
+    color: #7c8d93;
+    font-weight: 400;
+
+    width: 70%;
+}
+
+.usuario-texto {
+    font-weight: 500;
+    color: #7c8d93;
+    font-size: 14px;
+}
+
+.arquivo {
+    font-size: 58px;
+}

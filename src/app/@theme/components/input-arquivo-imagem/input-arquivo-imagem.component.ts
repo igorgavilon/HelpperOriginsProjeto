@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import IArquivoImagem from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
@@ -22,7 +25,6 @@ export class InputArquivoImagemComponent implements OnInit {
   ngOnInit() {
     this.dragAreaClass = "dragarea";
   }
-
   @HostListener("dragover", ["$event"]) onDragOver(event: any) {
     this.dragAreaClass = "droparea";
     event.preventDefault();
@@ -44,13 +46,13 @@ export class InputArquivoImagemComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
     if (event.dataTransfer.files) {
-      let files: FileList = event.dataTransfer.files;
+      const files: FileList = event.dataTransfer.files;
       this.saveFiles(files);
     }
   }
 
   onFileChange(event: any) {
-    let files: FileList = event.target.files;
+    const files: FileList = event.target.files;
     this.saveFiles(files);
   }
 
