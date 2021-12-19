@@ -1,5 +1,6 @@
 * {
     text-decoration: none;
+    list-style-type: none;
 }
 
 .container-principal {
@@ -16,6 +17,13 @@
 
 .titulo {
     width: 30%;
+    padding: 40px;
+    padding-left: 20px;
+
+    h3 {
+        font-size: 32px;
+        color: #006d77;
+    }
 }
 
 .nav-menu {
@@ -25,12 +33,32 @@
 .nav-itens {
     display: flex;
     justify-content: space-between;
+
+    li {
+        margin: 0 10px;
+    }
+
+    li > a:not(.sair-btn) {
+        color: #7c8d93;
+
+        padding-bottom: 5px;
+
+        &:hover {
+            color: #006d77;
+            border-bottom: 3px solid #e29578;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+    }
+
+    .sair-btn {
+        color: #e29578;
+    }
 }
 
-.nav-itens li {
-    margin: 0 10px;
-}
-
-li {
-    list-style-type: none;
+.is-active {
+    color: #006d77 !important;
+    border-bottom: 3px solid #e29578;
+    font-weight: 500;
 }
