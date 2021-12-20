@@ -38,3 +38,13 @@ mat-icon {
     font-size: 3rem;
     cursor: pointer;
 }
+
+::ng-deep .mat-bottom-sheet-container-large {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+::ng-deep .mat-bottom-sheet-container {
+    min-height: 100vh;
+}
