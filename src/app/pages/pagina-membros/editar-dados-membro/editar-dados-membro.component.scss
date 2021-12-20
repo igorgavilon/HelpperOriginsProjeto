@@ -1,12 +1,9 @@
 @import "src/app/@theme/styles/modal-mensagem.scss";
 @import "src/app/@theme/styles/topo-modal.scss";
+@import "src/app/@theme/styles/modal-container.scss";
 
 .container-principal {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include container();
 }
 
 .div-superior {
