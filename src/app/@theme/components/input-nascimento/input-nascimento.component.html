@@ -1,11 +1,10 @@
 
 <mat-form-field appearance="outline">
     <mat-label>Data de nascimento</mat-label>
-    <input matInput type="text"
+    <input matInput type="date"
         placeholder="Data de nascimento"
         [ngModel]="nascimentoInput"
-        name="inputNascimento" [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+        name="inputNascimento">
+    <mat-datepicker-toggle matSuffix></mat-datepicker-toggle>
 </mat-form-field>
 
