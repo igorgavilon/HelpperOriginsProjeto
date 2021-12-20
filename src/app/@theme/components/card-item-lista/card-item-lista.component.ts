@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
+import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({
