@@ -1,22 +1,13 @@
+@import "src/app/@theme/styles/modal-mensagem.scss";
+@import "src/app/@theme/styles/topo-modal.scss";
+@import "src/app/@theme/styles/modal-container.scss";
+
 .container-principal {
-    width: 97%;
-    box-sizing: border-box;
+    @include container();
 }
 
 .div-superior {
-    font-size: 1.5rem;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px 0px 20px;
-
-    h3 {
-        margin: 0;
-        font-size: 24px;
-        color: #3b4244;
-    }
+    @include topo-modal();
 }
 
 .div-form {
@@ -29,17 +20,10 @@
     max-width: 300px;
 }
 
-i {
-    font-size: 35px;
-    color: #3b4244;
-    cursor: pointer;
-}
-
 .div-mensagem-sucesso {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-width: 300px;
+    margin: auto;
+    @include message();
 }
 
 p {

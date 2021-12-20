@@ -1,14 +1,13 @@
 <div draggable="true" ngClass="{{dragAreaClass}}">
     <div class="row">
         <div>
-            <!-- <img *ngIf="arquivoImagemInput"
-                [src]="arquivoImagemInput.arquivo === null ?  + arquivoImagemInput.url : arquivoImagemInput.url"
+            <img *ngIf="arquivoImagemInput"
+                [src]="arquivoImagemInput.arquivo === null ? + 'src/assets/arquivo.png'  : arquivoImagemInput.url"
                 width="60px"
                 height="60px">
-                "arquivoImagemInput.url"  -->
-                <span class="material-icons arquivo">
+                <!-- <span class="material-icons arquivo">
                     description
-                </span>
+                </span> -->
         </div>
         <div class="col-md-12 text-center texto-box">
             Arraste ou
