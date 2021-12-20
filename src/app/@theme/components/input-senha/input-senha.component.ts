@@ -6,6 +6,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './input-senha.component.html',
   styleUrls: ['./input-senha.component.scss']
 })
+
 export class InputSenhaComponent{
     public hide: boolean = true;
     public senhaInput: FormControl = new FormControl();

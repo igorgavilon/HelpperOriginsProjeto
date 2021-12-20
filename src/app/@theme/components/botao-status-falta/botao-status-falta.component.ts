@@ -13,10 +13,7 @@ export class BotaoStatusFaltaComponent implements OnInit {
     public botaoStatusClicado: EventEmitter<any> = new EventEmitter();
 
     public texto: string;
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  constructor() {}
-
+    
   ngOnInit(): void {
     this.texto = this.atividadeEmFalta ? "Faltou" : "Marcar falta";
   }

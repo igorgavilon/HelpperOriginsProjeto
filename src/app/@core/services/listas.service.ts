@@ -94,27 +94,33 @@ const Membros: Membro[] = [
 const Atividades: Atividade[] = [
     {
         id_atividade: 1,
-        descricao: "Faucibus sit dictumst rhoncus ipsum amet egestas tempus eu risus. In sit."
+        descricao: "Faucibus sit dictumst rhoncus ipsum amet egestas tempus eu risus. In sit.",
+        ativo: true
     },
     {
         id_atividade: 2,
-        descricao: "Felis id etiam sed morbi eros, nulla molestie. Vitae at convallis ac integer et."
+        descricao: "Felis id etiam sed morbi eros, nulla molestie. Vitae at convallis ac integer et.",
+        ativo: true
     },
     {
         id_atividade: 3,
-        descricao: "Nisl sapien aliquam eget dolor aliquet tincidunt vitae arcu. Ut eleifend."
+        descricao: "Nisl sapien aliquam eget dolor aliquet tincidunt vitae arcu. Ut eleifend.",
+        ativo: true
     },
     {
         id_atividade: 4,
-        descricao: "Montes, ultricies non ut aliquam malesuada quisque suspendisse. Ligula sed."
+        descricao: "Montes, ultricies non ut aliquam malesuada quisque suspendisse. Ligula sed.",
+        ativo: true
     },
     {
         id_atividade: 5,
-        descricao: "Ornare sit velit vitae mauris cursus ipsum a potenti fermentum. Malesuada."
+        descricao: "Ornare sit velit vitae mauris cursus ipsum a potenti fermentum. Malesuada.",
+        ativo: true
     },
     {
         id_atividade: 6,
-        descricao: "Pulvinar aliquam elementum vitae vitae, massa. Quis rhoncus habitant ut."
+        descricao: "Pulvinar aliquam elementum vitae vitae, massa. Quis rhoncus habitant ut.",
+        ativo: true
     }
 ];
 

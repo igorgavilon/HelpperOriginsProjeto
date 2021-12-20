@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 import { MembrosService } from 'src/app/@core/services/membros.service';
 import { CadastrarNovoMembroComponent } from './cadastrar-novo-membro/cadastrar-novo-membro.component';
+import { EditarDadosMembroComponent } from './editar-dados-membro/editar-dados-membro.component';
+import { ExcluirMembroComponent } from './excluir-membro/excluir-membro.component';
 
 @Component({
   selector: 'app-pagina-membros',
@@ -42,14 +44,22 @@ export class PaginaMembrosComponent implements OnInit {
   }
 
   public excluirMembro = (idMembro: number): void => {
-    this._membrosService.excluirMembroPeloId(idMembro);
-    this.carregarListaMembros();
+    const bottomSheetRef = this.bottomSheet.open(ExcluirMembroComponent, {
+        panelClass: 'bottom-sheet-container',
+        data: idMembro
+    });
+
+    bottomSheetRef.afterDismissed().subscribe(() => {
+        console.log('Bottom sheet has been dismissed.');
+        this.carregarListaMembros();
+    });
+
   }
 
   public editarMembro = (idMembro: number): void => {
     const membroEditar: Membro = this._membrosService.retornaMembroPeloId(idMembro);
 
-    const bottomSheetRef = this.bottomSheet.open(CadastrarNovoMembroComponent, {
+    const bottomSheetRef = this.bottomSheet.open(EditarDadosMembroComponent, {
         panelClass: 'bottom-sheet-container',
         data: membroEditar
     });

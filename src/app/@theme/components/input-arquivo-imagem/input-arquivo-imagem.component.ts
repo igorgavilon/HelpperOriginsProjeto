@@ -3,7 +3,7 @@
 
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import IArquivoImagem from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
+import {IArquivoImagem} from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
 
 @Component({
   selector: 'app-input-arquivo-imagem',
@@ -22,26 +22,27 @@ export class InputArquivoImagemComponent implements OnInit {
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.dragAreaClass = "dragarea";
   }
-  @HostListener("dragover", ["$event"]) onDragOver(event: any) {
+
+  @HostListener("dragover", ["$event"]) onDragOver(event: any): void {
     this.dragAreaClass = "droparea";
     event.preventDefault();
   }
-  @HostListener("dragenter", ["$event"]) onDragEnter(event: any) {
+  @HostListener("dragenter", ["$event"]) onDragEnter(event: any): void {
     this.dragAreaClass = "droparea";
     event.preventDefault();
   }
-  @HostListener("dragend", ["$event"]) onDragEnd(event: any) {
+  @HostListener("dragend", ["$event"]) onDragEnd(event: any): void {
     this.dragAreaClass = "dragarea";
     event.preventDefault();
   }
-  @HostListener("dragleave", ["$event"]) onDragLeave(event: any) {
+  @HostListener("dragleave", ["$event"]) onDragLeave(event: any): void {
     this.dragAreaClass = "dragarea";
     event.preventDefault();
   }
-  @HostListener("drop", ["$event"]) onDrop(event: any) {
+  @HostListener("drop", ["$event"]) onDrop(event: any): void {
     this.dragAreaClass = "dragarea";
     event.preventDefault();
     event.stopPropagation();
@@ -51,12 +52,12 @@ export class InputArquivoImagemComponent implements OnInit {
     }
   }
 
-  onFileChange(event: any) {
+  onFileChange(event: any): void {
     const files: FileList = event.target.files;
     this.saveFiles(files);
   }
 
-  saveFiles(files: FileList) {
+  saveFiles(files: FileList): void {
 
     if (files.length > 1) this.error = "Only one file at time allow";
     else {

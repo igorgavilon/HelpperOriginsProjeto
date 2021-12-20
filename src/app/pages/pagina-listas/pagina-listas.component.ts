@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import ListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
+import {ListaAtividades} from 'src/app/@core/common/interfaces/lista-atividades.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 import { LoginComponent } from '../login/login.component';
 
