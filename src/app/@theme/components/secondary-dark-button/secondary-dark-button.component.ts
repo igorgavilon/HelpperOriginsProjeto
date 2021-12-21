@@ -9,4 +9,7 @@ export class SecondaryDarkButtonComponent {
     @Input()
     public texto: string;
 
+    @Input()
+    public color: string;
+
 }
