@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import {IArquivoImagem} from 'src/app/@core/common/interfaces/arquivo-imagem.interface';

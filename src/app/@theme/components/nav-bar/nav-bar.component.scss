@@ -38,7 +38,7 @@
         margin: 0 10px;
     }
 
-    li > a:not(.sair-btn) {
+    li > a:not(.sair-btn, .is-active) {
         color: #7c8d93;
 
         padding-bottom: 5px;
@@ -58,7 +58,8 @@
 }
 
 .is-active {
-    color: #006d77 !important;
+    color: #006d77;
     border-bottom: 3px solid #e29578;
     font-weight: 500;
+    padding-bottom: 5px;
 }
