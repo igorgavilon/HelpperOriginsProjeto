@@ -10,28 +10,31 @@ import { AutenticacaoService } from 'src/app/@core/services/autenticacao.service
 })
 export class LoginComponent {
     public usuarioAutenticado: boolean = false;
-    public mensagemErro: string;
+    public mensagemErro: string = "";
 
   constructor(private _autenticacaoService: AutenticacaoService, private _rota: Router) { }
 
   public login(form: NgForm): void {
     this._autenticacaoService.login(form.value).subscribe({
       next: resposta => {
-        console.log("Resposta do login service: ", resposta);
-        this.usuarioAutenticado = true;
+        this._autenticacaoService.salvarToken(resposta.data.Token);
+        this.verificaAutenticacao(resposta.status);
       },
       error: erro => {
         console.log("Erro ao efetuar o login: ", erro.error)
-        this.usuarioAutenticado = false;
+        this.verificaAutenticacao(erro.error.status);
       }
     });
+  }
 
+  public verificaAutenticacao(status: boolean): void {
+    this.usuarioAutenticado = status;
     if(this.usuarioAutenticado) {
-        this._rota.navigate(['/pages/listas']);
+      this._rota.navigate(['/pages/listas']);
     }else {
         this.mensagemErro = "Usuário Não Autenticado! E-mail ou senha incorretos!";
     }
-}
 
+  }
 
 }

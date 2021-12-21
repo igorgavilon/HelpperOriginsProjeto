@@ -22,10 +22,10 @@ export class AutenticacaoService {
             }
         );
 
-        // if(dadosLogin.email === "delta@squad.com" && dadosLogin.senha === "delta") {
-        //     return true;
-        // }
-        // return false;
+    }
+
+    public salvarToken(token: string): void {
+        localStorage.setItem('tokenUsuario', token);
     }
 
 }
