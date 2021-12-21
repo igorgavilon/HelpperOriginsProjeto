@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
+import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({
@@ -42,9 +42,5 @@ export class CardItemListaComponent implements OnInit {
     this._listaService.atualizarItemDaLista(this.itemLista, statusFalta);
     this.botaoStatusClicado.emit(statusFalta ? this.valorDesconto : -1*(this.valorDesconto));
   }
-
-  // public atualizarCheckBox() {
-  //     //aqui serão inseridas lógicas quando for fazer o crud da lista de atividades!
-  // }
 
 }

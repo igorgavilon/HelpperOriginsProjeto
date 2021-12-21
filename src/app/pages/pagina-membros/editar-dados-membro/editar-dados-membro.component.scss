@@ -1,0 +1,43 @@
+@import "src/app/@theme/styles/modal-mensagem.scss";
+@import "src/app/@theme/styles/topo-modal.scss";
+@import "src/app/@theme/styles/modal-container.scss";
+
+.container-principal {
+    @include container();
+}
+
+.div-superior {
+    @include topo-modal();
+}
+
+.div-form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div-mensagem-sucesso {
+    @include message();
+}
+
+i {
+    font-size: 35px;
+    color: #3b4244;
+    cursor: pointer;
+}
+
+mat-icon {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+::ng-deep .mat-bottom-sheet-container-large {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+::ng-deep .mat-bottom-sheet-container {
+    min-height: 100vh;
+}

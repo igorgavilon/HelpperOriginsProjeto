@@ -1,4 +1,4 @@
-export default interface Itemlista {
+export interface Itemlista {
     id_lista: number;
     id_atividade: number;
     valor_desconto: number;

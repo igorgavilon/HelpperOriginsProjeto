@@ -1,7 +1,4 @@
-<p>
-    <mat-form-field appearance="outline">
-      <mat-label>Nome</mat-label>
-      <input matInput placeholder="Nome">
-      <mat-hint>Nome</mat-hint>
-    </mat-form-field>
-  </p>
+<mat-form-field appearance="outline">
+    <mat-label>Nome do membro</mat-label>
+    <input matInput placeholder="Nome do membro" name="inputNome" [ngModel]="nomeInput">
+</mat-form-field>

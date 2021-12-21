@@ -12,7 +12,8 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $riott-web-primary: mat-palette($mat-cyan);
-$riott-web-accent: mat-palette($mat-cyan, 900, A100, A400);
+$riott-web-accent: mat-palette($mat-teal, 900, A100, A400);
+//$riott-web-accent: mat-palette($mat-cyan, 900, A100, A400);
 
 
 // The warn palette is optional (defaults to red).
@@ -48,11 +49,9 @@ body {
     color: #eb5757;
 }
 
-html,
-body {
+.bottom-sheet-container {
+    min-height: calc(100vh - 80px);
+    min-width: 100vw !important;
     height: 100%;
-}
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    width: 100%;
 }

@@ -10,13 +10,22 @@ import { CardItemListaComponent } from './components/card-item-lista/card-item-l
 import { SecondaryDarkButtonComponent } from './components/secondary-dark-button/secondary-dark-button.component';
 import { BotaoStatusFaltaComponent } from './components/botao-status-falta/botao-status-falta.component';
 import { CommonModule } from "@angular/common";
+import { ModalComponent } from './components/modal/modal.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { RouterModule } from "@angular/router";
+import { InputNascimentoComponent } from './components/input-nascimento/input-nascimento.component';
+import { InputValorMesadaComponent } from './components/input-valor-mesada/input-valor-mesada.component';
+import { InputArquivoImagemComponent } from './components/input-arquivo-imagem/input-arquivo-imagem.component';
 
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule,
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,
+        MatDialogModule,
 	],
 	declarations: [
 		WelcomeComponent,
@@ -27,7 +36,13 @@ import { CommonModule } from "@angular/common";
 		CardItemListaComponent,
 		SecondaryDarkButtonComponent,
 		BotaoStatusFaltaComponent,
+		ModalComponent,
+		NavBarComponent,
+		InputNascimentoComponent,
+		InputValorMesadaComponent,
+		InputArquivoImagemComponent,
 	],
+    entryComponents: [],
 	providers: [],
     exports: [
         WelcomeComponent,
@@ -37,6 +52,11 @@ import { CommonModule } from "@angular/common";
         PrimaryButtonComponent,
         CardItemListaComponent,
 		SecondaryDarkButtonComponent,
+        ModalComponent,
+        NavBarComponent,
+        InputNascimentoComponent,
+        InputValorMesadaComponent,
+        InputArquivoImagemComponent,
     ]
 })
 export class ThemeModule { }
