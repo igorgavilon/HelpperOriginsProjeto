@@ -1,12 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
+import { Component, Input } from '@angular/core';
+import {Atividade} from 'src/app/@core/common/interfaces/atividade.interface';
 
 @Component({
   selector: 'app-card-atividade-infos',
   templateUrl: './card-atividade-infos.component.html',
   styleUrls: ['./card-atividade-infos.component.scss']
 })
-export class CardAtividadeInfosComponent implements OnInit {
+export class CardAtividadeInfosComponent {
     @Input()
     public _atividade: Atividade;
 
@@ -15,9 +15,4 @@ export class CardAtividadeInfosComponent implements OnInit {
 
     @Input()
     public editarAtividadeClick: any;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 }
