@@ -1,12 +1,18 @@
+@import "~@angular/material/theming";
+
+button {
+    width: 100%;
+}
+
 .estilo-status-falta {
-    background: #E29578;
-    color: #FFFFFF;
+    background: #e29578;
+    color: #ffffff;
     border-radius: 4px;
 }
 
 .estilo-status-marcar {
-    background: #FFFFFF;
-    color: #E29578;
+    background: #ffffff;
+    color: #e29578;
     border-radius: 4px;
-    border: 2px solid #E29578;
+    border: 2px solid #e29578;
 }

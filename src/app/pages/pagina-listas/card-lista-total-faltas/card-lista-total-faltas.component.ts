@@ -5,7 +5,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './card-lista-total-faltas.component.html',
   styleUrls: ['./card-lista-total-faltas.component.scss']
 })
-
 export class CardListaTotalFaltasComponent {
     @Input()
     public _total_faltas: number;
@@ -16,5 +15,6 @@ export class CardListaTotalFaltasComponent {
     @Input()
     public _valor_total: number;
     @Input()
-    public acaoFinalizarLista: any;
+    public acaoFinalizarLista: () => void;
+
 }

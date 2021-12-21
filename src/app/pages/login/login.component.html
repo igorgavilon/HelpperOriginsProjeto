@@ -1,19 +1,31 @@
-<div class="container-principal">
-    <div class="div-imagem-capa">
-        <h1>Imagem da Tela de Login</h1>
-    </div>
-    <div class="div-form-login">
-        <h4>Form de Login</h4>
+<main class="container-principal">
+    <section class="div-imagem-capa">
+        <picture>
+            <img src="../assets/image/image-login.png" alt="">
+        </picture>
+        <span class="span">Seu time <br> em harmonia.</span>
+    </section>
+    <section class="div-form-login">
+        <h1 class="title">RIOTT</h1>
+        <h2 class="subtitle">Controle as tarefas e mesadas dos seus filhos para manter a casa em harmonia.</h2>
         <form #loginForm="ngForm">
-            <app-input-email ngDefaultControl ngModel name="email"></app-input-email>
-            <app-input-senha ngDefaultControl ngModel name="senha"></app-input-senha>
-            <app-primary-button texto="Entrar" (click)="login(loginForm)"></app-primary-button>
+            <app-input-email 
+                ngDefaultControl 
+                ngModel 
+                name="email">
+            </app-input-email>
+            <app-input-senha 
+                ngDefaultControl 
+                ngModel 
+                name="senha" >
+            </app-input-senha>
+            <app-primary-button texto="Entrar" color="primary-dark" (click)="login(loginForm)"></app-primary-button>
         </form>
         <br/>
         <div *ngIf="mensagemErro">
-            {{mensagemErro}}
+            <span class="mensagem_erro">{{mensagemErro}}</span>
         </div>
 
-    </div>
-</div>
+    </section>
+</main>
 

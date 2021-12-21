@@ -5,16 +5,15 @@ import { Component, Input } from '@angular/core';
   templateUrl: './primary-button.component.html',
   styleUrls: ['./primary-button.component.scss']
 })
-
 export class PrimaryButtonComponent{
 
     @Input()
     public texto: string;
 
     @Input()
-    public color: string;
+    public icone: string;
 
     @Input()
-    public icone: string;
+    public color: string;
 
 }

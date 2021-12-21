@@ -1,6 +1,6 @@
 import { IArquivoImagem } from "./arquivo-imagem.interface";
 
-export interface Membro {
+export default interface Membro {
     id_membro: number;
     nome: string;
     imagem_avatar: IArquivoImagem;

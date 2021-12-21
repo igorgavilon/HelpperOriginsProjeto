@@ -8,7 +8,6 @@ import { AutenticacaoService } from 'src/app/@core/services/autenticacao.service
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-
 export class LoginComponent {
     public usuarioAutenticado: boolean = false;
     public mensagemErro: string;
@@ -16,8 +15,6 @@ export class LoginComponent {
   constructor(private _autenticacaoService: AutenticacaoService, private _rota: Router) { }
 
   public login(form: NgForm): void {
-    console.log(form.value);
-
     this.usuarioAutenticado = this._autenticacaoService.login(form.value);
     if(this.usuarioAutenticado) {
         this._rota.navigate(['/pages/listas']);
