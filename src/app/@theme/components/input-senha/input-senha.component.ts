@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,13 +6,9 @@ import { FormControl } from '@angular/forms';
   templateUrl: './input-senha.component.html',
   styleUrls: ['./input-senha.component.scss']
 })
-export class InputSenhaComponent implements OnInit {
+
+export class InputSenhaComponent{
     public hide: boolean = true;
     public senhaInput: FormControl = new FormControl();
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -1,9 +1,7 @@
 <div class="container-principal">
     <div class="div-superior">
         <h3>{{!edicaoSucesso ? 'Editar membro': ' '}}</h3>
-        <!-- <button mat-raised-button> -->
-            <mat-icon (click)="fecharModal()">{{'close'}}</mat-icon>
-        <!-- </button> -->
+        <span><i class="material-icons" (click)="fecharModal()">close</i></span>
     </div>
     <div class="div-form" *ngIf="!edicaoSucesso">
         <p>Altere os dados abaixo para editar o cadastro de um membro no RIOTT.</p>
@@ -16,8 +14,6 @@
     <div class="div-mensagem-sucesso" *ngIf="edicaoSucesso">
         <img src="../../../../assets/sucesso.png" alt="">
         <h3>Membro editado com sucesso!</h3>
-        <app-primary-button texto="Finalizar" (click)="fecharModal()">
-
-        </app-primary-button>
+        <app-primary-button color="accent" texto="Finalizar" (click)="fecharModal()"></app-primary-button>
     </div>
 </div>

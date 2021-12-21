@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -6,15 +6,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit {
+
+export class ModalComponent {
 
     constructor(
         @Optional() public dialogRef: MatDialogRef<ModalComponent>,
         @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-    ngOnInit(): void {
-        // this.dialogRef.updateSize('100%', '100%');
-    }
 
     onNoClick(): void {
         this.dialogRef.close();

@@ -1,16 +1,26 @@
 .example-right-align {
     text-align: left;
-  }
+}
 
-  input.example-right-align::-webkit-outer-spin-button,
-  input.example-right-align::-webkit-inner-spin-button {
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
     display: none;
-  }
+}
 
-  input.example-right-align {
+input.example-right-align {
     -moz-appearance: textfield;
-  }
+}
 
-  mat-form-field {
-      width: 180px;
-  }
+mat-form-field {
+    width: 300px;
+    display: block;
+}
+
+input {
+    width: 100%;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-prefix {
+    place-self: center;
+    color: gray;
+}

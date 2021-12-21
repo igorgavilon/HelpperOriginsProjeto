@@ -1,18 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-primary-button',
   templateUrl: './primary-button.component.html',
   styleUrls: ['./primary-button.component.scss']
 })
-export class PrimaryButtonComponent implements OnInit {
+
+export class PrimaryButtonComponent{
 
     @Input()
     public texto: string;
 
-  constructor() { }
+    @Input()
+    public color: string;
 
-  ngOnInit(): void {
-  }
+    @Input()
+    public icone: string;
 
 }

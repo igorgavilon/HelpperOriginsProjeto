@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
-import Membro from "../common/interfaces/membro.interface";
+import { Membro } from "../common/interfaces/membro.interface";
 
 @Injectable({
     providedIn: 'root',
 })
 export class MembrosService {
 
-    public retornaTodosMembros(): Array<Membro> {
+    public retornaTodosMembros(): Membro[] {
         return Membros;
     }
 
@@ -87,7 +87,7 @@ export class MembrosService {
 
 }
 
-var Membros: Array<Membro> = [
+let Membros: Membro[] = [
     {
         id_membro: 1,
         nome: "Luisa Sousa",
@@ -118,4 +118,4 @@ var Membros: Array<Membro> = [
         data_nascimento: "2014-01-01",
         valor_mesada: 500
     }
-]
+];

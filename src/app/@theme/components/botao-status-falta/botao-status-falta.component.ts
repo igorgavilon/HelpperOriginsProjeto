@@ -13,9 +13,7 @@ export class BotaoStatusFaltaComponent implements OnInit {
     public botaoStatusClicado: EventEmitter<any> = new EventEmitter();
 
     public texto: string;
-
-  constructor() { }
-
+    
   ngOnInit(): void {
     this.texto = this.atividadeEmFalta ? "Faltou" : "Marcar falta";
   }
