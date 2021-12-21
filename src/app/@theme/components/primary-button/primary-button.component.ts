@@ -10,4 +10,10 @@ export class PrimaryButtonComponent {
     @Input()
     public texto: string;
 
+    @Input()
+    public color: string;
+
+    @Input()
+    public icone: string;
+
 }
