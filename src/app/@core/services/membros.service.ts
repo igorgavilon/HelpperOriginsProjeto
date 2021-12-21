@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Membro } from "../common/interfaces/membro.interface";
+import Membro from "../common/interfaces/membro.interface";
 
 @Injectable({
     providedIn: 'root',
@@ -50,41 +50,7 @@ export class MembrosService {
     public excluirMembroPeloId(id: number): void {
         Membros = Membros.filter((itemAtual: Membro) => itemAtual.id_membro !== id);
     }
-
-    // public salvar(cliente: ICliente): void {
-    //     const arrayClientes: ICliente[]= this.retornaTodosClientes();
-
-    //     //se o cliente já existe, possui um id
-    //     //serão atualizados os dados de um cliente já existente
-    //     if(cliente.id !== null) {
-    //         const indice = arrayClientes.findIndex((clienteAtual: ICliente) => clienteAtual.id === cliente.id);
-    //         arrayClientes[indice] = cliente;
-    //     }else {//se o cliente não possui um id, ele é um novo cliente
-    //         //serão salvos os dados do novo cliente
-
-    //         //se for o primeiro cliente a ser cadastrado seu índice será zero
-    //         let idAtual: number = 0;
-    //         //se não for o primeiro cliente o arrayClientes não será vazio
-    //         //então atualiza o idAtual
-    //         if(arrayClientes.length !== 0) {
-    //             //busca o último id que foi cadastrado
-    //             const ultimoId: number = arrayClientes.map((item: ICliente) => item.id).reduce((anterior: number, atual: number) => Math.max(anterior, atual));
-    //             //incrementa o último id para definir o id do cliente que será criado
-    //             idAtual = ultimoId+1;
-    //         }
-
-    //         //guarda os dados do cliente que vieram do formulário
-    //         const {nome, email, telefone, status} = cliente;
-    //         //adiciona o novo cliente no array de clientes
-    //         arrayClientes.push({id: idAtual, nome: nome, email: email, telefone: telefone, status: status});
-    //     }
-
-    //     localStorage.setItem('clientesArray', JSON.stringify(arrayClientes));
-
-    //     //volta para a tela de listagem do cliente
-    //     this.irRotaListagemCliente();
-    // }
-
+    
 }
 
 let Membros: Membro[] = [

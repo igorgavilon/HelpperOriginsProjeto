@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
+import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { MembrosService } from 'src/app/@core/services/membros.service';
 import { CadastrarNovoMembroComponent } from './cadastrar-novo-membro/cadastrar-novo-membro.component';
 import { EditarDadosMembroComponent } from './editar-dados-membro/editar-dados-membro.component';
@@ -50,7 +50,6 @@ export class PaginaMembrosComponent implements OnInit {
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
-        console.log('Bottom sheet has been dismissed.');
         this.carregarListaMembros();
     });
 

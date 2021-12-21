@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
-import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
+import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { MembrosService } from 'src/app/@core/services/membros.service';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import {IArquivoImagem} from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
-import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
+import IArquivoImagem from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
+import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { MembrosService } from 'src/app/@core/services/membros.service';
 
 @Component({
@@ -11,10 +11,10 @@ import { MembrosService } from 'src/app/@core/services/membros.service';
 })
 export class FormMembroComponent implements OnInit {
     @Input()
-    public cancelarFormClick: any;
+    public cancelarFormClick: () => void;
 
     @Input()
-    public salvarMembroClick: any;
+    public salvarMembroClick: (membro: Membro) => void;
 
     @Input()
     public dadosMembro: Membro;

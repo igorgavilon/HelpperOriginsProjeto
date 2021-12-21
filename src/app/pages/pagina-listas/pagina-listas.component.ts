@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
 import {ListaAtividades} from 'src/app/@core/common/interfaces/lista-atividades.interface';
-import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
+import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 import { LoginComponent } from '../login/login.component';
 
@@ -22,7 +22,7 @@ export class PaginaListasComponent implements OnInit {
     public descontos: number;
     public total: number;
 
-  constructor(private _listasService: ListasService, public bottomSheet: MatBottomSheet) {//public dialog: MatDialog) {
+  constructor(private _listasService: ListasService, public bottomSheet: MatBottomSheet) {
       this.descontos = 0;
       this.totalFaltas = 0;
   }
@@ -71,7 +71,6 @@ export class PaginaListasComponent implements OnInit {
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
-        console.log('Bottom sheet has been dismissed.');
     });
   }
 

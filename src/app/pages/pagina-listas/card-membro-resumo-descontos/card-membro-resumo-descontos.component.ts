@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
 import {ListaAtividades} from 'src/app/@core/common/interfaces/lista-atividades.interface';
-import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
+import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({

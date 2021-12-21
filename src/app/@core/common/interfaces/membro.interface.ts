@@ -1,4 +1,4 @@
-import { IArquivoImagem } from "./arquivo-imagem.interface";
+import IArquivoImagem from "./arquivo-imagem.interface";
 
 export default interface Membro {
     id_membro: number;

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
+import Membro from 'src/app/@core/common/interfaces/membro.interface';
 
 @Component({
   selector: 'app-card-membro-infos',
@@ -12,9 +12,9 @@ export class CardMembroInfosComponent   {
     public _membro: Membro;
 
     @Input()
-    public excluirMembroClick: any;
+    public excluirMembroClick: (idMembro: number) => void;
 
     @Input()
-    public editarMembroClick: any;
+    public editarMembroClick: (idMembro: number) => void;
 
 }

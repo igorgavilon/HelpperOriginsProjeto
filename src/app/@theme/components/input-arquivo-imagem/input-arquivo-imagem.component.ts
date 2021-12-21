@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import {IArquivoImagem} from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
+import IArquivoImagem from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
 
 @Component({
   selector: 'app-input-arquivo-imagem',
@@ -15,7 +15,7 @@ export class InputArquivoImagemComponent implements OnInit {
     public arquivoImagemInput: IArquivoImagem;
 
     @Input()
-    public atualizarArquivoImagem: any;
+    public atualizarArquivoImagem: (dadosImagem: IArquivoImagem) => void;
 
   constructor(private sanitizer: DomSanitizer) { }
 
@@ -63,7 +63,6 @@ export class InputArquivoImagemComponent implements OnInit {
         this.arquivoImagemInput = { arquivo, url };
         this.atualizarArquivoImagem(this.arquivoImagemInput);
         this.error = "";
-        // console.log(files[0].size,files[0].name,files[0].type, url);
     }
   }
 }
