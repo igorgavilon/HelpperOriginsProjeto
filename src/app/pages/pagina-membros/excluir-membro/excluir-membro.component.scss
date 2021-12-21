@@ -1,0 +1,38 @@
+@import "src/app/@theme/styles/modal-mensagem.scss";
+@import "src/app/@theme/styles/topo-modal.scss";
+@import "src/app/@theme/styles/modal-container.scss";
+
+.container-principal {
+    @include container();
+}
+
+.div-superior {
+    @include topo-modal();
+}
+
+.div-confirma-exclusao {
+    @include message();
+}
+
+.div-mensagem-sucesso {
+    @include message();
+}
+
+.controle-botao {
+    margin-bottom: 10px;
+}
+
+mat-icon {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+::ng-deep .mat-bottom-sheet-container-large {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+::ng-deep .mat-bottom-sheet-container {
+    min-height: 100vh;
+}

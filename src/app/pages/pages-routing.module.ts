@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { PagesComponent } from "./pages.component";
 import { LoginComponent } from './login/login.component';
 import { PaginaListasComponent } from './pagina-listas/pagina-listas.component';
+import { PaginaMembrosComponent } from './pagina-membros/pagina-membros.component';
 
 const routes: Routes = [
 	{
@@ -21,6 +22,10 @@ const routes: Routes = [
             {
 				path: 'listas',
 				component: PaginaListasComponent,
+			},
+            {
+				path: 'membros',
+				component: PaginaMembrosComponent,
 			},
         ],
 	},

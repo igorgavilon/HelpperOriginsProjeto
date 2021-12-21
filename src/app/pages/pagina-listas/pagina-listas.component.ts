@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import ListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
+import {ListaAtividades} from 'src/app/@core/common/interfaces/lista-atividades.interface';
 import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-pagina-listas',
@@ -10,6 +12,7 @@ import { ListasService } from 'src/app/@core/services/listas.service';
   styleUrls: ['./pagina-listas.component.scss']
 })
 export class PaginaListasComponent implements OnInit {
+
     public listaMembros: Membro[];
     public itensLista: Itemlista[];
     public lista_membro_selecionado: ListaAtividades;
@@ -19,7 +22,7 @@ export class PaginaListasComponent implements OnInit {
     public descontos: number;
     public total: number;
 
-  constructor(private _listasService: ListasService) {
+  constructor(private _listasService: ListasService, public bottomSheet: MatBottomSheet) {
       this.descontos = 0;
       this.totalFaltas = 0;
   }
@@ -60,6 +63,15 @@ export class PaginaListasComponent implements OnInit {
   public finalizarLista = (): void => {
     this._listasService.finalizarLista(this.lista_membro_selecionado);
     this.carregarDadosDaPagina();
+  }
+
+  public abrirModal(): void {
+    const bottomSheetRef = this.bottomSheet.open(LoginComponent, {
+        panelClass: 'bottom-sheet-container'
+    });
+
+    bottomSheetRef.afterDismissed().subscribe(() => {
+    });
   }
 
 }

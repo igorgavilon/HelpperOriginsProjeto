@@ -1,0 +1,25 @@
+<form #membroForm="ngForm">
+    <input type="number" [ngModel]="dadosMembro.id_membro" name="id_membro" hidden>
+    <app-input-arquivo-imagem ngDefaultControl ngModel
+            [arquivoImagemInput]="arquivoImagem"
+            name="url_avatar"
+            [atualizarArquivoImagem]="atualizarArquivoImagem">
+    </app-input-arquivo-imagem>
+    <app-input-nome ngDefaultControl [ngModel]="dadosMembro.nome"
+            [nomeInput]="dadosMembro.nome"
+            name="nome">
+    </app-input-nome>
+    <app-input-nascimento ngDefaultControl [ngModel]="dadosMembro.data_nascimento"
+            [nascimentoInput]="dadosMembro.data_nascimento"
+            name="data_nascimento">
+    </app-input-nascimento>
+    <app-input-valor-mesada ngDefaultControl [ngModel]="dadosMembro.valor_mesada"
+            [valorMesadaInput]="dadosMembro.valor_mesada"
+            name="valor_mesada">
+    </app-input-valor-mesada>
+    <app-primary-button color="accent" [texto]="dadosMembro.id_membro ? 'Salvar edição' : 'Cadastrar membro'" (click)="salvarMembro(membroForm)"></app-primary-button>
+    <p>
+        <app-secondary-dark-button texto="Cancelar" (click)="cancelarFormClick()"></app-secondary-dark-button>
+    </p>
+</form>
+
