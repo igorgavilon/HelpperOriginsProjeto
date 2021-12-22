@@ -16,6 +16,12 @@ import { CardMembroInfosComponent } from "./pagina-membros/card-membro-infos/car
 import { FormMembroComponent } from "./pagina-membros/form-membro/form-membro.component";
 import { EditarDadosMembroComponent } from "./pagina-membros/editar-dados-membro/editar-dados-membro.component";
 import { ExcluirMembroComponent } from "./pagina-membros/excluir-membro/excluir-membro.component";
+import { PaginaAtividadesComponent } from "./pagina-atividades/pagina-atividades.component";
+import { CardAtividadeInfosComponent } from "./pagina-atividades/card-atividade-infos/card-atividade-infos.component";
+import { ExcluirAtividadeComponent } from "./pagina-atividades/excluir-atividade/excluir-atividade.component";
+import { CadastrarNovaAtividadeComponent } from "./pagina-atividades/cadastrar-nova-atividade/cadastrar-nova-atividade.component";
+import { EditarDadosAtividadeComponent } from "./pagina-atividades/editar-dados-atividade/editar-dados-atividade.component";
+import { FormAtividadeComponent } from "./pagina-atividades/form-atividade/form-atividade.component";
 
 @NgModule({
 	imports: [
@@ -39,11 +45,20 @@ import { ExcluirMembroComponent } from "./pagina-membros/excluir-membro/excluir-
         FormMembroComponent,
         EditarDadosMembroComponent,
         ExcluirMembroComponent,
+        PaginaAtividadesComponent,
+        CadastrarNovaAtividadeComponent,
+        CardAtividadeInfosComponent,
+        FormAtividadeComponent,
+        EditarDadosAtividadeComponent,
+        ExcluirAtividadeComponent,
 	],
     entryComponents: [
         CadastrarNovoMembroComponent,
         EditarDadosMembroComponent,
         ExcluirMembroComponent,
+        CadastrarNovaAtividadeComponent,
+        EditarDadosAtividadeComponent,
+        ExcluirAtividadeComponent,
     ],
 	providers: []
 })

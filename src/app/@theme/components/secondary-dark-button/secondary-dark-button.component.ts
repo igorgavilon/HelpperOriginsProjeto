@@ -11,5 +11,4 @@ export class SecondaryDarkButtonComponent  {
 
     @Input()
     public color: string;
-  
 }
