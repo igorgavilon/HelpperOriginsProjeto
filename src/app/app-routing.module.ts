@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     {
 		path: 'pages',
-		loadChildren: (): Promise<NgModuleFactory<any> | Type<any> | any> => import('./pages/pages.module').then(module => module.PagesModule),
-	},
-    { path: '**', redirectTo: 'pages' },
+		loadChildren: (): Promise<NgModuleFactory<any> | Type<any> | any> => import('./pages/pages.module').then(module => module.PagesModule), 
+  },
+    { path: '**', redirectTo: 'pages/login' },
 ];
 
 @NgModule({
