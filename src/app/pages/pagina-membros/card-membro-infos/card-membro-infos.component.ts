@@ -1,12 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import { Component, Input } from '@angular/core';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 
 @Component({
   selector: 'app-card-membro-infos',
   templateUrl: './card-membro-infos.component.html',
   styleUrls: ['./card-membro-infos.component.scss']
 })
-export class CardMembroInfosComponent implements OnInit {
+export class CardMembroInfosComponent {
     @Input()
     public _membro: Membro;
 
@@ -15,10 +15,5 @@ export class CardMembroInfosComponent implements OnInit {
 
     @Input()
     public editarMembroClick: any;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

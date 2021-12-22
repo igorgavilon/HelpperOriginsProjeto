@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import ListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
+import {ListaAtividades} from 'src/app/@core/common/interfaces/lista-atividades.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({
@@ -32,7 +32,7 @@ export class CardMembroResumoDescontosComponent implements OnInit {
 
     public _mesada: number;
     public _listaAtividades: ListaAtividades;
-    public _itensLista: Array<Itemlista>;
+    public _itensLista: Itemlista[];
     public _valor_descontos: number;
     public _valor_total: number
 

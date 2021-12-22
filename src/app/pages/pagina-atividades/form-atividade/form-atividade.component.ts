@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
+import { Component, Input } from '@angular/core';
+import {Atividade} from 'src/app/@core/common/interfaces/atividade.interface';
 import { AtividadesService } from 'src/app/@core/services/atividades.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { AtividadesService } from 'src/app/@core/services/atividades.service';
   templateUrl: './form-atividade.component.html',
   styleUrls: ['./form-atividade.component.scss']
 })
-export class FormAtividadeComponent implements OnInit {
+export class FormAtividadeComponent {
     @Input()
     public cancelarFormClick: any;
 
@@ -18,9 +18,6 @@ export class FormAtividadeComponent implements OnInit {
     public dadosAtividade: Atividade;
 
     constructor(private _atividadesService: AtividadesService) { }
-
-    ngOnInit(): void {
-    }
 
 //   public salvarMembro(form: NgForm): void {
 //       console.log(form.value);
