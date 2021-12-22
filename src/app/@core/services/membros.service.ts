@@ -50,7 +50,6 @@ export class MembrosService {
     public excluirMembroPeloId(id: number): void {
         Membros = Membros.filter((itemAtual: Membro) => itemAtual.id_membro !== id);
     }
-    
 }
 
 let Membros: Membro[] = [

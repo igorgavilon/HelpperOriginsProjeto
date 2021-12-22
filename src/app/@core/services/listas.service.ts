@@ -1,17 +1,26 @@
 import { Injectable } from "@angular/core";
+import ItemLista from "../common/classes/classe-item-lista";
+import ListaAtividades from "../common/classes/classe-lista-atividades";
 import Atividade from "../common/interfaces/atividade.interface";
-import {Itemlista} from "../common/interfaces/item-lista.interface";
-import {ListaAtividades} from "../common/interfaces/lista-atividades.interface";
 import Membro from "../common/interfaces/membro.interface";
 import { EnumStatusLista } from "../common/tipos/tipos-enum";
+import { MembrosService } from "./membros.service";
 
 @Injectable({
     providedIn: 'root',
 })
 export class ListasService {
 
-    public retornaTodosMembros(): Membro[] {
-        return Membros;
+    constructor(private _membrosService: MembrosService) {
+
+    }
+
+    public retornaTodasListas(): Array<ListaAtividades> {
+        return Listas;
+    }
+
+    public retornaListaPeloId(id: number): ListaAtividades {
+        return Listas.find((lista: ListaAtividades) => lista.id_lista === id);
     }
 
     public retornaListasAtivas(): ListaAtividades[] {
@@ -29,31 +38,106 @@ export class ListasService {
         return arrayMembros;
     }
 
-    public buscaListaAtivaPeloIdMembro(id_membro: number): ListaAtividades {
+    public buscaListaEmAndamentoPeloIdMembro(id_membro: number): ListaAtividades {
         return Listas.find((lista: ListaAtividades) => (lista.id_membro === id_membro && lista.status_lista === EnumStatusLista.ANDAMENTO));
     }
 
-    public buscaItensListaPeloIdLista(id_lista: number): Itemlista[] {
+    public buscaListaAtivaPeloIdMembro(id_membro: number): ListaAtividades {
+        return Listas.find((lista: ListaAtividades) => (lista.id_membro === id_membro && lista.status_lista !== EnumStatusLista.FINALIZADA));
+    }
 
-        return ItensLista.filter((item: Itemlista) => item.id_lista === id_lista);
+    public buscaItensListaPeloIdLista(id_lista: number): Array<ItemLista> {
+
+        return ItensLista.filter((item: ItemLista) => item.id_lista === id_lista);
+    }
+
+    public removerTodosItensListaPeloIdLista(idLista: number): void {
+        ItensLista = ItensLista.filter((item: ItemLista) => item.id_lista !== idLista);
     }
 
     public buscaAtividadePeloId(id_atividade :number): Atividade {
         return Atividades.find((atividade: Atividade) => atividade.id_atividade === id_atividade);
     }
 
-    public atualizarItemDaLista(item: Itemlista, status: boolean): void {
+    public atualizarValorDescontoLista(idLista: number, valorDesconto: number): void {
+        let lista: ListaAtividades = this.retornaListaPeloId(idLista);
+        lista.valor_descontado = valorDesconto;
+    }
+
+    public atualizarItemDaLista(item: ItemLista, status: boolean): void {
         if(status !== undefined) {
             ItensLista
-            .filter((itemAtual: Itemlista) => itemAtual.id_lista === item.id_lista && itemAtual.id_atividade === item.id_atividade)
-            .map((objetoItem: Itemlista) => objetoItem.status_falta = status);
+            .filter((itemAtual: ItemLista) => itemAtual.id_lista === item.id_lista && itemAtual.id_atividade === item.id_atividade)
+            .map((objetoItem: ItemLista) => objetoItem.status_falta = status);
         }
+    }
 
+    public salvarItensLista(idLista: number, itemLista: ItemLista[]): void {
+        for(const item of itemLista) {
+            ItensLista.push(
+                {
+                    id_lista: idLista,
+                    id_atividade: item.id_atividade,
+                    valor_desconto: item.valor_desconto,
+                    status_falta: item.status_falta,
+                    checkboxSelecionado: true
+                }
+            );
+        }
     }
 
     public finalizarLista(listaFinalizada: ListaAtividades): void {
         Listas.filter((listaAtual: ListaAtividades) => listaAtual.id_lista === listaFinalizada.id_lista)
         .map((objetoLista: ListaAtividades) => objetoLista.status_lista = EnumStatusLista.FINALIZADA);
+    }
+
+    public iniciarLista(idLista: number): void {
+        Listas.filter((lista: ListaAtividades) => lista.id_lista === idLista)
+        .map((lista: ListaAtividades) => lista.status_lista = EnumStatusLista.ANDAMENTO);
+    }
+
+    public salvarLista(idMembro: number, nomeLista: string, itensLista: ItemLista[]): void {
+        const listaAtiva: ListaAtividades = this.buscaListaAtivaPeloIdMembro(idMembro);
+        let idAtual: number;
+        if(listaAtiva) {
+            idAtual = listaAtiva.id_lista;
+            listaAtiva.nome_lista = nomeLista;
+            this.removerTodosItensListaPeloIdLista(idAtual);
+        }else {
+            const arrayListasDeAtividades: Array<ListaAtividades> = this.retornaTodasListas();
+            //se for a primeira lista a ser cadastrada seu índice será zero
+            idAtual = 0;
+            //se não for a primeira lista o arrayListasDeAtividades não será vazio
+            //então atualiza o idAtual
+            if(arrayListasDeAtividades.length !== 0) {
+                //busca o último id que foi cadastrado
+                const ultimoId: number = arrayListasDeAtividades.map((item: ListaAtividades) => item.id_lista)
+                .reduce((anterior: number, atual: number) => Math.max(anterior, atual));
+                //incrementa o último id para definir o id do membro que será criado
+                idAtual = ultimoId+1;
+            }
+            const membro: Membro = this._membrosService.retornaMembroPeloId(idMembro);
+
+            Listas.push(
+                {
+                    id_lista: idAtual,
+                    id_membro: idMembro,
+                    nome_lista: nomeLista,
+                    status_lista: EnumStatusLista.ESPERA,
+                    valor_mesada: membro.valor_mesada,
+                    valor_descontado: 0,
+                    valor_total: membro.valor_mesada
+                }
+            );
+            this.removerTodosItensListaPeloIdLista(idAtual);
+
+        }
+        this.salvarItensLista(idAtual, itensLista);
+    }
+
+    public excluirLista(idLista: number): void {
+        this.removerTodosItensListaPeloIdLista(idLista);
+        Listas = Listas.filter((lista: ListaAtividades) => lista.id_lista !== idLista);
     }
 
 }
@@ -124,7 +208,7 @@ const Atividades: Atividade[] = [
     }
 ];
 
-const Listas: ListaAtividades[] = [
+let Listas: ListaAtividades[] = [
     {
         id_lista: 1,
         id_membro: 1,
@@ -145,41 +229,47 @@ const Listas: ListaAtividades[] = [
     },
 ];
 
-const ItensLista: Itemlista[] = [
+var ItensLista: Array<ItemLista> = [
     {
         id_lista: 1,
         id_atividade: 1,
         valor_desconto: 10,
-        status_falta: true
+        status_falta: true,
+        checkboxSelecionado: true
     },
     {
         id_lista: 1,
         id_atividade: 3,
         valor_desconto: 5,
-        status_falta: false
+        status_falta: false,
+        checkboxSelecionado: true
     },
     {
         id_lista: 1,
         id_atividade: 6,
         valor_desconto: 15,
-        status_falta: false
+        status_falta: false,
+        checkboxSelecionado: true
     },
     {
         id_lista: 2,
         id_atividade: 6,
         valor_desconto: 5,
-        status_falta: true
+        status_falta: true,
+        checkboxSelecionado: true
     },
     {
         id_lista: 2,
         id_atividade: 2,
         valor_desconto: 20,
-        status_falta: false
+        status_falta: false,
+        checkboxSelecionado: true
     },
     {
         id_lista: 2,
         id_atividade: 4,
         valor_desconto: 10,
-        status_falta: false
+        status_falta: false,
+        checkboxSelecionado: true
     },
 ];

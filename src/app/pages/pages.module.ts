@@ -22,6 +22,9 @@ import { ExcluirAtividadeComponent } from "./pagina-atividades/excluir-atividade
 import { CadastrarNovaAtividadeComponent } from "./pagina-atividades/cadastrar-nova-atividade/cadastrar-nova-atividade.component";
 import { EditarDadosAtividadeComponent } from "./pagina-atividades/editar-dados-atividade/editar-dados-atividade.component";
 import { FormAtividadeComponent } from "./pagina-atividades/form-atividade/form-atividade.component";
+import { GerenciarListasComponent } from "./pagina-listas/gerenciar-listas/gerenciar-listas.component";
+import { CardMembroAtivoComponent } from "./pagina-listas/card-membro-ativo/card-membro-ativo.component";
+import { CardListaTotalAtividadesComponent } from "./pagina-listas/card-lista-total-atividades/card-lista-total-atividades.component";
 
 @NgModule({
 	imports: [
@@ -51,6 +54,9 @@ import { FormAtividadeComponent } from "./pagina-atividades/form-atividade/form-
         FormAtividadeComponent,
         EditarDadosAtividadeComponent,
         ExcluirAtividadeComponent,
+        GerenciarListasComponent,
+        CardMembroAtivoComponent,
+        CardListaTotalAtividadesComponent,
 	],
     entryComponents: [
         CadastrarNovoMembroComponent,
@@ -59,6 +65,7 @@ import { FormAtividadeComponent } from "./pagina-atividades/form-atividade/form-
         CadastrarNovaAtividadeComponent,
         EditarDadosAtividadeComponent,
         ExcluirAtividadeComponent,
+        GerenciarListasComponent,
     ],
 	providers: []
 })
