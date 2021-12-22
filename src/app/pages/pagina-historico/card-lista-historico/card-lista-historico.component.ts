@@ -13,7 +13,7 @@ export class CardListaHistoricoComponent implements OnInit {
     public _lista: IListaAtividades;
 
     @Input()
-    public acaoDetalhesClick: any;
+    public acaoDetalhesClick: (lista: IListaAtividades) => void;
 
     @Input()
     public somenteLeitura: boolean;
