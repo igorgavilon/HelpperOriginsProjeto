@@ -1,7 +1,7 @@
 <div class="container-principal">
     <div class="div-superior">
         <h3>{{!edicaoSucesso ? 'Editar atividade': ' '}}</h3>
-            <mat-icon (click)="fecharModal()">{{'close'}}</mat-icon>
+        <span><i class="material-icons" (click)="fecharModal()">close</i></span>
     </div>
     <div class="div-form" *ngIf="!edicaoSucesso">
         <p>Altere os dados abaixo para editar uma atividade no RIOTT.</p>
@@ -14,8 +14,6 @@
     <div class="div-mensagem-sucesso" *ngIf="edicaoSucesso">
         <img src="../../../../assets/sucesso.png" alt="">
         <h3>Atividade editada com sucesso!</h3>
-        <app-primary-button texto="Finalizar" (click)="fecharModal()">
-
-        </app-primary-button>
+        <app-primary-button texto="Finalizar" (click)="fecharModal()"></app-primary-button>
     </div>
 </div>

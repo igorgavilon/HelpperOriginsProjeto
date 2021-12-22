@@ -1,0 +1,19 @@
+@mixin message {
+    width: 300px;
+    margin-top: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+        width: 130px;
+        margin: auto;
+    }
+
+    h3 {
+        font-size: 22px;
+        text-align: center;
+        color: #3b4244;
+    }
+}

@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { MatDialog } from '@angular/material/dialog';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import ListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
-import { EnumStatusLista } from 'src/app/@core/common/tipos/tipos-enum';
+import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
+import {ListaAtividades} from 'src/app/@core/common/interfaces/lista-atividades.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
-import { ModalComponent } from 'src/app/@theme/components/modal/modal.component';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
@@ -15,9 +12,9 @@ import { LoginComponent } from '../login/login.component';
   styleUrls: ['./pagina-listas.component.scss']
 })
 export class PaginaListasComponent implements OnInit {
-    public _listaMembros: Array<Membro>;
-    public _listasDeAtividades: Array<ListaAtividades>;
-    public _itensLista: Array<Itemlista>;
+    public _listaMembros: Membro[];
+    public _listasDeAtividades: ListaAtividades[];
+    public _itensLista: Itemlista[];
     public _lista_membro_selecionado: ListaAtividades;
     public _id_membro_selecionado: number;
     public _totalFaltas: number;
@@ -69,7 +66,7 @@ export class PaginaListasComponent implements OnInit {
   }
 
   public abrirModal(): void {
-    let bottomSheetRef = this.bottomSheet.open(LoginComponent, {
+    const bottomSheetRef = this.bottomSheet.open(LoginComponent, {
         panelClass: 'bottom-sheet-container'
     });
 

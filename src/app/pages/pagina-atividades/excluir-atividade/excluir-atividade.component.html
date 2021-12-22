@@ -1,20 +1,21 @@
 <div class="container-principal">
     <div class="div-superior">
         <h3>{{' '}}</h3>
-        <!-- <button mat-raised-button> -->
-            <mat-icon (click)="fecharModal()">{{'close'}}</mat-icon>
-        <!-- </button> -->
+        <span><i class="material-icons" (click)="fecharModal()">close</i></span>
     </div>
     <div class="div-confirma-exclusao" *ngIf="!exclusaoSucesso">
         <img src="../../../../assets/atencao.png" alt="">
         <h3>Deseja realmente excluir essa atividade?</h3>
-        <app-primary-button texto="Confirmar e excluir a atividade" (click)="excluirAtividade()">
+        
+        <div class="controle-botao">
+            <app-primary-button texto="Confirmar e excluir a atividade" (click)="excluirAtividade()"></app-primary-button>
+        </div>
 
-        </app-primary-button>
-        <app-primary-button texto="Cancelar" (click)="fecharModal()">
-
-        </app-primary-button>
+        <div class="controle-botao">
+            <app-secondary-dark-button texto="Cancelar" (click)="fecharModal()"></app-secondary-dark-button>
+        </div>
     </div>
+    
     <div class="div-mensagem-sucesso" *ngIf="exclusaoSucesso">
         <img src="../../../../assets/sucesso.png" alt="">
         <h3>Atividade excluída com sucesso!</h3>

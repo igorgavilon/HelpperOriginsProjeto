@@ -8,7 +8,7 @@ import { AtividadesService } from 'src/app/@core/services/atividades.service';
   templateUrl: './form-atividade.component.html',
   styleUrls: ['./form-atividade.component.scss']
 })
-export class FormAtividadeComponent implements OnInit {
+export class FormAtividadeComponent {
     @Input()
     public cancelarFormClick: () => void;
 

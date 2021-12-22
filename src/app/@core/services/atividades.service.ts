@@ -1,15 +1,15 @@
 import { Injectable } from "@angular/core";
-import Atividade from "../common/interfaces/atividade.interface";
+import {Atividade} from "../common/interfaces/atividade.interface";
 
 @Injectable({
     providedIn: 'root',
 })
 export class AtividadesService {
-    public retornaTodasAtividades(): Array<Atividade> {
+    public retornaTodasAtividades(): Atividade[] {
         return Atividades;
     }
 
-    public retornaTodasAtividadesAtivas(): Array<Atividade> {
+    public retornaTodasAtividadesAtivas(): Atividade[] {
         return Atividades.filter((atividade: Atividade) => atividade.ativo === true);
     }
 
@@ -58,7 +58,7 @@ export class AtividadesService {
     }
 }
 
-var Atividades: Array<Atividade> = [
+const Atividades: Atividade[] = [
     {
         id_atividade: 1,
         descricao: "Faucibus sit dictumst rhoncus ipsum amet egestas tempus eu risus. In sit.",
@@ -89,4 +89,4 @@ var Atividades: Array<Atividade> = [
         descricao: "Pulvinar aliquam elementum vitae vitae, massa. Quis rhoncus habitant ut.",
         ativo: true
     }
-]
+];

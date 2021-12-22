@@ -2,12 +2,16 @@
     <div class="div-container">
         <div class="div-informacoes">
             <div>
-                <p>Descrição da atividade:</p>
-                <h4>{{_atividade.descricao}}</h4>
+                <h4>Descrição da atividade:</h4>
+                <p>{{_atividade.descricao}}</p>
             </div>
-            <div>
-                <app-primary-button texto="Excluir" (click)="excluirAtividadeClick(_atividade.id_atividade)"></app-primary-button>
-                <app-primary-button texto="Editar" (click)="editarAtividadeClick(_atividade.id_atividade)"></app-primary-button>
+            <div class="buttons">
+                <div class="controle-botoes">
+                    <app-secondary-dark-button texto="Excluir" (click)="excluirAtividadeClick(_atividade.id_atividade)"></app-secondary-dark-button>
+                </div>
+                <div class="controle-botoes">
+                    <app-primary-button color="primary" texto="Editar" (click)="editarAtividadeClick(_atividade.id_atividade)"></app-primary-button>
+                </div>
             </div>
         </div>
     </div>
