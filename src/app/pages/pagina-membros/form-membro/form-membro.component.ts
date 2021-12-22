@@ -11,10 +11,10 @@ import { MembrosService } from 'src/app/@core/services/membros.service';
 })
 export class FormMembroComponent implements OnInit {
     @Input()
-    public cancelarFormClick: any;
+    public cancelarFormClick: () => void;
 
     @Input()
-    public salvarMembroClick: any;
+    public salvarMembroClick: (membro: Membro) => void;
 
     @Input()
     public dadosMembro: Membro;

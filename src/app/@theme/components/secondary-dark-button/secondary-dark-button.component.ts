@@ -5,11 +5,10 @@ import { Component, Input } from '@angular/core';
   templateUrl: './secondary-dark-button.component.html',
   styleUrls: ['./secondary-dark-button.component.scss']
 })
-export class SecondaryDarkButtonComponent {
+export class SecondaryDarkButtonComponent  {
     @Input()
     public texto: string;
 
     @Input()
     public color: string;
-
 }

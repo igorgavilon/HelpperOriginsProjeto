@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Itemlista} from 'src/app/@core/common/interfaces/item-lista.interface';
 import {ListaAtividades} from 'src/app/@core/common/interfaces/lista-atividades.interface';
-import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
+import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({
@@ -25,11 +25,7 @@ export class CardMembroResumoDescontosComponent implements OnInit {
             this.atualizarValoresCard();
         }
     }
-    //public _valorDescontosAtualizado: number;
-
-
-
-
+    
     public _mesada: number;
     public _listaAtividades: ListaAtividades;
     public _itensLista: Itemlista[];
@@ -54,6 +50,5 @@ export class CardMembroResumoDescontosComponent implements OnInit {
     this._valor_total = this._mesada - this._valor_descontos;
 
   }
-
-
+  
 }

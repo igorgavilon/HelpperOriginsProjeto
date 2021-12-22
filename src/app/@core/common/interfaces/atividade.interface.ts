@@ -3,3 +3,4 @@ export interface Atividade {
     descricao: string;
     ativo: boolean;
 }
+

@@ -50,7 +50,6 @@ export class PaginaMembrosComponent implements OnInit {
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
-        console.log('Bottom sheet has been dismissed.');
         this.carregarListaMembros();
     });
 

@@ -1,18 +1,79 @@
-.div-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+@mixin content {
+    font-size: 14px;
+
+    p {
+        color: #7c8d93;
+        padding-bottom: 3px;
+    }
+
+    span {
+        color: #3b4244;
+    }
 }
 
 .mat-card-principal {
-    border: 1px solid #83C5BE;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid #83c5be;
     box-sizing: border-box;
-    box-shadow: 7px 7px 14px rgba(181, 197, 202, 0.5);
     border-radius: 4px;
 }
 
-.span-total-faltas {
-    font-weight: bold;
-    font-size: 20px;
+.secao-info {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.total-faltas {
+    display: flex;
+    padding: 0px 16px;
+
+    border-right: 1px solid #dee8eb;
+
+    p {
+        color: #7c8d93;
+        font-size: 16px;
+        padding-right: 10px;
+    }
+
+    span {
+        font-size: 20px;
+        color: #3b4244;
+    }
+}
+
+.title-content {
+    padding-left: 24px;
+    @include content();
+}
+
+.menos {
+    padding: 0px 24px;
+    font-size: 24px;
+
+    span {
+        color: #3b4244;
+    }
+}
+
+.icone-igual {
+    font-size: 24px;
+
+    span {
+        color: #3b4244;
+    }
+}
+
+.valor {
+    padding-right: 24px;
+
+    p {
+        color: #7c8d93;
+        padding-bottom: 3px;
+    }
 }

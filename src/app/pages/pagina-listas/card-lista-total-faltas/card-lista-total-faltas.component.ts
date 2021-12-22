@@ -15,6 +15,6 @@ export class CardListaTotalFaltasComponent {
     @Input()
     public _valor_total: number;
     @Input()
-    public acaoFinalizarLista: any;
+    public acaoFinalizarLista: () => void;
 
 }

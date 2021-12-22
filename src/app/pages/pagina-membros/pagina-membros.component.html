@@ -1,9 +1,9 @@
-<div class="container-principal">
-    <div class="div-superior">
+<main class="container-principal">
+    <section class="superior">
         <h3>Membros:</h3>
-        <app-primary-button texto="Cadastrar novo membro" (click)="cadastrarNovoMembro()"></app-primary-button>
-    </div>
-    <div class="div-listagem-membros">
+        <app-primary-button color="accent" texto="Cadastrar novo membro" (click)="cadastrarNovoMembro()"></app-primary-button>
+    </section>
+    <section class="listagem-membros">
         <p *ngFor="let membro of listaMembros">
             <app-card-membro-infos [_membro]="membro"
                 [editarMembroClick]="editarMembro"
@@ -11,5 +11,5 @@
             </app-card-membro-infos>
         </p>
 
-    </div>
-</div>
+    </section>
+</main>
