@@ -9,7 +9,6 @@ import { AutenticacaoService } from 'src/app/@core/services/autenticacao.service
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-    public usuarioAutenticado: boolean = false;
     public mensagemErro: string = "";
 
   constructor(private _autenticacaoService: AutenticacaoService, private _rota: Router) { }
@@ -21,15 +20,13 @@ export class LoginComponent {
         this.verificaAutenticacao(resposta.status);
       },
       error: erro => {
-        console.log("Erro ao efetuar o login: ", erro.error)
         this.verificaAutenticacao(erro.error.status);
       }
     });
   }
 
   public verificaAutenticacao(status: boolean): void {
-    this.usuarioAutenticado = status;
-    if(this.usuarioAutenticado) {
+    if(status) {
       this._rota.navigate(['/pages/listas']);
     }else {
         this.mensagemErro = "Usuário Não Autenticado! E-mail ou senha incorretos!";

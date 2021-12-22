@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import IDadosLogin from "../common/interfaces/dados-login.interface";
 
 @Injectable({
     providedIn: 'root',
@@ -13,7 +14,7 @@ export class AutenticacaoService {
 
     }
 
-    public login(dadosLogin: any): Observable<any> {
+    public login(dadosLogin: IDadosLogin): Observable<any> {
         return this._httpClient.post(
             this._autenticacaoUrl,
             {
