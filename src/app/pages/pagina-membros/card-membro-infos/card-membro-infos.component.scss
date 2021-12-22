@@ -1,23 +1,61 @@
 .mat-card-principal {
-    border: 1px solid #DEE8EB;
+    border: 1px solid #dee8eb;
     box-sizing: border-box;
     border-radius: 4px;
     font-size: 0.8rem;
     width: auto;
-    max-height: fit-content;
+    max-height: 70vh;
     cursor: pointer;
 }
 
-.div-container {
+::ng-deep .mat-card {
+    padding: 24px !important;
+}
+
+.container {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
-.div-informacoes {
-    width: 100%;
+.botoes {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 10px;
+}
+
+.control-button {
+    min-height: 30px;
+    min-width: 80px;
+    padding-left: 10px;
+}
+
+/* == ITEMS DO CARD == */
+
+.avatar {
+    width: 8%;
+}
+
+.nome-membro {
+    width: 25%;
+}
+
+.info-membro {
+    display: flex;
+
+    width: 43%;
+}
+
+.info-membro > div {
+    margin-right: 50px;
+}
+
+p {
+    font-size: 14px;
+    color: #7c8d93;
+
+    padding-bottom: 7px;
+    margin: 0;
+}
+
+span {
+    font-size: 16px;
+    color: #3b4244;
 }

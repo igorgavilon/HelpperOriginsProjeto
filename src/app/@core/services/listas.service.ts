@@ -23,7 +23,7 @@ export class ListasService {
         return Listas.find((lista: ListaAtividades) => lista.id_lista === id);
     }
 
-    public retornaListasAtivas(): Array<ListaAtividades> {
+    public retornaListasAtivas(): ListaAtividades[] {
         return Listas.filter((lista: ListaAtividades) => lista.status_lista === EnumStatusLista.ANDAMENTO);
     }
 
@@ -162,7 +162,7 @@ export class ListasService {
 
 }
 
-var Membros: Array<Membro> = [
+const Membros: Membro[] = [
     {
         id_membro: 1,
         nome: "Luisa Sousa",
@@ -193,9 +193,9 @@ var Membros: Array<Membro> = [
         data_nascimento: "01/01/2014",
         valor_mesada: 500
     }
-]
+];
 
-var Atividades: Array<Atividade> = [
+const Atividades: Atividade[] = [
     {
         id_atividade: 1,
         descricao: "Faucibus sit dictumst rhoncus ipsum amet egestas tempus eu risus. In sit.",
@@ -226,9 +226,9 @@ var Atividades: Array<Atividade> = [
         descricao: "Pulvinar aliquam elementum vitae vitae, massa. Quis rhoncus habitant ut.",
         ativo: true
     }
-]
+];
 
-var Listas: Array<ListaAtividades> = [
+let Listas: ListaAtividades[] = [
     {
         id_lista: 1,
         id_membro: 1,
@@ -247,7 +247,7 @@ var Listas: Array<ListaAtividades> = [
         valor_descontado: 0,
         valor_total: 200
     },
-]
+];
 
 var ItensLista: Array<ItemLista> = [
     {
@@ -292,4 +292,4 @@ var ItensLista: Array<ItemLista> = [
         status_falta: false,
         checkboxSelecionado: true
     },
-]
+];

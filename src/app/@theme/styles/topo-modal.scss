@@ -1,0 +1,21 @@
+@mixin topo-modal() {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px 0px 20px;
+
+    h3 {
+        margin: 0;
+        font-size: 24px;
+        color: #3b4244;
+    }
+
+    i {
+        font-size: 35px;
+        color: #3b4244;
+        cursor: pointer;
+    }
+}

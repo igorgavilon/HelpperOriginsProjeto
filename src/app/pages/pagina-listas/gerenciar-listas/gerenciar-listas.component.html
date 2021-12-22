@@ -55,9 +55,9 @@
             <div class="div-listagem-atividades-membro-selecionado" *ngIf="idMembroSelecionado && listaAtivaMembroSelecionado">
                 <p *ngFor="let item of itensLista">
                     <app-card-item-lista
-                        [_modoReadOnly]="modoReadOnly"
-                        [_botaoMarcarFaltaVisivel]="false"
-                        [_itemLista]="item"
+                        [modoReadOnly]="modoReadOnly"
+                        [botaoMarcarFaltaVisivel]="false"
+                        [itemLista]="item"
                         [atualizarCheckBox]="atualizarCheckBox">
                     </app-card-item-lista>
                 </p>

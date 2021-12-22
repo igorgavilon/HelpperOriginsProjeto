@@ -6,7 +6,7 @@ import Membro from "../common/interfaces/membro.interface";
 })
 export class MembrosService {
 
-    public retornaTodosMembros(): Array<Membro> {
+    public retornaTodosMembros(): Membro[] {
         return Membros;
     }
 
@@ -50,10 +50,9 @@ export class MembrosService {
     public excluirMembroPeloId(id: number): void {
         Membros = Membros.filter((itemAtual: Membro) => itemAtual.id_membro !== id);
     }
-
 }
 
-var Membros: Array<Membro> = [
+let Membros: Membro[] = [
     {
         id_membro: 1,
         nome: "Luisa Sousa",
@@ -84,4 +83,4 @@ var Membros: Array<Membro> = [
         data_nascimento: "2014-01-01",
         valor_mesada: 500
     }
-]
+];
