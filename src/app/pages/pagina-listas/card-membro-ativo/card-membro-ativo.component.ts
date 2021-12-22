@@ -17,19 +17,11 @@ export class CardMembroAtivoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    //   this._mesada = this._membro.valor_mesada;
       this.atualizarValoresCard();
 
   }
 
   public atualizarValoresCard(): void {
-    // this._listaAtividades = this._listasService.buscaListaAtivaPeloIdMembro(this._membro.id_membro);
-    // this._itensLista = this._listasService.buscaItensListaPeloIdLista(this._listaAtividades.id_lista);
-    // this._valor_descontos = 0;
-    // for(const item of this._itensLista){
-    //     this._valor_descontos += item.status_falta? item.valor_desconto : 0;
-    // }
-    // this._valor_total = this._mesada - this._valor_descontos;
 
   }
 

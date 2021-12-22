@@ -4,15 +4,6 @@
 
         <mat-icon (click)="fecharModal()">{{'close'}}</mat-icon>
     </div>
-    <!-- <div class="div-form" *ngIf="!cadastroSucesso">
-        <p>Insira os dados abaixo para cadastrar uma nova atividade ao RIOTT</p>
-        <div>
-            <app-form-atividade [cancelarFormClick]="fecharModal"
-                [salvarAtividadeClick]="salvarAtividade"
-                [dadosAtividade]="dadosAtividade"></app-form-atividade>
-        </div>
-    </div> -->
-
     <div class="div-inferior">
         <div class="div-nome-lista" *ngIf="idMembroSelecionado && listaAtivaMembroSelecionado && !modoReadOnly">
             <mat-form-field appearance="outline">
