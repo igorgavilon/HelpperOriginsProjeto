@@ -1,0 +1,27 @@
+<div class="container-principal">
+    <div class="section-esquerda">
+        <h3>Históricos:</h3>
+        <div class="div-listas-todos-membros">
+            <p *ngFor="let membro of _listaMembros">
+                <app-card-membro-historico
+                    [_membro]="membro"
+                    (click)="atualizarDadosMembroSelecionado(membro.id_membro)"
+                    [_id_membro_selecionado]="_id_membro_selecionado">
+                </app-card-membro-historico>
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="section-direita">
+        <h5>Listas finalizadas:</h5>
+        <div class="div-listas-finalizadas">
+            <p *ngFor="let lista of _listasDeAtividades">
+                <app-card-lista-historico
+                    [somenteLeitura]="false"
+                    [_lista]="lista"
+                    [acaoDetalhesClick]="verDetalhesLista">
+                </app-card-lista-historico>
+            </p>
+        </div>
+    </div>
+</div>

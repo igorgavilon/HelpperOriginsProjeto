@@ -27,15 +27,35 @@ export class ListasService {
         return Listas.filter((lista: ListaAtividades) => lista.status_lista === EnumStatusLista.ANDAMENTO);
     }
 
-    public retornaTodosMembrosComListaAtiva(): Membro[] {
-        const arrayMembros: Membro[] = [];
-        const listasAtivas: ListaAtividades[] = this.retornaListasAtivas();
+    public retornaListasFinalizadas(): Array<IListaAtividades> {
+        return Listas.filter((lista: IListaAtividades) => lista.status_lista === EnumStatusLista.FINALIZADA);
+    }
+
+    public retornaListasFinalizadasPeloIdMembro(idMembro: number): Array<IListaAtividades> {
+        return Listas.filter((lista: IListaAtividades) => (lista.status_lista === EnumStatusLista.FINALIZADA) && (lista.id_membro === idMembro));
+    }
+
+    public retornaTodosMembrosComListaAtiva(): Array<Membro> {
+        let arrayMembros: Array<Membro> = [];
+        const listasAtivas: Array<ListaAtividades> = this.retornaListasAtivas();
 
         for(const lista of listasAtivas) {
             const membro: Membro = Membros.find((membroAtual: Membro) => membroAtual.id_membro === lista.id_membro);
             arrayMembros.push(membro);
         }
         return arrayMembros;
+    }
+
+    public retornaTodosMembrosComListaFinalizada(): Array<Membro> {
+        let arrayMembros: Array<Membro> = [];
+        const listasFinalizadas: Array<IListaAtividades> = this.retornaListasFinalizadas();
+
+        for(const lista of listasFinalizadas) {
+            const membro: Membro = Membros.find((membroAtual: Membro) => membroAtual.id_membro === lista.id_membro);
+            arrayMembros.push(membro);
+        }
+        //elimina itens duplicados do arrayMembros
+        return arrayMembros.filter((membro, indice) => arrayMembros.indexOf(membro) === indice);
     }
 
     public buscaListaEmAndamentoPeloIdMembro(id_membro: number): ListaAtividades {

@@ -1,0 +1,25 @@
+<mat-card [ngClass]="somenteLeitura ? 'mat-card-principal mat-elevation-z0' : 'mat-card-principal bordas-card'" >
+    <div class="div-container">
+        <div class="div-informacoes">
+            <div *ngIf="!somenteLeitura">
+                <p>Nome da lista:</p>
+                <h2>{{ _lista.nome_lista }}</h2>
+            </div>
+            <div>
+                <p>Número de faltas:</p>
+                <h2>{{ numeroFaltas }}</h2>
+            </div>
+            <div>
+                <p>Data de início:</p>
+                <h2>{{ '_lista.data_inicio'}}</h2>
+            </div>
+            <div>
+                <p>Data de finalização:</p>
+                <h2>{{ '_lista.data_finalizacao'}}</h2>
+            </div>
+            <div *ngIf="!somenteLeitura">
+                <app-primary-button texto="Ver detalhes" (click)="acaoDetalhesClick(_lista)"></app-primary-button>
+            </div>
+        </div>
+    </div>
+</mat-card>

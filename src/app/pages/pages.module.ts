@@ -25,6 +25,11 @@ import { FormAtividadeComponent } from "./pagina-atividades/form-atividade/form-
 import { GerenciarListasComponent } from "./pagina-listas/gerenciar-listas/gerenciar-listas.component";
 import { CardMembroAtivoComponent } from "./pagina-listas/card-membro-ativo/card-membro-ativo.component";
 import { CardListaTotalAtividadesComponent } from "./pagina-listas/card-lista-total-atividades/card-lista-total-atividades.component";
+import { PaginaHistoricoComponent } from "./pagina-historico/pagina-historico.component";
+import { CardMembroHistoricoComponent } from "./pagina-historico/card-membro-historico/card-membro-historico.component";
+import { CardListaHistoricoComponent } from "./pagina-historico/card-lista-historico/card-lista-historico.component";
+import { DetalhesListaHistoricoComponent } from "./pagina-historico/detalhes-lista-historico/detalhes-lista-historico.component";
+import { DetalhesItemListaHistoricoComponent } from "./pagina-historico/detalhes-item-lista-historico/detalhes-item-lista-historico.component";
 
 @NgModule({
 	imports: [
@@ -57,6 +62,11 @@ import { CardListaTotalAtividadesComponent } from "./pagina-listas/card-lista-to
         GerenciarListasComponent,
         CardMembroAtivoComponent,
         CardListaTotalAtividadesComponent,
+        PaginaHistoricoComponent,
+        CardMembroHistoricoComponent,
+        CardListaHistoricoComponent,
+        DetalhesListaHistoricoComponent,
+        DetalhesItemListaHistoricoComponent,
 	],
     entryComponents: [
         CadastrarNovoMembroComponent,
@@ -66,6 +76,7 @@ import { CardListaTotalAtividadesComponent } from "./pagina-listas/card-lista-to
         EditarDadosAtividadeComponent,
         ExcluirAtividadeComponent,
         GerenciarListasComponent,
+        DetalhesListaHistoricoComponent,
     ],
 	providers: []
 })
