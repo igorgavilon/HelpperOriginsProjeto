@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import {Atividade} from "../common/interfaces/atividade.interface";
+import Atividade from "../common/interfaces/atividade.interface";
 import {Itemlista} from "../common/interfaces/item-lista.interface";
 import {ListaAtividades} from "../common/interfaces/lista-atividades.interface";
 import Membro from "../common/interfaces/membro.interface";
