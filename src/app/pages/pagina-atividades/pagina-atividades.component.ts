@@ -12,7 +12,7 @@ import { ExcluirAtividadeComponent } from './excluir-atividade/excluir-atividade
   styleUrls: ['./pagina-atividades.component.scss']
 })
 export class PaginaAtividadesComponent implements OnInit {
-    public listaAtividades: Array<Atividade>;
+    public listaAtividades: Atividade[];
 
   constructor(public bottomSheet: MatBottomSheet, private _atividadesService: AtividadesService) { }
 
@@ -36,7 +36,6 @@ export class PaginaAtividadesComponent implements OnInit {
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
-        console.log('Bottom sheet has been dismissed.');
         this.carregarListaAtividades();
     });
   }
@@ -48,15 +47,12 @@ export class PaginaAtividadesComponent implements OnInit {
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
-        console.log('Bottom sheet has been dismissed.');
         this.carregarListaAtividades();
     });
 
   }
 
   public editarAtividade = (idAtividade: number): void => {
-      console.log('entrou editarAtividade');
-
     const atividadeEditar: Atividade = this._atividadesService.retornaAtividadePeloId(idAtividade);
 
     const bottomSheetRef = this.bottomSheet.open(EditarDadosAtividadeComponent, {
@@ -65,7 +61,6 @@ export class PaginaAtividadesComponent implements OnInit {
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
-        console.log('Bottom sheet has been dismissed.');
         this.carregarListaAtividades();
     });
   }

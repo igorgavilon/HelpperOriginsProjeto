@@ -1,6 +1,30 @@
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #b5c5ca #dee8eb;
+    scrollbar-gutter: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #dee8eb;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b5c5ca;
+    border-radius: 20px;
+    border: 2px solid #b5c5ca;
+}
+
 .container-principal {
-    width: 100vw;
+    width: 99%;
     box-sizing: border-box;
+
+    padding: 0px 10px;
+    height: auto;
+    margin: 0px 10px;
 }
 
 .div-superior {
@@ -13,5 +37,13 @@
 }
 
 .div-listagem-atividades {
+    height: 74vh;
+
     padding: 0 20px;
+    overflow-y: scroll;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 500;
 }

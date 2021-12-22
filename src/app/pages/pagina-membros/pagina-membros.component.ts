@@ -12,7 +12,7 @@ import { ExcluirMembroComponent } from './excluir-membro/excluir-membro.componen
   styleUrls: ['./pagina-membros.component.scss']
 })
 export class PaginaMembrosComponent implements OnInit {
-    public listaMembros: Array<Membro>;
+    public listaMembros: Membro[];
 
   constructor(public bottomSheet: MatBottomSheet, private _membrosService: MembrosService) { }
 
@@ -50,7 +50,6 @@ export class PaginaMembrosComponent implements OnInit {
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
-        console.log('Bottom sheet has been dismissed.');
         this.carregarListaMembros();
     });
 

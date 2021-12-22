@@ -1,15 +1,33 @@
-<mat-card class="mat-card-principal"
+<mat-card class="mat-card-principal mat-elevation-z1"
         [ngClass]="{'card-selecionado' : _membro.id_membro === _id_membro_selecionado}">
-    <div class="div-container">
+    <main class="div-container">
         <div class="div-avatar">
             <img mat-card-avatar [src]="_membro.imagem_avatar.arquivo === null ? '../../../../assets/' + _membro.imagem_avatar.url : _membro.imagem_avatar.url">
-            <!-- src="../../../../assets/{{_membro.imagem_avatar.url}}" -->
         </div>
         <div class="div-informacoes">
-            <h2>{{_membro.nome}}</h2>
-            <p>Mesada: R$ {{_mesada}}</p>
-            <p>Descontos: <span [ngClass]="_valor_descontos > 0 ? 'estilo-valor-negativo' : ''"><span *ngIf="_valor_descontos !== 0">-</span>R$ {{_valor_descontos}}</span> </p>
-            <p>Total: R$ {{_valor_total}}</p>
+            <h2 class="texto-titulo-info">{{ _membro.nome }}</h2>
+
+            <div class="flex-info">
+                <span class="card-texto-cinza">Mesada:</span>
+                <p class="texto-titulo-info">R$ {{_mesada}},00</p>
+            </div>
+
+            <div class="flex-info">
+                <span class="card-texto-cinza">Descontos:</span>
+                <p>
+                    <span [ngClass]="_valor_descontos > 0 ? 'estilo-valor-negativo' : ''">
+                        <span *ngIf="_valor_descontos !== 0">-</span>
+                        R$ {{_valor_descontos}},00
+                    </span>
+                </p>
+            </div>
+
+            <div class="flex-info">
+                <span class="card-texto-cinza">Total:</span>
+                <p class="texto-titulo-info">
+                    R$ {{_valor_total}},00
+                </p>
+            </div>
         </div>
-    </div>
+    </main>
 </mat-card>

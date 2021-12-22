@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import Membro from 'src/app/@core/common/interfaces/membro.interface';
 
 @Component({
@@ -6,19 +6,14 @@ import Membro from 'src/app/@core/common/interfaces/membro.interface';
   templateUrl: './card-membro-infos.component.html',
   styleUrls: ['./card-membro-infos.component.scss']
 })
-export class CardMembroInfosComponent implements OnInit {
+export class CardMembroInfosComponent   {
     @Input()
     public _membro: Membro;
 
     @Input()
-    public excluirMembroClick: any;
+    public excluirMembroClick: (idMembro: number) => void;
 
     @Input()
-    public editarMembroClick: any;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+    public editarMembroClick: (idMembro: number) => void;
 
 }
