@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import IItemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import IListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
+import ItemLista from 'src/app/@core/common/classes/classe-item-lista';
+import ListaAtividades from 'src/app/@core/common/classes/classe-lista-atividades';
 import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 import { GerenciarListasComponent } from './gerenciar-listas/gerenciar-listas.component';
@@ -13,9 +13,9 @@ import { GerenciarListasComponent } from './gerenciar-listas/gerenciar-listas.co
 })
 export class PaginaListasComponent implements OnInit {
     public _listaMembros: Array<Membro>;
-    public _listasDeAtividades: Array<IListaAtividades>;
-    public _itensLista: Array<IItemlista>;
-    public _lista_membro_selecionado: IListaAtividades;
+    public _listasDeAtividades: Array<ListaAtividades>;
+    public _itensLista: Array<ItemLista>;
+    public _lista_membro_selecionado: ListaAtividades;
     public _id_membro_selecionado: number;
     public _totalFaltas: number;
     public _mesada_membro_selecionado: number;
@@ -72,10 +72,6 @@ export class PaginaListasComponent implements OnInit {
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {
-        console.log('Bottom sheet has been dismissed.');
-        //quando os dados estiverem vindo do backend
-        //devo atualizar a página para refletir as alterações aqui
-        // window.location.reload();
         this.carregarDadosDaPagina();
     });
   }
