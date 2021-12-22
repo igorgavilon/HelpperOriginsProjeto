@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import {Atividade} from 'src/app/@core/common/interfaces/atividade.interface';
+import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
 import { AtividadesService } from 'src/app/@core/services/atividades.service';
 import { CadastrarNovaAtividadeComponent } from './cadastrar-nova-atividade/cadastrar-nova-atividade.component';
 import { EditarDadosAtividadeComponent } from './editar-dados-atividade/editar-dados-atividade.component';

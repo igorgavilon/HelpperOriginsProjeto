@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {Atividade} from 'src/app/@core/common/interfaces/atividade.interface';
+import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
 
 @Component({
   selector: 'app-card-atividade-infos',

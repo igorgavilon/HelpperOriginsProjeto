@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import {IArquivoImagem} from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
+import IArquivoImagem from 'src/app/@core/common/interfaces/arquivo-imagem.interface';
 
 @Component({
   selector: 'app-input-arquivo-imagem',

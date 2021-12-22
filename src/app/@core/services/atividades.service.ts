@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import {Atividade} from "../common/interfaces/atividade.interface";
+import Atividade from "../common/interfaces/atividade.interface";
 
 @Injectable({
     providedIn: 'root',
