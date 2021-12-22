@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Itemlista from 'src/app/@core/common/interfaces/item-lista.interface';
+import ItemLista from 'src/app/@core/common/classes/classe-item-lista';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({
@@ -15,10 +15,10 @@ export class CardItemListaComponent implements OnInit {
     public _botaoMarcarFaltaVisivel: boolean;
 
     @Input()
-    public _itemLista: Itemlista;
+    public _itemLista: ItemLista;
 
     @Input()
-    public atualizarCheckBox: any;
+    public atualizarCheckBox: () => void;
 
     @Output()
     public botaoStatusClicado: EventEmitter<any> = new EventEmitter();

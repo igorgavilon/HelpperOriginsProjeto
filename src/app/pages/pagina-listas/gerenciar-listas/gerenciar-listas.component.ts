@@ -3,8 +3,6 @@ import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bott
 import ItemLista from 'src/app/@core/common/classes/classe-item-lista';
 import ListaAtividades from 'src/app/@core/common/classes/classe-lista-atividades';
 import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
-import IItemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import IListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
 import Membro from 'src/app/@core/common/interfaces/membro.interface';
 import { EnumStatusLista } from 'src/app/@core/common/tipos/tipos-enum';
 import { AtividadesService } from 'src/app/@core/services/atividades.service';
@@ -23,15 +21,15 @@ export class GerenciarListasComponent implements OnInit {
     public listaMembros: Membro[];
     public idMembroSelecionado: number;
     public membroSelecionado: Membro;
-    public listaAtivaMembroSelecionado: IListaAtividades;
-    public itensLista: IItemlista[];
+    public listaAtivaMembroSelecionado: ListaAtividades;
+    public itensLista: ItemLista[];
     public modoReadOnly: boolean;
     public criarNovaLista: boolean;
     public modoEditarLista: boolean;
     public mostrarMensagemConfirmacao: boolean;
     public textoMensagemConfirmacao: string;
     public totalAtividadesLista: number;
-    public acaoConfirmacaoAceita: any;
+    public acaoConfirmacaoAceita: () => void;
 
     constructor(
             private _listasService: ListasService,
@@ -124,7 +122,7 @@ export class GerenciarListasComponent implements OnInit {
 
     //salva a lista e todos os itens associados a ela
     public salvarLista = (): void => {
-        const itensListaSelecionados: IItemlista[] = this.itensLista.filter((item: IItemlista) => item.checkboxSelecionado === true);
+        const itensListaSelecionados: ItemLista[] = this.itensLista.filter((item: ItemLista) => item.checkboxSelecionado === true);
         this._listasService.salvarLista(this.idMembroSelecionado, this.listaAtivaMembroSelecionado.nome_lista, itensListaSelecionados);
         this.textoMensagemInformativa = this.listaAtivaMembroSelecionado.id_lista ? "Lista salva com sucesso!" : "Lista criada com sucesso!";
         this.mostrarMensagemInformativa = true;

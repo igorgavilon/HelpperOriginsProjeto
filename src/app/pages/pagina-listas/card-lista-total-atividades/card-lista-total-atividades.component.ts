@@ -17,7 +17,7 @@ export class CardListaTotalAtividadesComponent implements OnInit {
     public modoEdicao: boolean;
 
     @Input()
-    public acaoBotaoClick: any;
+    public acaoBotaoClick: () => void;
 
   constructor() { }
 
