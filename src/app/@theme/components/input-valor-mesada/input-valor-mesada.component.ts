@@ -5,7 +5,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './input-valor-mesada.component.html',
   styleUrls: ['./input-valor-mesada.component.scss']
 })
-
 export class InputValorMesadaComponent {
     @Input()
     public valorMesadaInput: number;

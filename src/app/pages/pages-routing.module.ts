@@ -5,6 +5,8 @@ import { PagesComponent } from "./pages.component";
 import { LoginComponent } from './login/login.component';
 import { PaginaListasComponent } from './pagina-listas/pagina-listas.component';
 import { PaginaMembrosComponent } from './pagina-membros/pagina-membros.component';
+import { PaginaAtividadesComponent } from './pagina-atividades/pagina-atividades.component';
+import { PaginaHistoricoComponent } from './pagina-historico/pagina-historico.component';
 
 const routes: Routes = [
 	{
@@ -26,6 +28,14 @@ const routes: Routes = [
             {
 				path: 'membros',
 				component: PaginaMembrosComponent,
+			},
+            {
+				path: 'atividades',
+				component: PaginaAtividadesComponent,
+			},
+            {
+				path: 'historico',
+				component: PaginaHistoricoComponent,
 			},
         ],
 	},

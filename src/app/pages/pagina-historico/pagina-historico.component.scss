@@ -1,0 +1,53 @@
+.container-principal {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.section-esquerda {
+    width: 30%;
+    height: 80vh;
+}
+
+.section-esquerda h3 {
+    margin-left: 20px;
+}
+
+.section-direita {
+    width: 70%;
+    height: 80vh;
+}
+
+.section-direita h5 {
+    padding-left: 20px;
+}
+
+.div-listas-todos-membros {
+    width: auto;
+    padding: 0 20px;
+    height: 60vh;
+    overflow: scroll;
+}
+
+.div-botao-gerenciar {
+    display: flex;
+    width: auto;
+    height: 20vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div-listas-finalizadas {
+    width: auto;
+    padding: 0 20px;
+    height: 60vh;
+    overflow: scroll;
+
+}
+
+.div-total-faltas {
+    width: 100%;
+    padding: 0 20px;
+    height: 20vh;
+}

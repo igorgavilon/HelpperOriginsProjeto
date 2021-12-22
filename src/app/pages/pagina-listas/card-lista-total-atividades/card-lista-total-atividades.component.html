@@ -1,0 +1,14 @@
+<mat-card class="mat-card-principal">
+    <div class="div-container">
+        <app-card-membro-ativo [_membro]="membroSelecionado">
+
+        </app-card-membro-ativo>
+
+        <div class="descricao-atividade">
+            <p>Total de atividades na lista: <span class="span-total-faltas">{{ total_atividades_lista }}</span></p>
+        </div>
+        <div class="botao-status">
+            <app-primary-button texto="{{modoEdicao ? 'Salvar lista' : 'Criar lista'}}" (click)="acaoBotaoClick()"></app-primary-button>
+        </div>
+    </div>
+</mat-card>

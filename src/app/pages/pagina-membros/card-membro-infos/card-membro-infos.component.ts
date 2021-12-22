@@ -6,7 +6,6 @@ import Membro from 'src/app/@core/common/interfaces/membro.interface';
   templateUrl: './card-membro-infos.component.html',
   styleUrls: ['./card-membro-infos.component.scss']
 })
-
 export class CardMembroInfosComponent   {
     @Input()
     public _membro: Membro;
