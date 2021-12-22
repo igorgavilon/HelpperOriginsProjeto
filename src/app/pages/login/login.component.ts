@@ -27,9 +27,11 @@ export class LoginComponent {
 
   public verificaAutenticacao(status: boolean): void {
     if(status) {
+      this._autenticacaoService.mostrarMenuEmitter.emit(true);
       this._rota.navigate(['/pages/listas']);
     }else {
-        this.mensagemErro = "Usuário Não Autenticado! E-mail ou senha incorretos!";
+      this._autenticacaoService.mostrarMenuEmitter.emit(false);
+      this.mensagemErro = "Usuário Não Autenticado! E-mail ou senha incorretos!";
     }
 
   }
