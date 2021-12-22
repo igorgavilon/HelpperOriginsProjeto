@@ -27,12 +27,12 @@ export class ListasService {
         return Listas.filter((lista: ListaAtividades) => lista.status_lista === EnumStatusLista.ANDAMENTO);
     }
 
-    public retornaListasFinalizadas(): Array<IListaAtividades> {
-        return Listas.filter((lista: IListaAtividades) => lista.status_lista === EnumStatusLista.FINALIZADA);
+    public retornaListasFinalizadas(): Array<ListaAtividades> {
+        return Listas.filter((lista: ListaAtividades) => lista.status_lista === EnumStatusLista.FINALIZADA);
     }
 
-    public retornaListasFinalizadasPeloIdMembro(idMembro: number): Array<IListaAtividades> {
-        return Listas.filter((lista: IListaAtividades) => (lista.status_lista === EnumStatusLista.FINALIZADA) && (lista.id_membro === idMembro));
+    public retornaListasFinalizadasPeloIdMembro(idMembro: number): Array<ListaAtividades> {
+        return Listas.filter((lista: ListaAtividades) => (lista.status_lista === EnumStatusLista.FINALIZADA) && (lista.id_membro === idMembro));
     }
 
     public retornaTodosMembrosComListaAtiva(): Array<Membro> {
@@ -48,7 +48,7 @@ export class ListasService {
 
     public retornaTodosMembrosComListaFinalizada(): Array<Membro> {
         let arrayMembros: Array<Membro> = [];
-        const listasFinalizadas: Array<IListaAtividades> = this.retornaListasFinalizadas();
+        const listasFinalizadas: Array<ListaAtividades> = this.retornaListasFinalizadas();
 
         for(const lista of listasFinalizadas) {
             const membro: Membro = Membros.find((membroAtual: Membro) => membroAtual.id_membro === lista.id_membro);

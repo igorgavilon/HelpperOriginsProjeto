@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import IItemlista from 'src/app/@core/common/interfaces/item-lista.interface';
+import ItemLista from 'src/app/@core/common/classes/classe-item-lista';
 import { AtividadesService } from 'src/app/@core/services/atividades.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AtividadesService } from 'src/app/@core/services/atividades.service';
 })
 export class DetalhesItemListaHistoricoComponent implements OnInit {
     @Input()
-    public _itemLista: IItemlista;
+    public _itemLista: ItemLista;
 
     public descricao_atividade: string;
     public atividadeEmFalta: boolean;
