@@ -14,11 +14,9 @@ export class AtividadesService {
     }
 
     public excluirAtividadePeloId(id: number): void {
-        // Atividades = Atividades.filter((itemAtual: Atividade) => itemAtual.id_atividade !== id);
         const arrayAtividades: Atividade[] = this.retornaTodasAtividades();
         const indice = arrayAtividades.findIndex((itemAtual: Atividade) => itemAtual.id_atividade === id);
         arrayAtividades[indice].ativo = false;
-        console.log(Atividades);
 
     }
 

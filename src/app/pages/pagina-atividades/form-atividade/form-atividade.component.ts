@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
 import { AtividadesService } from 'src/app/@core/services/atividades.service';
 
@@ -9,10 +10,10 @@ import { AtividadesService } from 'src/app/@core/services/atividades.service';
 })
 export class FormAtividadeComponent implements OnInit {
     @Input()
-    public cancelarFormClick: any;
+    public cancelarFormClick: () => void;
 
     @Input()
-    public salvarAtividadeClick: any;
+    public salvarAtividadeClick: (form: NgForm) => void;
 
     @Input()
     public dadosAtividade: Atividade;
@@ -21,14 +22,5 @@ export class FormAtividadeComponent implements OnInit {
 
     ngOnInit(): void {
     }
-
-//   public salvarMembro(form: NgForm): void {
-//       console.log(form.value);
-
-//     const {id_membro, nome, data_nascimento, valor_mesada} = form.value;
-//     this.salvarMembroClick(
-//         {id_membro: id_membro, nome: nome, imagem_avatar: this.arquivoImagem, data_nascimento: data_nascimento, valor_mesada: valor_mesada}
-//     );
-//   }
 
 }

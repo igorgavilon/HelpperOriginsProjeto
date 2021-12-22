@@ -11,10 +11,10 @@ export class CardAtividadeInfosComponent implements OnInit {
     public _atividade: Atividade;
 
     @Input()
-    public excluirAtividadeClick: any;
+    public excluirAtividadeClick: (idAtividade: number) => void;
 
     @Input()
-    public editarAtividadeClick: any;
+    public editarAtividadeClick: (idAtividade: number) => void;
 
   constructor() { }
 

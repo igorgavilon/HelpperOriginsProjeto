@@ -1,9 +1,7 @@
 <div class="container-principal">
     <div class="div-superior">
         <h3>{{!edicaoSucesso ? 'Editar atividade': ' '}}</h3>
-        <!-- <button mat-raised-button> -->
             <mat-icon (click)="fecharModal()">{{'close'}}</mat-icon>
-        <!-- </button> -->
     </div>
     <div class="div-form" *ngIf="!edicaoSucesso">
         <p>Altere os dados abaixo para editar uma atividade no RIOTT.</p>

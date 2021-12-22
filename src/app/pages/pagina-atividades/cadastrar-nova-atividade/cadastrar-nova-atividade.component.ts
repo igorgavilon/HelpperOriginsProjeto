@@ -27,8 +27,6 @@ export class CadastrarNovaAtividadeComponent implements OnInit {
     }
 
     public salvarAtividade = (form: NgForm): void => {
-        console.log(form.value);
-
         this._atividadesService.salvarAtividade(form.value);
         this.cadastroSucesso = true;
     }
