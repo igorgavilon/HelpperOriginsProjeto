@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import IItemlista from 'src/app/@core/common/interfaces/item-lista.interface';
-import IListaAtividades from 'src/app/@core/common/interfaces/lista-atividades.interface';
+import ItemLista from 'src/app/@core/common/classes/classe-item-lista';
+import ListaAtividades from 'src/app/@core/common/classes/classe-lista-atividades';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({
@@ -10,16 +10,16 @@ import { ListasService } from 'src/app/@core/services/listas.service';
 })
 export class CardListaHistoricoComponent implements OnInit {
     @Input()
-    public _lista: IListaAtividades;
+    public _lista: ListaAtividades;
 
     @Input()
-    public acaoDetalhesClick: (lista: IListaAtividades) => void;
+    public acaoDetalhesClick: (lista: ListaAtividades) => void;
 
     @Input()
     public somenteLeitura: boolean;
 
     public numeroFaltas: number;
-    public itensLista: Array<IItemlista>;
+    public itensLista: Array<ItemLista>;
 
     constructor(private _listasService: ListasService) { }
 
