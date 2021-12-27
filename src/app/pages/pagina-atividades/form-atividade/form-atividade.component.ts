@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
+import {Atividade} from 'src/app/@core/common/interfaces/atividade.interface';
 import { AtividadesService } from 'src/app/@core/services/atividades.service';
 
 @Component({
@@ -20,7 +20,5 @@ export class FormAtividadeComponent {
 
     constructor(private _atividadesService: AtividadesService) { }
 
-    ngOnInit(): void {
-    }
 
 }

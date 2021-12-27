@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 
 @Component({
@@ -22,6 +22,7 @@ export class CardMembroHistoricoComponent implements OnInit {
   }
 
   public atualizarValoresCard(): void {
+    console.log('teste');
   }
 
 

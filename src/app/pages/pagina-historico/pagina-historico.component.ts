@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import ListaAtividades from 'src/app/@core/common/classes/classe-lista-atividades';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 import { DetalhesListaHistoricoComponent } from './detalhes-lista-historico/detalhes-lista-historico.component';
 
@@ -11,8 +11,8 @@ import { DetalhesListaHistoricoComponent } from './detalhes-lista-historico/deta
   styleUrls: ['./pagina-historico.component.scss']
 })
 export class PaginaHistoricoComponent implements OnInit {
-    public _listaMembros: Array<Membro>;
-    public _listasDeAtividades: Array<ListaAtividades>;
+    public _listaMembros: Membro[];
+    public _listasDeAtividades: ListaAtividades[];
     public _id_membro_selecionado: number;
 
   constructor(private _listasService: ListasService, public bottomSheet: MatBottomSheet) {//public dialog: MatDialog) {

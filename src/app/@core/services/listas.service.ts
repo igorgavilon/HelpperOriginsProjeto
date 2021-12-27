@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import ItemLista from "../common/classes/classe-item-lista";
 import ListaAtividades from "../common/classes/classe-lista-atividades";
-import Atividade from "../common/interfaces/atividade.interface";
-import Membro from "../common/interfaces/membro.interface";
+import {Atividade} from "../common/interfaces/atividade.interface";
+import {Membro} from "../common/interfaces/membro.interface";
 import { EnumStatusLista } from "../common/tipos/tipos-enum";
 import { MembrosService } from "./membros.service";
 
@@ -15,7 +15,7 @@ export class ListasService {
 
     }
 
-    public retornaTodasListas(): Array<ListaAtividades> {
+    public retornaTodasListas(): ListaAtividades[] {
         return Listas;
     }
 
@@ -27,17 +27,17 @@ export class ListasService {
         return Listas.filter((lista: ListaAtividades) => lista.status_lista === EnumStatusLista.ANDAMENTO);
     }
 
-    public retornaListasFinalizadas(): Array<ListaAtividades> {
+    public retornaListasFinalizadas(): ListaAtividades[] {
         return Listas.filter((lista: ListaAtividades) => lista.status_lista === EnumStatusLista.FINALIZADA);
     }
 
-    public retornaListasFinalizadasPeloIdMembro(idMembro: number): Array<ListaAtividades> {
+    public retornaListasFinalizadasPeloIdMembro(idMembro: number): ListaAtividades[] {
         return Listas.filter((lista: ListaAtividades) => (lista.status_lista === EnumStatusLista.FINALIZADA) && (lista.id_membro === idMembro));
     }
 
-    public retornaTodosMembrosComListaAtiva(): Array<Membro> {
-        let arrayMembros: Array<Membro> = [];
-        const listasAtivas: Array<ListaAtividades> = this.retornaListasAtivas();
+    public retornaTodosMembrosComListaAtiva(): Membro[] {
+        const arrayMembros: Membro[] = [];
+        const listasAtivas: ListaAtividades[] = this.retornaListasAtivas();
 
         for(const lista of listasAtivas) {
             const membro: Membro = Membros.find((membroAtual: Membro) => membroAtual.id_membro === lista.id_membro);
@@ -46,9 +46,9 @@ export class ListasService {
         return arrayMembros;
     }
 
-    public retornaTodosMembrosComListaFinalizada(): Array<Membro> {
-        let arrayMembros: Array<Membro> = [];
-        const listasFinalizadas: Array<ListaAtividades> = this.retornaListasFinalizadas();
+    public retornaTodosMembrosComListaFinalizada(): Membro[] {
+        const arrayMembros: Membro[] = [];
+        const listasFinalizadas: ListaAtividades[] = this.retornaListasFinalizadas();
 
         for(const lista of listasFinalizadas) {
             const membro: Membro = Membros.find((membroAtual: Membro) => membroAtual.id_membro === lista.id_membro);
@@ -66,7 +66,7 @@ export class ListasService {
         return Listas.find((lista: ListaAtividades) => (lista.id_membro === id_membro && lista.status_lista !== EnumStatusLista.FINALIZADA));
     }
 
-    public buscaItensListaPeloIdLista(id_lista: number): Array<ItemLista> {
+    public buscaItensListaPeloIdLista(id_lista: number): ItemLista[] {
 
         return ItensLista.filter((item: ItemLista) => item.id_lista === id_lista);
     }
@@ -80,7 +80,7 @@ export class ListasService {
     }
 
     public atualizarValorDescontoLista(idLista: number, valorDesconto: number): void {
-        let lista: ListaAtividades = this.retornaListaPeloId(idLista);
+        const lista: ListaAtividades = this.retornaListaPeloId(idLista);
         lista.valor_descontado = valorDesconto;
     }
 
@@ -124,7 +124,7 @@ export class ListasService {
             listaAtiva.nome_lista = nomeLista;
             this.removerTodosItensListaPeloIdLista(idAtual);
         }else {
-            const arrayListasDeAtividades: Array<ListaAtividades> = this.retornaTodasListas();
+            const arrayListasDeAtividades: ListaAtividades[] = this.retornaTodasListas();
             //se for a primeira lista a ser cadastrada seu índice será zero
             idAtual = 0;
             //se não for a primeira lista o arrayListasDeAtividades não será vazio
@@ -249,7 +249,7 @@ let Listas: ListaAtividades[] = [
     },
 ];
 
-var ItensLista: Array<ItemLista> = [
+let ItensLista: ItemLista[] = [
     {
         id_lista: 1,
         id_atividade: 1,

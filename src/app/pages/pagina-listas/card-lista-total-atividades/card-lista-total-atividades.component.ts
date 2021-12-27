@@ -1,12 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import { Component, Input } from '@angular/core';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 
 @Component({
   selector: 'app-card-lista-total-atividades',
   templateUrl: './card-lista-total-atividades.component.html',
   styleUrls: ['./card-lista-total-atividades.component.scss']
 })
-export class CardListaTotalAtividadesComponent implements OnInit {
+export class CardListaTotalAtividadesComponent {
     @Input()
     public membroSelecionado: Membro;
 
@@ -18,10 +18,5 @@ export class CardListaTotalAtividadesComponent implements OnInit {
 
     @Input()
     public acaoBotaoClick: () => void;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
