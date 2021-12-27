@@ -6,6 +6,8 @@ import { PaginaListasComponent } from './pagina-listas/pagina-listas.component';
 import { PaginaMembrosComponent } from './pagina-membros/pagina-membros.component';
 import { PaginaAtividadesComponent } from './pagina-atividades/pagina-atividades.component';
 import { PaginaHistoricoComponent } from './pagina-historico/pagina-historico.component';
+import {AuthGuard} from '../@core/guards/auth.guard';
+import { LoginGuard } from '../@core/guards/login.guard';
 
 const routes: Routes = [
 	{
@@ -15,22 +17,27 @@ const routes: Routes = [
             {
 				path: 'login',
 				component: LoginComponent,
+				canActivate: [LoginGuard]
 			},
             {
 				path: 'listas',
 				component: PaginaListasComponent,
+				canActivate: [AuthGuard]
 			},
             {
 				path: 'membros',
 				component: PaginaMembrosComponent,
+				canActivate: [AuthGuard]
 			},
             {
 				path: 'atividades',
 				component: PaginaAtividadesComponent,
+				canActivate: [AuthGuard]
 			},
             {
 				path: 'historico',
 				component: PaginaHistoricoComponent,
+				canActivate: [AuthGuard]
 			},
         ],
 	},
