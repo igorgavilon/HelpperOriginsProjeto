@@ -6,20 +6,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './input-email.component.html',
   styleUrls: ['./input-email.component.scss']
 })
+
 export class InputEmailComponent implements OnInit{
   public emailForm: FormGroup; 
 
+
   constructor(private formBuilder: FormBuilder) {
 
-   }
+  }
 
   ngOnInit(): void {
-
     this.emailForm = this.formBuilder.group({
-      email: [null, [
+      email: ["", [
               Validators.required, 
               Validators.email
         ]]
-    });
+    });     
   }
+
+
 }
