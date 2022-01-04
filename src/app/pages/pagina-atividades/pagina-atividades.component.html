@@ -3,9 +3,9 @@
         <h3>Atividades:</h3>
         <app-primary-button texto="Cadastrar nova atividade" (click)="cadastrarNovaAtividade()"></app-primary-button>
     </div>
-    <div class="div-listagem-atividades">
+    <div class="div-listagem-atividades" *ngIf="listaAtividades">
         <p *ngFor="let atividade of listaAtividades">
-            <app-card-atividade-infos [_atividade]="atividade"
+            <app-card-atividade-infos [atividade]="atividade"
                 [editarAtividadeClick]="editarAtividade"
                 [excluirAtividadeClick]="excluirAtividade">
             </app-card-atividade-infos>

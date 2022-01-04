@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
+import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
 import { AtividadesService } from 'src/app/@core/services/atividades.service';
 
 @Component({
@@ -9,16 +10,17 @@ import { AtividadesService } from 'src/app/@core/services/atividades.service';
   styleUrls: ['./editar-dados-atividade.component.scss']
 })
 export class EditarDadosAtividadeComponent implements OnInit {
-    public edicaoSucesso: boolean;
+    public edicaoSucesso: boolean = false;
+    public edicaoErro: boolean = false;
+    public mensagemErro: string;
 
     constructor(
             private _atividadesService: AtividadesService,
             public bottomSheetRef: MatBottomSheetRef<EditarDadosAtividadeComponent>,
-            @Inject(MAT_BOTTOM_SHEET_DATA) public dadosAtividade: any
+            @Inject(MAT_BOTTOM_SHEET_DATA) public dadosAtividade: Atividade
         ) { }
 
     ngOnInit(): void {
-        this.edicaoSucesso = false;
     }
 
     public fecharModal = (): void => {
@@ -26,8 +28,19 @@ export class EditarDadosAtividadeComponent implements OnInit {
     }
 
     public salvarAtividade = (form: NgForm): void => {
-        this._atividadesService.salvarAtividade(form.value);
-        this.edicaoSucesso = true;
+        this._atividadesService.salvarAtividade(form.value).subscribe({
+            next: resposta => {
+                this.edicaoSucesso = true;
+            },
+            error: erro => {
+                this.mensagemErro = erro.error;
+                this.edicaoErro = true;
+            }
+        });
+    }
+
+    public tentarNovamente(): void {
+        this.edicaoErro = false;
     }
 
 }

@@ -12,7 +12,7 @@ import { ExcluirAtividadeComponent } from './excluir-atividade/excluir-atividade
   styleUrls: ['./pagina-atividades.component.scss']
 })
 export class PaginaAtividadesComponent implements OnInit {
-    public listaAtividades: Atividade[];
+    public listaAtividades: Atividade[] = [];
 
   constructor(public bottomSheet: MatBottomSheet, private _atividadesService: AtividadesService) { }
 
@@ -21,14 +21,21 @@ export class PaginaAtividadesComponent implements OnInit {
   }
 
   public carregarListaAtividades(): void {
-    this.listaAtividades = this._atividadesService.retornaTodasAtividadesAtivas();
+    this._atividadesService.retornaTodasAtividadesAtivas().subscribe({
+      next: resposta => {
+        this.listaAtividades = resposta.data.activeTasks;
+      },
+      error: erro => {
+        
+      }
+    });
   }
 
   public cadastrarNovaAtividade(): void {
     const novaAtividade: Atividade = {
-        id_atividade: null,
-        descricao: null,
-        ativo: true
+        id: null,
+        description: null,
+        isDeleted: false
     };
     const bottomSheetRef = this.bottomSheet.open(CadastrarNovaAtividadeComponent, {
         panelClass: 'bottom-sheet-container',
@@ -40,7 +47,7 @@ export class PaginaAtividadesComponent implements OnInit {
     });
   }
 
-  public excluirAtividade = (idAtividade: number): void => {
+  public excluirAtividade = (idAtividade: string): void => {
     const bottomSheetRef = this.bottomSheet.open(ExcluirAtividadeComponent, {
         panelClass: 'bottom-sheet-container',
         data: idAtividade
@@ -52,12 +59,10 @@ export class PaginaAtividadesComponent implements OnInit {
 
   }
 
-  public editarAtividade = (idAtividade: number): void => {
-    const atividadeEditar: Atividade = this._atividadesService.retornaAtividadePeloId(idAtividade);
-
+  public editarAtividade = (atividade: Atividade): void => {
     const bottomSheetRef = this.bottomSheet.open(EditarDadosAtividadeComponent, {
         panelClass: 'bottom-sheet-container',
-        data: atividadeEditar
+        data: atividade
     });
 
     bottomSheetRef.afterDismissed().subscribe(() => {

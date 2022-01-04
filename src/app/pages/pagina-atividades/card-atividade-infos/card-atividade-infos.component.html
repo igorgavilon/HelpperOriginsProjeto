@@ -3,14 +3,14 @@
         <div class="div-informacoes">
             <div>
                 <h4>Descrição da atividade:</h4>
-                <p>{{_atividade.descricao}}</p>
+                <p>{{atividade.description}}</p>
             </div>
             <div class="buttons">
                 <div class="controle-botoes">
-                    <app-secondary-dark-button texto="Excluir" (click)="excluirAtividadeClick(_atividade.id_atividade)"></app-secondary-dark-button>
+                    <app-secondary-dark-button texto="Excluir" (click)="excluirAtividadeClick(atividade.id)"></app-secondary-dark-button>
                 </div>
                 <div class="controle-botoes">
-                    <app-primary-button color="primary" texto="Editar" (click)="editarAtividadeClick(_atividade.id_atividade)"></app-primary-button>
+                    <app-primary-button color="primary" texto="Editar" (click)="editarAtividadeClick(atividade)"></app-primary-button>
                 </div>
             </div>
         </div>

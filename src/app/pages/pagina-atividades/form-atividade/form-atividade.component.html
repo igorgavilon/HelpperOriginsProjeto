@@ -1,14 +1,14 @@
 <form #membroForm="ngForm">
-    <input type="hidden" [ngModel]="dadosAtividade.id_atividade" name="id_atividade">
+    <input type="hidden" [ngModel]="dadosAtividade.id" name="id">
 
     <mat-form-field appearance="outline">
         <mat-label>Descrição da atividade</mat-label>
-        <textarea rows="10" matInput placeholder="Descrição da atividade" name="descricao" [ngModel]="dadosAtividade.descricao"></textarea>
+        <textarea rows="10" matInput placeholder="Descrição da atividade" name="description" [ngModel]="dadosAtividade.description"></textarea>
       </mat-form-field>
 
-    <input type="hidden" [ngModel]="dadosAtividade.ativo" name="ativo">
+    <input type="hidden" [ngModel]="dadosAtividade.isDeleted" name="isDeleted">
 
-    <app-primary-button [texto]="dadosAtividade.id_atividade ? 'Salvar edição' : 'Adicionar atividade'" (click)="salvarAtividadeClick(membroForm)"></app-primary-button>
+    <app-primary-button [texto]="dadosAtividade.id ? 'Salvar edição' : 'Adicionar atividade'" (click)="salvarAtividadeClick(membroForm)"></app-primary-button>
     <p>
         <app-secondary-dark-button texto="Cancelar" (click)="cancelarFormClick()"></app-secondary-dark-button>
     </p>

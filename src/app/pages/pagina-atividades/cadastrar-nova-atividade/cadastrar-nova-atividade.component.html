@@ -1,9 +1,9 @@
 <div class="container-principal">
     <div class="div-superior">
-        <h3>{{!cadastroSucesso ? 'Cadastrar nova atividade': ' '}}</h3>
+        <h3>{{!cadastroSucesso && !cadastroErro ? 'Cadastrar nova atividade': ' '}}</h3>
         <span><i class="material-icons" (click)="fecharModal()">close</i></span> 
     </div>
-    <div class="div-form" *ngIf="!cadastroSucesso">
+    <div class="div-form" *ngIf="!cadastroSucesso && !cadastroErro">
         <p>Insira os dados abaixo para cadastrar uma nova atividade ao RIOTT</p>
         <div>
             <app-form-atividade [cancelarFormClick]="fecharModal"
@@ -15,5 +15,12 @@
         <img src="../../../../assets/sucesso.png" alt="">
         <h3>Atividade adicionada com sucesso!</h3>
         <app-primary-button texto="Finalizar" (click)="fecharModal()"></app-primary-button>
+    </div>
+    <div class="div-mensagem-sucesso" *ngIf="cadastroErro">
+        <img src="../../../../assets/erro.png" alt="">
+        <h3>Algo deu errado</h3>
+        <h5>{{ mensagemErro }}</h5>
+        <app-primary-button texto="Tentar novamente" (click)="tentarNovamente()"></app-primary-button>
+        <app-primary-button texto="Voltar ao início" (click)="fecharModal()"></app-primary-button>
     </div>
 </div>

@@ -17,7 +17,7 @@ export class DetalhesItemListaHistoricoComponent implements OnInit {
   constructor(private _atividadesService: AtividadesService) { }
 
   ngOnInit(): void {
-      this.descricao_atividade = this._atividadesService.retornaAtividadePeloId(this._itemLista.id_atividade).descricao;
+      this.descricao_atividade = this._atividadesService.retornaAtividadePeloId(this._itemLista.id_atividade).description;
       this.atividadeEmFalta = this._itemLista.status_falta;
   }
 

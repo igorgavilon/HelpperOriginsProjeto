@@ -8,13 +8,13 @@ import Atividade from 'src/app/@core/common/interfaces/atividade.interface';
 })
 export class CardAtividadeInfosComponent {
     @Input()
-    public _atividade: Atividade;
+    public atividade: Atividade;
 
     @Input()
-    public excluirAtividadeClick: (idAtividade: number) => void;
+    public excluirAtividadeClick: (idAtividade: string) => void;
 
     @Input()
-    public editarAtividadeClick: (idAtividade: number) => void;
+    public editarAtividadeClick: (atividade: Atividade) => void;
 
   constructor() { }
 

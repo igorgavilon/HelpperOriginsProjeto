@@ -1,6 +1,6 @@
 export default interface Atividade {
-    id_atividade: number;
-    descricao: string;
-    ativo: boolean;
+    id: string;
+    description: string;
+    isDeleted: boolean;
 }
 

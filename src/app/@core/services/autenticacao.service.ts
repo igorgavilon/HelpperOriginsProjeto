@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { EventEmitter, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import IDadosLogin from "../common/interfaces/dados-login.interface";
@@ -37,6 +37,14 @@ export class AutenticacaoService {
             return true;
         }
         return false;
+    }
+
+    public retornaToken(): string {
+        return localStorage.getItem('tokenUsuario');
+    }
+
+    public retornaHeaderComToken(): HttpHeaders {
+        return new HttpHeaders().set('Authorization', "Bearer " + this.retornaToken());
     }
 
 }
