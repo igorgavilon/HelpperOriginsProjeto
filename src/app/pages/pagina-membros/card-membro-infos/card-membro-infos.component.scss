@@ -4,12 +4,10 @@
     border-radius: 4px;
     font-size: 0.8rem;
     width: auto;
-    max-height: 70vh;
+    max-height: fit-content;
     cursor: pointer;
-}
-
-::ng-deep .mat-card {
-    padding: 24px !important;
+    padding: 24px;
+    margin-bottom: 7px;
 }
 
 .container {

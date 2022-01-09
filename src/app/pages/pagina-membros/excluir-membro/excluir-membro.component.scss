@@ -12,19 +12,22 @@
 
 .div-confirma-exclusao {
     @include message();
+
+    img {
+        margin-bottom: 10px;
+    }
 }
 
 .div-mensagem-sucesso {
     @include message();
+
+    img {
+        margin-bottom: 10px;
+    }
 }
 
 .controle-botao {
     margin-bottom: 10px;
-}
-
-mat-icon {
-    font-size: 3rem;
-    cursor: pointer;
 }
 
 ::ng-deep .mat-bottom-sheet-container-large {
