@@ -5,6 +5,8 @@
         class="example-right-align"
         placeholder="Valor da mesada"
         [ngModel]="valorMesadaInput"
-        name="inputValorMesada">
-    <span class="prefix" matPrefix>R$&nbsp;</span>
+        name="inputValorMesada"
+        min="1"
+        oninput="validity.valid ? this.save = value : value = this.save;">
+    <span matPrefix>R$&nbsp;</span>
 </mat-form-field>
