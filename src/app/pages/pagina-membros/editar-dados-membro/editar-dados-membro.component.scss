@@ -19,16 +19,15 @@
 
 .div-mensagem-sucesso {
     @include message();
+
+    img {
+        margin-bottom: 10px;
+    }
 }
 
 i {
     font-size: 35px;
     color: #3b4244;
-    cursor: pointer;
-}
-
-mat-icon {
-    font-size: 3rem;
     cursor: pointer;
 }
 

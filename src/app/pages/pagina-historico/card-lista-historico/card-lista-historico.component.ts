@@ -19,7 +19,7 @@ export class CardListaHistoricoComponent implements OnInit {
     public somenteLeitura: boolean;
 
     public numeroFaltas: number;
-    public itensLista: Array<ItemLista>;
+    public itensLista: ItemLista[];
 
     constructor(private _listasService: ListasService) { }
 

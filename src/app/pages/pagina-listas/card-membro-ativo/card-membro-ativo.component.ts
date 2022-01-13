@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 
 @Component({
   selector: 'app-card-membro-ativo',
@@ -13,16 +13,13 @@ export class CardMembroAtivoComponent implements OnInit {
     @Input()
     public _id_membro_selecionado: number;
 
-
-  constructor() { }
-
   ngOnInit(): void {
       this.atualizarValoresCard();
 
   }
 
   public atualizarValoresCard(): void {
-
+    console.log('teste');
   }
 
 }

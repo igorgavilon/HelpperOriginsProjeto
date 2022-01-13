@@ -24,6 +24,10 @@
     max-width: 300px;
     margin: auto;
     @include message();
+
+    img {
+        margin-bottom: 10px;
+    }
 }
 
 p {

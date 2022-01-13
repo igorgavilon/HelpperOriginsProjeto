@@ -9,7 +9,7 @@ import { AutenticacaoService } from 'src/app/@core/services/autenticacao.service
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-    public mensagemErro: string = "";
+  public mensagemErro: string = "";
 
   constructor(private _autenticacaoService: AutenticacaoService, private _rota: Router) { }
 

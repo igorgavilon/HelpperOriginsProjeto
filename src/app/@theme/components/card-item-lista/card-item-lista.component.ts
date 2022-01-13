@@ -8,29 +8,29 @@ import { ListasService } from 'src/app/@core/services/listas.service';
   styleUrls: ['./card-item-lista.component.scss']
 })
 export class CardItemListaComponent implements OnInit {
-    @Input()
-    public modoReadOnly: boolean;
-
-    @Input()
-    public botaoMarcarFaltaVisivel: boolean;
-
-    @Input()
-    public itemLista: ItemLista;
-
-    @Input()
-    public atualizarCheckBox: () => void;
-
-    @Output()
-    public botaoStatusClicado: EventEmitter<number> = new EventEmitter();
+  @Input()
+  public modoReadOnly: boolean;
+  
+  @Input()
+  public botaoMarcarFaltaVisivel: boolean;
+  
+  @Input()
+  public itemLista: ItemLista;
+  
+  @Input()
+  public atualizarCheckBox: () => void;
+  
+  @Output()
+  public botaoStatusClicado: EventEmitter<number> = new EventEmitter();
 
     public descricao_atividade: string;
     public atividadeEmFalta: boolean;
     public valorDesconto: number;
     public checkboxSelecionado: boolean;
-
-  constructor(private _listaService: ListasService) { }
-
-  ngOnInit(): void {
+    
+    constructor(private _listaService: ListasService) { }
+    
+    ngOnInit(): void {
     this.inicializarVariáveis();
   }
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import ItemLista from 'src/app/@core/common/classes/classe-item-lista';
 import ListaAtividades from 'src/app/@core/common/classes/classe-lista-atividades';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 import { ListasService } from 'src/app/@core/services/listas.service';
 import { GerenciarListasComponent } from './gerenciar-listas/gerenciar-listas.component';
 

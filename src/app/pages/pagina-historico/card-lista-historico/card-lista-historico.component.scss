@@ -1,12 +1,15 @@
 .mat-card-principal {
+    border: 1px solid #dee8eb;
     box-sizing: border-box;
-    font-size: 0.8rem;
-    width: auto;
-    max-height: fit-content;
+
+    border-radius: 4px;
+
+    margin-bottom: 10px;
+    padding: 15px 0px;
 }
 
 .bordas-card {
-    border: 1px solid #DEE8EB !important;
+    border: 1px solid #dee8eb !important;
     border-radius: 4px !important;
 }
 
@@ -21,7 +24,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 10px;
+
+    h2 {
+        color: #7c8d93;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    p {
+        color: #3b4244;
+        font-size: 16px;
+    }
 }
 
 .div-informacoes div {
