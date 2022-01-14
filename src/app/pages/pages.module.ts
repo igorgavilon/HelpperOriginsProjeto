@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { ThemeModule } from "../@theme/theme.module";
 import { PagesRoutingModule } from "./pages-routing.module";
 import { PagesComponent } from "./pages.component";
-import { ExampleComponent } from './example/example.component';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from "./material.module";
 import { PaginaListasComponent } from "./pagina-listas/pagina-listas.component";
@@ -42,7 +41,6 @@ import { DetalhesItemListaHistoricoComponent } from "./pagina-historico/detalhes
 	],
 	declarations: [
 		PagesComponent,
-		ExampleComponent,
 		LoginComponent,
         PaginaListasComponent,
         CardMembroResumoDescontosComponent,

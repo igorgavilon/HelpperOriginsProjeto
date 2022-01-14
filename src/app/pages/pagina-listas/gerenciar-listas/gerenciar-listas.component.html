@@ -2,7 +2,7 @@
     <div class="div-superior">
         <h3>{{ !modoReadOnly ? (modoEditarLista ? 'Editar lista' : 'Criar nova lista') : 'Gerenciar listas' }}</h3>
 
-        <mat-icon (click)="fecharModal()">{{'close'}}</mat-icon>
+        <span><i class="material-icons" (click)="fecharModal()">close</i></span>
     </div>
     <div class="div-inferior">
         <div class="div-nome-lista" *ngIf="idMembroSelecionado && listaAtivaMembroSelecionado && !modoReadOnly">
@@ -28,17 +28,23 @@
             </div>
             <div class="div-barra-menu" *ngIf="idMembroSelecionado && listaAtivaMembroSelecionado && modoReadOnly">
                 <div class="div-status-lista-info">
-                    <p>Status da lista</p>
-                    <p>{{ listaAtivaMembroSelecionado.status_lista }}</p>
+                    <h3>Status da lista</h3>
+                    <p [ngClass]="{'espera': listaAtivaMembroSelecionado.status_lista === 'Em espera', 'andamento': listaAtivaMembroSelecionado.status_lista === 'Em andamento'}">{{ listaAtivaMembroSelecionado.status_lista }}</p>
                 </div>
-                <div class="botoes-crud-lista">
-                    <app-primary-button texto="Excluir lista" (click)="confirmarExclusaoLista()">
-                    </app-primary-button>
-                    <app-primary-button texto="Editar lista" (click)="editarLista()">
-                    </app-primary-button>
-                    <app-primary-button texto="Iniciar lista" (click)="confirmarInicioLista()"
-                        *ngIf="listaAtivaMembroSelecionado.status_lista === 'Em espera'">
-                    </app-primary-button>
+                <div [ngClass]="{'botoes-crud-lista': listaAtivaMembroSelecionado.status_lista === 'Em espera', 'non-flex': listaAtivaMembroSelecionado.status_lista === 'Em andamento'}">
+                    <div class="controle-botao">
+                        <app-secondary-dark-button texto="Excluir lista" (click)="confirmarExclusaoLista()">
+                        </app-secondary-dark-button>
+                    </div>
+                    <div class="controle-botao">
+                        <app-primary-button color="primary" texto="Editar lista" (click)="editarLista()" *ngIf="listaAtivaMembroSelecionado.status_lista === 'Em espera'">
+                        </app-primary-button>
+                    </div>
+                    <div class="controle-botao">
+                        <app-primary-button texto="Iniciar lista" (click)="confirmarInicioLista()"
+                            *ngIf="listaAtivaMembroSelecionado.status_lista === 'Em espera'">
+                        </app-primary-button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,7 +54,7 @@
             </div>
             <div class="div-card-atividades" *ngIf="!idMembroSelecionado">
                 <mat-card class="mat-card-principal" *ngFor="let atividade of listaAtividades">
-                    <p>Descrição da atividade:</p>
+                    <h3 class="h3">Descrição da atividade:</h3>
                     <p>{{ atividade.descricao }}</p>
                 </mat-card>
             </div>
@@ -63,14 +69,16 @@
                 </p>
             </div>
             <div class="div-mensagem-criar-lista" *ngIf="idMembroSelecionado && !listaAtivaMembroSelecionado">
-                <img src="../../../../assets/atencao.png" alt="" width="80px" height="80px">
-                <h3>Este membro não possui lista configurada</h3>
+                <div class="controle-confirmacao">
+                    <img src="../../../../assets/atencao.png" alt="" width="80px" height="80px">
+                    <h3>Este membro não <br> possui lista configurada</h3>
+                </div>
                 <app-primary-button texto="Criar lista" (click)="criarLista()">
                 </app-primary-button>
             </div>
         </div>
     </div>
-    <app-card-lista-total-atividades *ngIf="idMembroSelecionado && listaAtivaMembroSelecionado && !modoReadOnly"
+    <app-card-lista-total-atividades [ngClass]="{'criar-lista': criarNovaLista === 'true'}" *ngIf="idMembroSelecionado && listaAtivaMembroSelecionado && !modoReadOnly"
         [membroSelecionado]="membroSelecionado"
         [modoEdicao]="modoEditarLista"
         [total_atividades_lista]="totalAtividadesLista" [acaoBotaoClick]="salvarLista">
@@ -86,12 +94,14 @@
 </div>
 
 <div class="div-mensagem-confirmacao" *ngIf="mostrarMensagemConfirmacao">
-    <img src="../../../../assets/atencao.png" alt="">
-    <h3>Deseja realmente {{textoMensagemConfirmacao}} essa lista?</h3>
-    <app-primary-button texto="Confirmar e {{ textoMensagemConfirmacao }} a lista" (click)="acaoConfirmacaoAceita()">
+        <img src="../../../../assets/atencao.png" alt="">
+        <h3>Deseja realmente {{textoMensagemConfirmacao}} essa lista?</h3>
 
-    </app-primary-button>
-    <app-primary-button texto="Cancelar" (click)="finalizarMensagemConfirmacao()">
+    <div class="controle-botao-confirmacao">
+        <app-primary-button texto="Confirmar e {{ textoMensagemConfirmacao }} a lista" (click)="acaoConfirmacaoAceita()"></app-primary-button>
+    </div>
 
-    </app-primary-button>
+    <div class="controle-botao-confirmacao">
+        <app-secondary-dark-button texto="Cancelar" (click)="finalizarMensagemConfirmacao()"></app-secondary-dark-button>
+    </div>
 </div>

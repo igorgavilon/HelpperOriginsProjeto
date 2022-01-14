@@ -1,28 +1,46 @@
 .mat-card-principal {
-    border: 1px solid #DEE8EB;
+    border: 1px solid #dee8eb;
     box-sizing: border-box;
     border-radius: 4px;
-    margin: 10px;
+    margin: 10px 16px 10px 0px;
     font-size: 0.8rem;
-    width: auto;
-    max-height: fit-content;
     cursor: pointer;
 }
 
 .card-selecionado {
-    border: 1px solid #83C5BE;
+    border: 1px solid #83c5be;
     box-sizing: border-box;
     box-shadow: 0px 4px 24px rgba(131, 197, 190, 0.3);
     border-radius: 4px;
 }
 
 .div-container {
-    width: 20vw;
+    min-width: 200px;
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
 .div-informacoes {
     margin-left: 10px;
+}
+
+.div-avatar {
+    img {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+h3 {
+    margin: 0;
+    color: #7c8d93;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+p {
+    font-size: 16px;
+    color: #3b4244;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

@@ -1,7 +1,19 @@
+@mixin content-card() {
+    h2 {
+        color: #7c8d93;
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
 .mat-card-principal {
-    border: 1px solid #DEE8EB;
+    border: 1px solid #dee8eb;
     box-sizing: border-box;
     border-radius: 4px;
+    margin-bottom: 15px;
 }
 
 .div-container {
@@ -13,6 +25,11 @@
 
 .div-descricao-atividade {
     margin-right: 20px;
+    @include content-card();
+}
+
+.div-status-atividade {
+    @include content-card();
 }
 
 .div-botao-status {
@@ -21,25 +38,25 @@
 
 .example-right-align {
     text-align: left;
-  }
+}
 
-  input.example-right-align::-webkit-outer-spin-button,
-  input.example-right-align::-webkit-inner-spin-button {
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
     display: none;
-  }
+}
 
-  input.example-right-align {
+input.example-right-align {
     -moz-appearance: textfield;
-  }
+}
 
-  mat-form-field {
-      width: 180px;
-  }
+mat-form-field {
+    width: 180px;
+}
 
-  .estilo-atividade-faltou {
-    color: #E29578;
-  }
+.estilo-atividade-faltou {
+    color: #e29578;
+}
 
-  .estilo-atividade-concluida {
-    color: #006D77;
-  }
+.estilo-atividade-concluida {
+    color: #006d77;
+}

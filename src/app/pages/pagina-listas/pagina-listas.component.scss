@@ -23,7 +23,7 @@
 
     margin: auto;
     display: flex;
-    height: 96vh;
+    height: 86vh;
 
     overflow-y: hidden;
 }
@@ -39,15 +39,16 @@
 
     width: 23%;
     min-width: 270px;
-    height: 90vh;
+    height: 82vh;
 
     padding-left: 40px;
+    margin-top: 15px;
 
     h3 {
         font-size: 24px;
         font-weight: 500;
 
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
 }
 
@@ -58,9 +59,10 @@
     justify-content: space-between;
 
     padding: 0px 5px 0px 35px;
+    margin-top: 15px;
 
     width: 68%;
-    height: 90vh;
+    height: 82vh;
 
     border-left: 1px solid #dee8eb;
 }

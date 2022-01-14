@@ -1,1 +1,9 @@
 @import "src/app/@theme/styles/input.scss";
+
+mat-hint,
+mat-error {
+    padding-top: 20px;
+}
+mat-error {
+    color: #eb5757;
+}

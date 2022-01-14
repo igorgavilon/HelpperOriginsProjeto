@@ -1,7 +1,7 @@
 <main class="container-principal">
     <section class="superior">
         <h3>Membros:</h3>
-        <app-primary-button color="accent" texto="Cadastrar novo membro" (click)="cadastrarNovoMembro()"></app-primary-button>
+        <app-primary-button texto="Cadastrar novo membro" (click)="cadastrarNovoMembro()"></app-primary-button>
     </section>
     <section class="listagem-membros">
         <p *ngFor="let membro of listaMembros">

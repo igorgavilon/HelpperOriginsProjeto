@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
-import Membro from 'src/app/@core/common/interfaces/membro.interface';
+import {Membro} from 'src/app/@core/common/interfaces/membro.interface';
 import { MembrosService } from 'src/app/@core/services/membros.service';
 import { ListasService } from 'src/app/@core/services/listas.service';
 import ListaAtividades from 'src/app/@core/common/classes/classe-lista-atividades';
@@ -13,7 +13,7 @@ import ItemLista from 'src/app/@core/common/classes/classe-item-lista';
 })
 export class DetalhesListaHistoricoComponent implements OnInit {
     public membro: Membro;
-    public itensLista: Array<ItemLista>;
+    public itensLista: ItemLista[];
 
   constructor(
         private _listasService: ListasService,

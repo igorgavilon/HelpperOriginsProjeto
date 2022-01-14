@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { EventEmitter, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import IDadosLogin from "../common/interfaces/dados-login.interface";
+import {IDadosLogin} from "../common/interfaces/dados-login.interface";
 import BaseResponse from "../common/models/classe-base-response";
 import ResponseDataLogin from "../common/models/classe-response-data-login";
 

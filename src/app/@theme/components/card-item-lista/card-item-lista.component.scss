@@ -13,21 +13,35 @@ mat-card {
     box-sizing: border-box;
     border-radius: 4px;
 
-    margin-right: 25px;
+    margin-right: 8px;
+    margin-bottom: 10px;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 7px 15px;
+    margin-bottom: 10px;
+}
+
+.criar-lista {
+    display: flex;
+    align-content: center;
 }
 
 /* CONTROLE E ESTILO DOS ITEMS DO CARD */
 
 /* == DESCRIÇÃO E TÍTULO DA ATIVIDADE == */
 
+.div-checkbox-seleciona-atividade {
+    padding-top: 1%;
+    margin-right: 20px;
+}
+
 .descricao-atividade {
-    width: 72%;
+    width: 65%;
 
     h4 {
         color: #7c8d93;
@@ -82,4 +96,13 @@ input.example-right-align::-webkit-inner-spin-button {
 
 input.example-right-align {
     -moz-appearance: textfield;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-prefix {
+    place-self: center;
+    color: gray;
 }

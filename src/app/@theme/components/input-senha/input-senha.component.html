@@ -7,6 +7,9 @@
           formControlName="senha" 
           name="inputSenha"
           />
+          <mat-error *ngIf="senhaForm.controls.senha.errors?.required">
+              Senha obrigatória
+          </mat-error>
         <button 
           mat-icon-button 
           matSuffix 
@@ -17,4 +20,5 @@
         </button>
     </mat-form-field>
 </form>
+
 

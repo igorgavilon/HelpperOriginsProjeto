@@ -5,7 +5,13 @@
             matInput
             placeholder="Email@email.com"
             formControlName="email"
-            name="inputEmail" />
+            name="inputEmail" />     
+        <mat-hint>Ex: pat@example.com</mat-hint>
+        <mat-error *ngIf="emailForm.controls.email.errors?.required">
+            E-mail obrigatório
+        </mat-error>
+        <mat-error *ngIf="emailForm.controls.email.errors?.email && (emailForm.controls.email.dirty || emailForm.controls.email.touched)">
+            E-mail em formato inválido
+        </mat-error>
     </mat-form-field>
 </form>
-

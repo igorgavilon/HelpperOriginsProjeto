@@ -9,8 +9,9 @@
     <input type="hidden" [ngModel]="dadosAtividade.isDeleted" name="isDeleted">
 
     <app-primary-button [texto]="dadosAtividade.id ? 'Salvar edição' : 'Adicionar atividade'" (click)="salvarAtividadeClick(membroForm)"></app-primary-button>
-    <p>
+  
+    <div class="controle-botao">
         <app-secondary-dark-button texto="Cancelar" (click)="cancelarFormClick()"></app-secondary-dark-button>
-    </p>
+    </div>
 </form>
 

@@ -2,20 +2,20 @@
     <div class="div-container">
         <div class="div-informacoes">
             <div *ngIf="!somenteLeitura">
-                <p>Nome da lista:</p>
-                <h2>{{ _lista.nome_lista }}</h2>
+                <h2>Nome da lista:</h2>
+                <p>{{ _lista.nome_lista }}</p>
             </div>
             <div>
-                <p>Número de faltas:</p>
-                <h2>{{ numeroFaltas }}</h2>
+                <h2>Número de faltas:</h2>
+                <p>{{ numeroFaltas }}</p>
             </div>
             <div>
-                <p>Data de início:</p>
-                <h2>{{ '_lista.data_inicio'}}</h2>
+                <h2>Data de início:</h2>
+                <p>{{ '_lista.data_inicio'}}</p>
             </div>
             <div>
-                <p>Data de finalização:</p>
-                <h2>{{ '_lista.data_finalizacao'}}</h2>
+                <h2>Data de finalização:</h2>
+                <p>{{ '_lista.data_finalizacao'}}</p>
             </div>
             <div *ngIf="!somenteLeitura">
                 <app-primary-button texto="Ver detalhes" (click)="acaoDetalhesClick(_lista)"></app-primary-button>

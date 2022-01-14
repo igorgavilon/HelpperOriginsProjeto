@@ -1,12 +1,20 @@
-<mat-card class="mat-card-principal">
+<mat-card class="mat-card-principal" >
     <div class="div-container">
-        <app-card-membro-ativo [_membro]="membroSelecionado">
 
-        </app-card-membro-ativo>
-
-        <div class="descricao-atividade">
-            <p>Total de atividades na lista: <span class="span-total-faltas">{{ total_atividades_lista }}</span></p>
+        <div class="info-descricao">
+            <div class="info-membro">
+                <img mat-card-avatar [src]="'../../../../assets/' + membroSelecionado.imagem_avatar.url">
+                <div class="nome-membro">
+                    <h3>Membro:</h3>
+                    <p>{{ membroSelecionado.nome }}</p>
+                </div>
+            </div>
+            <div class="descricao-atividade">
+                <p>Total de atividades na lista: </p>
+                <span >{{ total_atividades_lista }}</span>
+            </div>
         </div>
+
         <div class="botao-status">
             <app-primary-button texto="{{modoEdicao ? 'Salvar lista' : 'Criar lista'}}" (click)="acaoBotaoClick()"></app-primary-button>
         </div>

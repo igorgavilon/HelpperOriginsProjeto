@@ -5,6 +5,9 @@ button {
     max-height: 70px;
     font-size: 16px;
     font-weight: 500;
+
+    background-color: #006d77;
+    color: #fff;
 }
 
 .button-control {
@@ -15,8 +18,4 @@ button {
     i {
         margin-right: 5px;
     }
-}
-
-.primary-color-dark {
-    background-color: #006d77;
 }
