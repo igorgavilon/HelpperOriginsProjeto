@@ -8,25 +8,36 @@ import { MembrosService } from 'src/app/@core/services/membros.service';
   styleUrls: ['./excluir-membro.component.scss']
 })
 export class ExcluirMembroComponent implements OnInit {
-    public exclusaoSucesso: boolean;
+    public exclusaoSucesso: boolean = false;
+    public exclusaoErro: boolean = false;
+    public mensagemErro: string;
 
     constructor(
             private _membrosService: MembrosService,
             public bottomSheetRef: MatBottomSheetRef<ExcluirMembroComponent>,
-            @Inject(MAT_BOTTOM_SHEET_DATA) public idMembro: number
+            @Inject(MAT_BOTTOM_SHEET_DATA) public idMembro: string
         ) { }
 
-    ngOnInit(): void {
-        this.exclusaoSucesso = false;
-    }
+    ngOnInit(): void {}
 
     public fecharModal = (): void => {
         this.bottomSheetRef.dismiss();
     }
 
     public excluirMembro = (): void => {
-        this._membrosService.excluirMembroPeloId(this.idMembro);
-        this.exclusaoSucesso = true;
+        this._membrosService.excluirMembroPeloId(this.idMembro).subscribe({
+            next: resposta => {
+                this.exclusaoSucesso = true;
+            },
+            error: erro => {
+                this.mensagemErro = erro.error;
+                this.exclusaoErro = true;
+            }
+        });
+    }
+
+    public tentarNovamente(): void {
+        this.exclusaoErro = false;
     }
 
 }

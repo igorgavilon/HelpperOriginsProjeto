@@ -44,7 +44,13 @@ export class AutenticacaoService {
     }
 
     public retornaHeaderComToken(): HttpHeaders {
-        return new HttpHeaders().set('Authorization', "Bearer " + this.retornaToken());
+        return new HttpHeaders().set('Authorization', "Bearer " + this.retornaToken()).set(
+        'Content-Type',  'application/json');
+    }
+
+    public retornaHeaderComToken2(): HttpHeaders {
+        return new HttpHeaders().set('Authorization', "Bearer " + this.retornaToken()).set(
+        'Content-Type', 'multipart/form-data').set('Accept', '*/*');
     }
 
 }

@@ -59,8 +59,12 @@ export class InputArquivoImagemComponent implements OnInit {
     if (files.length > 1) this.error = "Only one file at time allow";
     else {
         const arquivo = files[0];
+        console.log(arquivo.name);
+        
         const url = this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(arquivo));
         this.arquivoImagemInput = { arquivo, url };
+        console.log(this.arquivoImagemInput.arquivo.name);
+        
         this.atualizarArquivoImagem(this.arquivoImagemInput);
         this.error = "";
     }

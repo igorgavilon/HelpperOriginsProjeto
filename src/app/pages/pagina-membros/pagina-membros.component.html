@@ -5,9 +5,10 @@
     </section>
     <section class="listagem-membros">
         <p *ngFor="let membro of listaMembros">
-            <app-card-membro-infos [_membro]="membro"
+            <app-card-membro-infos [membro]="membro"
                 [editarMembroClick]="editarMembro"
-                [excluirMembroClick]="excluirMembro">
+                [excluirMembroClick]="excluirMembro"
+                [verListaMembro]="verListaMembro">
             </app-card-membro-infos>
         </p>
 

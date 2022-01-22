@@ -1,19 +1,31 @@
 <div class="container-principal">
     <div class="div-superior">
-        <h3>{{!edicaoSucesso ? 'Editar membro': ' '}}</h3>
+        <h3>{{!edicaoSucesso && !edicaoErro ? 'Editar membro': ' '}}</h3>
         <span><i class="material-icons" (click)="fecharModal()">close</i></span>
     </div>
-    <div class="div-form" *ngIf="!edicaoSucesso">
+    <div class="div-form" *ngIf="!edicaoSucesso && !edicaoErro">
         <p>Altere os dados abaixo para editar o cadastro de um membro no RIOTT.</p>
         <div>
             <app-form-membro [cancelarFormClick]="fecharModal"
                 [salvarMembroClick]="salvarMembro"
-                [dadosMembro]="dadosMembro"></app-form-membro>
+                [dadosMembro]="dadosMembro.membro"
+                [arquivoImagem]="dadosMembro.arquivoImagemAvatar"></app-form-membro>
         </div>
     </div>
     <div class="div-mensagem-sucesso" *ngIf="edicaoSucesso">
         <img src="../../../../assets/sucesso.png" alt="">
         <h3>Membro editado com sucesso!</h3>
         <app-primary-button texto="Finalizar" (click)="fecharModal()"></app-primary-button>
+    </div>
+    <div class="div-mensagem-sucesso" *ngIf="edicaoErro">
+        <img src="../../../../assets/erro.png" alt="">
+        <h3>Algo deu errado</h3>
+        <h5>{{ mensagemErro }}</h5>
+        <div class="controle-botao">
+            <app-primary-button texto="Tentar novamente" (click)="tentarNovamente()"></app-primary-button>
+        </div>
+        <div class="controle-botao">
+            <app-secondary-dark-button texto="Voltar ao início" (click)="fecharModal()"></app-secondary-dark-button>
+        </div>
     </div>
 </div>

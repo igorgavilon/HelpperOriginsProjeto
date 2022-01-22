@@ -4,7 +4,7 @@
         <span><i class="material-icons" (click)="fecharModal()">close</i></span>
     </div>
 
-    <div class="div-confirma-exclusao" *ngIf="!exclusaoSucesso">
+    <div class="div-confirma-exclusao" *ngIf="!exclusaoSucesso && !exclusaoErro">
         <img src="../../../../assets/atencao.png" class="image">
         <h3>Deseja realmente excluir esse membro?</h3>
 
@@ -22,5 +22,15 @@
         <h3>Membro excluído com sucesso!</h3>
         <app-primary-button texto="Finalizar" (click)="fecharModal()"></app-primary-button>
     </div>
-
+    <div class="div-mensagem-sucesso" *ngIf="exclusaoErro">
+        <img src="../../../../assets/erro.png" alt="">
+        <h3>Algo deu errado</h3>
+        <h5>{{ mensagemErro }}</h5>
+        <div class="controle-botao">
+            <app-primary-button texto="Tentar novamente" (click)="tentarNovamente()"></app-primary-button>
+        </div>
+        <div class="controle-botao">
+            <app-secondary-dark-button texto="Voltar ao início" (click)="fecharModal()"></app-secondary-dark-button>
+        </div>
+    </div>
 </div>

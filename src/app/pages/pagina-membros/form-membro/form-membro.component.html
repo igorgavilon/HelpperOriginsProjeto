@@ -1,34 +1,34 @@
 <form #membroForm="ngForm">
-    <input type="number" [ngModel]="dadosMembro.id_membro" name="id_membro" hidden>
+    <input type="text" [ngModel]="dadosMembro.id" name="id" hidden>
 
     <app-input-arquivo-imagem ngDefaultControl ngModel
             [arquivoImagemInput]="arquivoImagem"
-            name="url_avatar"
+            name="avatar"
             [atualizarArquivoImagem]="atualizarArquivoImagem">
     </app-input-arquivo-imagem>
 
     <div class="controle-input">
-            <app-input-nome ngDefaultControl [ngModel]="dadosMembro.nome"
-                    [nomeInput]="dadosMembro.nome"
-                    name="nome">
+            <app-input-nome ngDefaultControl [ngModel]="dadosMembro.name"
+                    [nomeInput]="dadosMembro.name"
+                    name="name">
             </app-input-nome>
     </div>
 
     <div class="controle-input">
-            <app-input-nascimento ngDefaultControl [ngModel]="dadosMembro.data_nascimento"
-                    [nascimentoInput]="dadosMembro.data_nascimento"
-                    name="data_nascimento">
+            <app-input-nascimento ngDefaultControl [ngModel]="dadosMembro.birthdate"
+                    [nascimentoInput]="dadosMembro.birthdate"
+                    name="birthdate">
             </app-input-nascimento>
     </div>
 
     <div class="controle-input">
-            <app-input-valor-mesada ngDefaultControl [ngModel]="dadosMembro.valor_mesada"
-                    [valorMesadaInput]="dadosMembro.valor_mesada"
-                    name="valor_mesada">
+            <app-input-valor-mesada ngDefaultControl [ngModel]="dadosMembro.allowance"
+                    [valorMesadaInput]="dadosMembro.allowance"
+                    name="allowance">
             </app-input-valor-mesada>
     </div>
 
-        <app-primary-button [texto]="dadosMembro.id_membro ? 'Salvar edição' : 'Cadastrar membro'" (click)="salvarMembro(membroForm)">
+        <app-primary-button [texto]="dadosMembro.id ? 'Salvar edição' : 'Cadastrar membro'" (click)="salvarMembro(membroForm)">
                 
         </app-primary-button>
 

@@ -1,35 +1,35 @@
 <mat-card class="mat-card-principal">
     <section class="container">
         <div class="avatar">
-            <img mat-card-avatar [src]="_membro.imagem_avatar.arquivo === null ? '../../../../assets/' + _membro.imagem_avatar.url : _membro.imagem_avatar.url">
+            <img mat-card-avatar [src]="arquivoImagem.url === null ? '../../../../assets/arquivo.png'  : arquivoImagem.url">
         </div>
 
         <div class="nome-membro">
             <p>Membro:</p>
-            <span>{{_membro.nome}}</span>
+            <span>{{membro.name}}</span>
         </div>
 
         <div class="info-membro">
             <div>
                 <p>Data de nascimento:</p>
-                <span>{{_membro.data_nascimento | date: 'dd/MM/yyyy'}}</span>
+                <span>{{membro.birthdate}}</span>
 
             </div>
             <div>
                 <p>Valor mesada:</p>
-                <span>R$ {{_membro.valor_mesada}}</span>
+                <span>R$ {{membro.allowance}}</span>
             </div>
         </div>
 
         <div class="botoes">
             <div class="control-button">
-                <app-secondary-dark-button texto="Excluir" (click)="excluirMembroClick(_membro.id_membro)"></app-secondary-dark-button>
+                <app-secondary-dark-button texto="Excluir" (click)="excluirMembroClick(membro.id)"></app-secondary-dark-button>
             </div>
             <div class="control-button">
-                <app-primary-button color="primary" texto="Editar" (click)="editarMembroClick(_membro.id_membro)"></app-primary-button>
+                <app-primary-button color="primary" texto="Editar" (click)="editarMembroClick(membro, arquivoImagem)"></app-primary-button>
             </div>
             <div class="control-button">
-                <app-primary-button texto="Ver lista"></app-primary-button>
+                <app-primary-button texto="Ver lista" (click)="verListaMembro(membro.id)"></app-primary-button>
             </div>
         </div>
        

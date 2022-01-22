@@ -24,6 +24,11 @@ const routes: Routes = [
 				component: PaginaListasComponent,
 				canActivate: [AuthGuard]
 			},
+			{
+				path: 'listas/verlistamembro/:id',
+				component: PaginaListasComponent,
+				canActivate: [AuthGuard]
+			},
             {
 				path: 'membros',
 				component: PaginaMembrosComponent,

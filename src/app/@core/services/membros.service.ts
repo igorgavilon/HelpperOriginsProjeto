@@ -1,60 +1,90 @@
+import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { IArquivoImagem } from "../common/interfaces/arquivo-imagem.interface";
 import {Membro} from "../common/interfaces/membro.interface";
+import BaseResponse from "../common/models/classe-base-response";
+import ResponseDataExcluirMembro from "../common/models/classe-response-data-excluir-membro";
+import ResponseDataMembros from "../common/models/classe-response-data-membros";
+import { AutenticacaoService } from "./autenticacao.service";
 
 @Injectable({
     providedIn: 'root',
 })
 export class MembrosService {
+    private _urlBase: string = "http://localhost:4444/v1/member";
 
-    public retornaTodosMembros(): Membro[] {
-        return Membros;
+    constructor(private _httpClient: HttpClient, private _autenticacaoService: AutenticacaoService) {}
+
+    public retornaTodosMembros(): Observable<BaseResponse<ResponseDataMembros>> {
+        return this._httpClient.get<BaseResponse<ResponseDataMembros>>(
+            this._urlBase + "?page=1&size=100&orderBy=ASC",
+            {headers: this._autenticacaoService.retornaHeaderComToken()}
+        );
+    }
+
+    public retornaAvatarMembroPeloId(idMembro: string): Observable<File> {
+        return this._httpClient.get<File>(
+            this._urlBase + `/avatar/${idMembro}`,
+            {headers: this._autenticacaoService.retornaHeaderComToken(), responseType: 'blob' as 'json'}
+        );
     }
 
     public retornaMembroPeloId(idMembro: number): Membro {
-        return Membros.find((membroAtual: Membro) => membroAtual.id_membro === idMembro);
+        return Membros.find((membroAtual: Membro) => membroAtual.id === idMembro);
     }
 
-    public salvarMembro(membro: Membro): void {
-        const arrayMembros: Membro[]= this.retornaTodosMembros();
-
+    public salvarMembro(membro: Membro): Observable<Object> {
         //se o membro já existe, possui um id
         //serão atualizados os dados de um membro já existente
-        if(membro.id_membro !== null) {
-            const indice = arrayMembros.findIndex((membroAtual: Membro) => membroAtual.id_membro === membro.id_membro);
-            arrayMembros[indice] = membro;
-            // Membros = arrayMembros;
+        if(membro.id !== null) {            
+            return this._httpClient.put(
+                this._urlBase,
+                {
+                    "id": membro.id,
+                    "name": membro.name,
+                    "birthdate": membro.birthdate,
+                    "allowance": membro.allowance
+                },
+                {headers: this._autenticacaoService.retornaHeaderComToken()}
+            );
         }else {//se o membro não possui um id, ele é um novo membro
             //serão salvos os dados do novo membro
 
-            //se for o primeiro membro a ser cadastrado seu índice será zero
-            let idAtual: number = 0;
-            //se não for o primeiro membro o arrayMembros não será vazio
-            //então atualiza o idAtual
-            if(arrayMembros.length !== 0) {
-                //busca o último id que foi cadastrado
-                const ultimoId: number = arrayMembros.map((item: Membro) => item.id_membro).reduce((anterior: number, atual: number) => Math.max(anterior, atual));
-                //incrementa o último id para definir o id do membro que será criado
-                idAtual = ultimoId+1;
-            }
-
-            //guarda os dados do membro que vieram do formulário
-            const {nome, imagem_avatar, data_nascimento, valor_mesada} = membro;
-            //adiciona o novo cliente no array de clientes
-            Membros.push({id_membro: idAtual, nome: nome, imagem_avatar: imagem_avatar, data_nascimento: data_nascimento, valor_mesada: valor_mesada});
-
-
+            return this._httpClient.post<Object>(
+                this._urlBase,
+                {
+                    "name": membro.name,
+                    "birthdate": membro.birthdate,
+                    "allowance": membro.allowance
+                },
+                {headers: this._autenticacaoService.retornaHeaderComToken()}
+            );
 
         }
     }
 
-    public excluirMembroPeloId(id: number): void {
-        Membros = Membros.filter((itemAtual: Membro) => itemAtual.id_membro !== id);
+    public salvarAvatarMembro(idMembro: string, imagemAvatar: IArquivoImagem): Observable<Object> {
+        const formData = new FormData();
+        formData.append('upload', imagemAvatar.arquivo);
+        
+        return this._httpClient.post<Object>(
+            this._urlBase + `/${idMembro}/avatar`,
+            formData,
+            {headers: this._autenticacaoService.retornaHeaderComToken2()});
+    }
+
+    public excluirMembroPeloId(idMembro: string): Observable<BaseResponse<ResponseDataExcluirMembro>> {
+        return this._httpClient.delete<BaseResponse<ResponseDataExcluirMembro>>(
+            this._urlBase + `/${idMembro}`,
+            {headers: this._autenticacaoService.retornaHeaderComToken()}
+        );
     }
 }
 
 let Membros: Membro[] = [
     {
-        id_membro: 1,
+        id: 1,
         nome: "Luisa Sousa",
         imagem_avatar: {
             arquivo: null,
@@ -64,7 +94,7 @@ let Membros: Membro[] = [
         valor_mesada: 1000
     },
     {
-        id_membro: 2,
+        id: 2,
         nome: "Clébin Sousa",
         imagem_avatar: {
             arquivo: null,
